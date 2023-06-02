@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import Button from "../components/Button";
 
 export default function HomePage() {
+    useEffect(
+        () => {
+            console.log(import.meta.env);
+        },
+        []
+    )
     return (
         <div>
 
