@@ -1,6 +1,7 @@
 import Button from "../components/Button";
 import Card_1 from "../components/Card_1";
 import Card_2 from "../components/Card_2";
+import FeatureCard_1 from "../components/FeatureCard_1";
 
 export default function HomePage() {
     return (
@@ -94,16 +95,29 @@ export default function HomePage() {
                 className="w-10/12 h-auto block mx-auto mt-36"
             />
 
+            {/* section-3 */}
             <div className="w-10/12 mx-auto mt-36">
 
                 <p
-                    className="text-center text-white font-bold text-3xl"
+                    style={{
+                        fontFamily: "var(--home__section-3__title--font-family)",
+                        fontSize: "var(--home__section-3__title--font-size)",
+                    }}
+                    className="text-center text-[--home__section-3__title--color]
+                    font-[--home__section-3__title--font-weight]"
                 >
                     Build your crypto portfolio
                 </p>
 
                 <p
-                    className="max-w-[50ch] text-sm font-normal tracking-wide text-white mt-4 text-center mx-auto"
+                    style={{
+                        fontSize: "var(--home__section-3__subtitle--font-size)",
+                        letterSpacing: "var(--home__section-3__subtitle--letter-spacing)",
+                        fontFamily: "var(--home__section-3__subtitle--font-family)",
+                        lineHeight: "var(--home__section-3__subtitle--line-height)"
+                    }}
+                    className="max-w-[50ch] tracking-wide mt-4 text-center mx-auto text-[--home__section-3__subtitle--color]
+                    font-[--home__section-3__subtitle--font-weight]"
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
                 </p>
@@ -159,6 +173,116 @@ export default function HomePage() {
                         rounded: "var(--header__btn--border-radius)"
                     }}
                 />
+
+            </div>
+
+            {/* section-4 */}
+            <div className="w-10/12 mx-auto mt-36">
+
+                <div className="w-full grid grid-cols-2 place-items-center">
+
+                    <img
+                        alt=""
+                        src={import.meta.env.BASE_URL+"/images/two-iphones.png"}
+                        className="w-96 h-auto"
+                    />
+
+                    <div>
+                        <p
+                            style={{
+                                fontFamily: "var(--home__section-4__title--font-family)",
+                                fontSize: "var(--home__section-4__title--font-size)",
+                            }}
+                            className="max-w-[15ch] text-[--home__section-4__title--color]
+                            font-[--home__section-4__title--font-weight]"
+                        >
+                            Earn daily rewards on your idle tokens
+                        </p>
+
+                        <p
+                            style={{
+                                fontFamily: "var(--home__section-4__subtitle--font-family)",
+                                fontSize: "var(--home__section-4__subtitle--font-size)",
+                            }}
+                            className="mt-4 max-w-[40ch] text-[--home__section-4__subtitle--color]
+                            font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
+                            tracking-[--home__section-4__subtitle--letter-spacing]"
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                        </p>
+
+                        <div className="space-y-3 mt-4">
+                            <FeatureCard_1
+                                text="Lowest fees in market"
+                                img={import.meta.env.BASE_URL+"/images/low-charts.png"}
+                            />
+                            <FeatureCard_1
+                                text="Fast and secure transactions"
+                                img={import.meta.env.BASE_URL+"/images/thunder.png"}
+                            />
+                            <FeatureCard_1
+                                text="256-bit secure encryption"
+                                img={import.meta.env.BASE_URL+"/images/lock.png"}
+                            />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {/* section-5 */}
+            <div className="w-full mx-auto mt-36">
+
+                <div className="w-full grid grid-cols-[45%_55%] place-items-center">
+
+                    <div className="pl-10">
+                        <p
+                            style={{
+                                fontFamily: "var(--home__section-5__title--font-family)",
+                                fontSize: "var(--home__section-5__title--font-size)",
+                            }}
+                            className="max-w-[15ch] text-[--home__section-5__title--color]
+                            font-[--home__section-5__title--font-weight]"
+                        >
+                            Earn daily rewards on your idle tokens
+                        </p>
+
+                        <p
+                            style={{
+                                fontFamily: "var(--home__section-5__subtitle--font-family)",
+                                fontSize: "var(--home__section-5__subtitle--font-size)",
+                            }}
+                            className="mt-4 max-w-[40ch] text-[--home__section-5__subtitle--color]
+                            font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
+                            tracking-[--home__section-5__subtitle--letter-spacing]"
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                        </p>
+
+                        <div className="space-y-3 mt-4">
+                            <FeatureCard_1
+                                text="100% Private data"
+                                img={import.meta.env.BASE_URL+"/images/shield.png"}
+                            />
+                            <FeatureCard_1
+                                text="99.99% Uptime guarantee"
+                                img={import.meta.env.BASE_URL+"/images/99-percent.png"}
+                            />
+                            <FeatureCard_1
+                                text="24/7 Dedicated support"
+                                img={import.meta.env.BASE_URL+"/images/message.png"}
+                            />
+                        </div>
+                    </div>
+
+                    <img
+                        alt=""
+                        src={import.meta.env.BASE_URL+"/images/Apple-Computers-2.png"}
+                        className="w-full h-auto place-self-end"
+                    />
+
+                </div>
 
             </div>
         </div>
