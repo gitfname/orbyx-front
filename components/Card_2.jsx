@@ -12,7 +12,7 @@ const stypeProps = {
     }
 }
 
-export default function Card_2({title, subtitle, img, style=stypeProps, className=""}) {
+export default function Card_2({title, subtitle, img, style=stypeProps, className="", content=null}) {
 
     const stypeProps = {
         card: {
@@ -98,10 +98,12 @@ export default function Card_2({title, subtitle, img, style=stypeProps, classNam
                 </p>
             </div>
 
+            {content}
+
             <img
                 alt=""
                 src={img}
-                className="h-auto w-72 object-center object-cover mt-auto block mx-auto"
+                className={"h-auto w-96 object-center object-scale-down mt-auto block mx-auto " + className}
             />
 
         </div>
