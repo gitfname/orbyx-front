@@ -1,13 +1,6 @@
-import { useEffect } from "react";
 import Button from "../components/Button";
 
 export default function HomePage() {
-    useEffect(
-        () => {
-            console.log(import.meta.env);
-        },
-        []
-    )
     return (
         <div>
 
@@ -88,7 +81,7 @@ export default function HomePage() {
                     <div className="absolute right-0 bottom-0 translate-y-20 w-[150%] h-72  scale-y-150 backdrop-blur-xl -z-10"></div>
                     <img
                         alt="Apple Computer"
-                        src="/images/Apple-Computers.png"
+                        src={import.meta.env.BASE_URL+"/images/Apple-Computers.png"}
                         className="h-auto"
                     />
                 </div>

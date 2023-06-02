@@ -27,7 +27,7 @@ export default function Header() {
             <div className="flex items-center gap-x-9">
                 <Link to="/" className="flex items-center gap-x-3">
                     <img
-                        src="/logo.svg"
+                        src={import.meta.env.BASE_URL+"/logo.svg"}
                         className="w-[--logo--width] h-[--logo--height] object-center object-cover"
                     />
                     <p
