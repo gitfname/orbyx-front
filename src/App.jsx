@@ -3,6 +3,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from '../pages/Home'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         element={<HomePage />}
       />
     </Routes>
+    <Footer />
     </>
   )
 }
