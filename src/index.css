@@ -8,6 +8,7 @@
     --primary-color: #0328EE;
     --bg-color: #010725;
     --dark-blue: #010D50;
+    --blue: #0328EE;
 
 
     /* ---------- header ---------- */
@@ -72,10 +73,88 @@
     --hero-section__cta2--py: 1.05rem;
     --hero-section__cta2--border-radius: 100px;
 
-
-
-
     /* End ---------- Hero section ---------- End */
+
+
+
+    /* ---------- Home__section-3 ---------- */
+
+    --home__section-3__title--color: white;
+    --home__section-3__title--font-size: white;
+    --home__section-3__title--font-weight: white;
+    --home__section-3__title--letter-spacing: 0.025rem;
+    --home__section-3__title--font-family: 'DM Sans';
+    --home__section-3__title--line-height: 1.75rem;
+
+    --home__section-3__subtitle--color: white;
+    --home__section-3__subtitle--font-size: white;
+    --home__section-3__subtitle--font-weight: white;
+    --home__section-3__subtitle--letter-spacing: 0.025rem;
+    --home__section-3__subtitle--font-family: 'DM Sans';
+    --home__section-3__subtitle--line-height: 1.75rem;
+
+
+    /* End ---------- Home__section-3 ---------- End */
+
+
+
+    /* ---------- Card_1 ---------- */
+
+    --card_1--w: 100%;
+    --card_1--h: 100%;
+    --card_1--py: 2.5rem;
+    --card_1--px: 1rem;
+    --card_1--border-radius: 1.75rem;
+    --card_1--bg: var(--dark-blue);
+
+    --card_1__img--w: 3.1rem;
+    --card_1__img--h: 3.1rem;
+
+    --card_1__title--color: white;
+    --card_1__title--font-size: 1rem;
+    --card_1__title--font-weight: 700;
+    --card_1__title--font-family: 'DM Sans';
+    --card_1__title--letter-spacing: 0.025rem;
+
+    --card_1__subtitle--color: white;
+    --card_1__subtitle--font-size: 0.8rem;
+    --card_1__subtitle--font-weight: 300;
+    --card_1__subtitle--font-family: 'DM Sans';
+    --card_1__subtitle--letter-spacing: 0.025rem;
+    --card_1__subtitle--line-height: 1.2rem;
+
+    /* End ---------- Card_1 ---------- End */
+
+
+
+    /* ---------- Card_2 ---------- */
+
+    --card_2--w: 100%;
+    --card_2--h: 100%;
+    --card_2--py: 1.6rem 0;
+    --card_2--px: 1rem;
+    --card_2--border-radius: 1.75rem;
+    --card_2--bg: var(--blue);
+
+    --vard_2__title--color: white;
+    --vard_2__title--font-family: 'DM Sans';
+    --vard_2__title--font-size: 1.3rem;
+    --vard_2__title--font-weight: 700;
+    --vard_2__title--letter-spacing: 0.075rem;
+    --vard_2__title--line-height: unset;
+    --vard_2__title--mb: unset;
+    --vard_2__title--mt: unset;
+
+    --vard_2__subtitle--color: white;
+    --vard_2__subtitle--font-family: 'DM Sans';
+    --vard_2__subtitle--font-size: 0.8rem;
+    --vard_2__subtitle--font-weight: 400;
+    --vard_2__subtitle--letter-spacing: 0.075rem;
+    --vard_2__subtitle--line-height: 1.2rem;
+    --vard_2__subtitle--mb: unset;
+    --vard_2__subtitle--mt: 0.75rem;
+    
+    /* ---------- Card_2 ---------- */
 
 }
 

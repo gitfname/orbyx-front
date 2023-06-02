@@ -1,13 +1,14 @@
 import Button from "../components/Button";
+import Card_1 from "../components/Card_1";
+import Card_2 from "../components/Card_2";
 
 export default function HomePage() {
     return (
-        <div>
+        <div className="pb-10">
 
             {/* light circles*/}
-            <div className="bg-[--dark-blue] absolute top-3 left-44 w-48 h-48 rounded-full -z-10"></div>
-            <div className="bg-[--dark-blue] absolute top-48 left-2 w-48 h-48 rounded-full -z-10"></div>
-            <div className="absolute top-0 left-0 w-full h-screen -z-10 backdrop-blur-3xl"></div>
+            <div className="bg-[--dark-blue] absolute top-3 left-44 w-48 h-48 rounded-full blur-3xl -z-10"></div>
+            <div className="bg-[--dark-blue] absolute top-48 left-2 w-48 h-48 rounded-full blur-3xl -z-10"></div>
 
             
             {/* hero section */}
@@ -76,15 +77,88 @@ export default function HomePage() {
 
                 <div className="relative">
                     {/* light circles*/}
-                    <div className="bg-[--dark-blue] absolute left-3 -bottom-2 w-72 h-72 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
-                    <div className="bg-[--dark-blue] absolute right-0 -bottom-2 w-56 h-56 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
-                    <div className="absolute right-0 bottom-0 translate-y-20 w-[150%] h-72  scale-y-150 backdrop-blur-xl -z-10"></div>
+                    <div className="bg-[--dark-blue] absolute left-3 -bottom-2 blur-3xl w-72 h-72 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
+                    <div className="bg-[--dark-blue] absolute right-0 -bottom-2 blur-3xl w-56 h-56 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
                     <img
                         alt="Apple Computer"
                         src={import.meta.env.BASE_URL+"/images/Apple-Computers.png"}
                         className="h-auto"
                     />
                 </div>
+
+            </div>
+
+            <img
+                alt="logos"
+                src={import.meta.env.BASE_URL+"/logos-blue.png"}
+                className="w-10/12 h-auto block mx-auto mt-36"
+            />
+
+            <div className="w-10/12 mx-auto mt-36">
+
+                <p
+                    className="text-center text-white font-bold text-3xl"
+                >
+                    Build your crypto portfolio
+                </p>
+
+                <p
+                    className="max-w-[50ch] text-sm font-normal tracking-wide text-white mt-4 text-center mx-auto"
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                </p>
+
+                <div className="w-full mt-20 grid grid-cols-[1fr_40%_1fr] gap-x-6">
+
+                    <div className="space-y-8 h-full flex flex-col">
+                        <Card_1
+                            title="Send & Receive"
+                            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
+                            img={import.meta.env.BASE_URL+"/images/send-receive.png"}
+                        />
+
+                        <Card_1
+                            title="100% Secure Wallet"
+                            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
+                            img={import.meta.env.BASE_URL+"/images/vallet.png"}
+                        />
+                    </div>
+
+                    <Card_2
+                        title="iOS & Android App"
+                        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In amet, morbi non at sed neque."
+                        img={import.meta.env.BASE_URL+"/images/iPhones.png"}
+                    />
+
+                    <div className="space-y-8 flex flex-col">
+                        <Card_1
+                            title="Trading Charts"
+                            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
+                            img={import.meta.env.BASE_URL+"/images/trading-charts.png"}
+                        />
+
+                        <Card_1
+                            title="Real Time Trading"
+                            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
+                            img={import.meta.env.BASE_URL+"/images/real-time.png"}
+                        />
+                    </div>
+
+                </div>
+
+                <Button
+                    text="DOWNLOAD APP"
+                    className="block mx-auto mt-12"
+                    style={{
+                        fontSize: "var(--header__btn--font-size)",
+                        fontFamily: "var(--header__btn--font-family)",
+                        bg: "var(--header__btn--bg)",
+                        color: "var(--header__btn--color)",
+                        px: "1.75rem",
+                        py: "1.1rem",
+                        rounded: "var(--header__btn--border-radius)"
+                    }}
+                />
 
             </div>
         </div>
