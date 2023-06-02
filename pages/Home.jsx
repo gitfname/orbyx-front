@@ -1,8 +1,11 @@
+import ArticleCard_1 from "../components/ArticleCard_1";
 import Button from "../components/Button";
 import Card_1 from "../components/Card_1";
 import Card_2 from "../components/Card_2";
 import FeatureCard_1 from "../components/FeatureCard_1";
+import SectionGroup_1 from "../components/SectionGroup_1";
 import TestimotionalsSlider_1 from "../components/TestimotionalSlider_1";
+import VideoPlayer_1 from "../components/VideoPlayer_1";
 
 export default function HomePage() {
     return (
@@ -374,6 +377,113 @@ export default function HomePage() {
                 </div>
                 <TestimotionalsSlider_1 />
             </div>
+
+            {/* section-7 */}
+            <div className="w-10/12 mx-auto mt-36">
+
+                <div className="w-full grid grid-cols-2 place-items-center">
+
+                    <div>
+                        <p
+                            style={{
+                                fontFamily: "var(--home__section-4__title--font-family)",
+                                fontSize: "var(--home__section-4__title--font-size)",
+                            }}
+                            className="max-w-[15ch] text-[--home__section-4__title--color]
+                            font-[--home__section-4__title--font-weight]"
+                        >
+                            Get started today
+                        </p>
+
+                        <p
+                            style={{
+                                fontFamily: "var(--home__section-4__subtitle--font-family)",
+                                fontSize: "var(--home__section-4__subtitle--font-size)",
+                            }}
+                            className="mt-4 max-w-[40ch] text-[--home__section-4__subtitle--color]
+                            font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
+                            tracking-[--home__section-4__subtitle--letter-spacing]"
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                        </p>
+
+                        <div className="space-y-3 mt-4">
+                            <FeatureCard_1
+                                text="Download app"
+                                img={import.meta.env.BASE_URL+"/images/download.png"}
+                            />
+                            <FeatureCard_1
+                                text="Create a free account"
+                                img={import.meta.env.BASE_URL+"/images/user.png"}
+                            />
+                            <FeatureCard_1
+                                text="Start trading"
+                                img={import.meta.env.BASE_URL+"/images/money.png"}
+                            />
+                        </div>
+                    </div>
+
+                    <VideoPlayer_1 />
+
+                </div>
+
+            </div>
+
+
+            {/* latest news */}
+            <SectionGroup_1
+                leftText="Browse our latest news"
+                rightText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet ."
+            >
+                <>
+                    <div className="w-full grid grid-cols-3 gap-x-4">
+                        <ArticleCard_1
+                            title="The Basics about Cryptocurrency"
+                            info="Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo."
+                            author={{
+                                img: import.meta.env.BASE_URL+"/images/user-profiles/user-1.jpg",
+                                username: "Jhon Smith"
+                            }}
+                            pubDate="AUGUST, 2, 2023"
+                        />
+
+                        <ArticleCard_1
+                            title="How to become a successful trader in 2023 "
+                            info="Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo."
+                            author={{
+                                img: import.meta.env.BASE_URL+"/images/user-profiles/user-2.jpg",
+                                username: "Markus Parker"
+                            }}
+                            pubDate="AUGUST, 2, 2023"
+                        />
+
+                        <ArticleCard_1
+                            title="Best Cryptocurrencies to buy in 2023"
+                            info="Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo."
+                            author={{
+                                img: import.meta.env.BASE_URL+"/images/user-profiles/user-1.jpg",
+                                username: "Jhon Smith"
+                            }}
+                            pubDate="AUGUST, 2, 2023"
+                        />
+                    </div>
+
+                    <Button
+                        text="VIEW ALL ARTICLES"
+                        className="mt-8 block mx-auto tracking-widest"
+                        style={{
+                            fontSize: "0.75rem",
+                            fontFamily: "Inter",
+                            fontWeight: 500,
+                            bg: "rgba(255, 255, 255, 0.1)",
+                            color: "white",
+                            px: "1.75rem",
+                            py: "1.1rem",
+                            rounded: "100px"
+                        }}
+                    />
+                </>
+            </SectionGroup_1>
         </div>
     )
 }

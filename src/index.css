@@ -247,6 +247,34 @@
  
 
     /* End ---------- TestimotionalCard_1 ---------- End */
+
+
+
+    /* ---------- VideoPlayer_1 ----------  */
+
+    --video-player-1--bg: var(--dark-blue);
+
+    /* End ---------- VideoPlayer_1 ---------- End  */
+
+
+
+    /* ---------- SectionGroup_1 ----------  */
+
+    --section-group-1__left-text--color: white;
+    --section-group-1__left-text--font-size: 1.875rem;
+    --section-group-1__left-text--font-weight: 700;
+    --section-group-1__left-text--font-family: 'DM Sans';
+    --section-group-1__left-text--line-height: 1.1rem;
+    --section-group-1__left-text--letter-spacing: 0.0875rem;
+
+    --section-group-1__right-text--color: white;
+    --section-group-1__right-text--font-size: 0.875rem;
+    --section-group-1__right-text--font-weight: 300;
+    --section-group-1__right-text--font-family: 'Inter';
+    --section-group-1__right-text--line-height: 1.1rem;
+    --section-group-1__right-text--letter-spacing: unset;
+
+    /* End ---------- SectionGroup_1 ---------- End */
 }
 
 * {
