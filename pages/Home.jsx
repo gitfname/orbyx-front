@@ -2,6 +2,7 @@ import Button from "../components/Button";
 import Card_1 from "../components/Card_1";
 import Card_2 from "../components/Card_2";
 import FeatureCard_1 from "../components/FeatureCard_1";
+import TestimotionalsSlider_1 from "../components/TestimotionalSlider_1";
 
 export default function HomePage() {
     return (
@@ -284,6 +285,94 @@ export default function HomePage() {
 
                 </div>
 
+            </div>
+
+            {/* section-6 */}
+            <div className="w-full mt-36 bg-[#0328EE]">
+
+                <div className="w-10/12 mx-auto grid grid-cols-2 place-items-center relative py-20">
+
+                    <div className="pl-10">
+                        <p
+                            style={{
+                                fontFamily: "var(--home__section-5__title--font-family)",
+                                fontSize: "var(--home__section-5__title--font-size)",
+                            }}
+                            className="max-w-[50ch] text-[--home__section-5__title--color]
+                            font-[--home__section-5__title--font-weight]"
+                        >
+                            Explore endless possibilities with FinanceFlow
+                        </p>
+
+                        <p
+                            style={{
+                                fontFamily: "var(--home__section-5__subtitle--font-family)",
+                                fontSize: "var(--home__section-5__subtitle--font-size)",
+                            }}
+                            className="mt-4 max-w-[40ch] text-[--home__section-5__subtitle--color]
+                            font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
+                            tracking-[--home__section-5__subtitle--letter-spacing]"
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                        </p>
+
+                        <Button
+                            text="DOWNLOAD APP"
+                            className="mt-4"
+                            style={{
+                                fontSize: "var(1rem)",
+                                fontFamily: "var(--header__btn--font-family)",
+                                fontWeight: 700,
+                                bg: "white",
+                                color: "var(--primary-color)",
+                                px: "1.75rem",
+                                py: "1.1rem",
+                                rounded: "var(--header__btn--border-radius)"
+                            }}
+                        />
+                    </div>
+
+                    <img
+                        alt=""
+                        src={import.meta.env.BASE_URL+"/images/two-iphones-2.png"}
+                        className="w-[30rem] h-auto place-self-end absolute bottom-0 -right-2"
+                    />
+
+                </div>
+
+            </div>
+
+            {/* testimotionals */}
+            <div className="mt-36 w-full relative">
+                {/* light circles*/}
+                <div className="bg-[rgba(3,40,238,0.4)] absolute -bottom-28 left-64 w-56 h-56 rounded-full blur-3xl -z-10"></div>
+
+                <div className="w-10/12 mx-auto flex items-center justify-between mb-8">
+                    <p
+                        style={{
+                            fontSize: "var(--home__testimotionals__title--font-size)",
+                            fontFamily: "var(--home__testimotionals__title--font-family)"
+                        }}
+                        className="text-[--home__testimotionals__title--color]
+                        font-[--home__testimotionals__title--font-weight]"
+                    >
+                        What our users say?
+                    </p>
+
+                    <Button
+                        text="DOWNLOAD APP"
+                        style={{
+                            fontSize: "var(--home__testimotionals__btn--font-size)",
+                            fontFamily: "var(--home__testimotionals__btn--font-family)",
+                            bg: "var(--home__testimotionals__btn--bg)",
+                            color: "var(--home__testimotionals__btn--color)",
+                            px: "var(--home__testimotionals__btn--px)",
+                            py: "var(--home__testimotionals__btn--py)",
+                            rounded: "var(--home__testimotionals__btn--border-radius)"
+                        }}
+                    />
+                </div>
+                <TestimotionalsSlider_1 />
             </div>
         </div>
     )

@@ -206,6 +206,47 @@
     --home__section-5__subtitle--line-height: 1.25rem;
 
     /* End ---------- Home__section-5 ---------- End */
+
+
+    /* ---------- Home__testimotionals ---------- */
+
+    --home__testimotionals__title--color: white;
+    --home__testimotionals__title--font-size: 2rem;
+    --home__testimotionals__title--font-weight: 700;
+    --home__testimotionals__title--font-family: 'DM Sans';
+
+    --home__testimotionals__btn--px: 1.75rem;
+    --home__testimotionals__btn--py: 1.1rem;
+    --home__testimotionals__btn--color: white;
+    --home__testimotionals__btn--font-size: 0.8rem;
+    --home__testimotionals__btn--font-weight: 500;
+    --home__testimotionals__btn--font-family: 'DM Sans';
+    --home__testimotionals__btn--bg: var(--primary-color);
+    --home__testimotionals__btn--border-radius: 100px;
+
+    /* End ---------- Home__testimotionals ---------- End */
+
+
+    
+    /* ---------- TestimotionalCard_1 ---------- */
+
+    --testimotionals-card-1--bg: var(--dark-blue);
+    --testimotionals-card-1--border-radius: 1.5rem;
+    --testimotionals-card-1--padding: 2.5rem;
+    --testimotionals-card-1--min-w: 24rem;
+
+    --testimotionals-card-1__username--color: white;
+    --testimotionals-card-1__username--font-size: 1rem;
+    --testimotionals-card-1__username--font-weight: 500;
+    --testimotionals-card-1__username--font-family: 'DM Sans';
+
+    --testimotionals-card-1__company--color: white;
+    --testimotionals-card-1__company--font-size: 0.8rem;;
+    --testimotionals-card-1__company--font-weight: 300;
+    --testimotionals-card-1__company--font-family: 'Inter';
+ 
+
+    /* End ---------- TestimotionalCard_1 ---------- End */
 }
 
 * {
@@ -236,4 +277,14 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 8px;
+}
+
+
+
+.swiper-slide {
+    @apply opacity-20 transition-opacity duration-300;
+}
+
+.swiper-slide.swiper-slide-active {
+    @apply opacity-100;
 }
