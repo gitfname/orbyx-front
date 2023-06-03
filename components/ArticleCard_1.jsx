@@ -14,7 +14,7 @@ export default function ArticleCard_1({
                 className="w-full h-auto object-center object-cover"
             />
 
-            <div className="p-5">
+            <div className="p-5 h-full">
 
                 <p
                     className="text-lg font-bold text-white line-clamp-3 tracking-wide"

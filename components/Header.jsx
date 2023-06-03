@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom"
 import Button from "./Button"
+import MobileMenu_1 from "./MobileMenu_1"
 
 function NavLink({text, href="/"}) {
     return (
@@ -20,7 +21,7 @@ function NavLink({text, href="/"}) {
 export default function Header() {
     return (
         <nav
-            className="flex items-center justify-between w-full absolute top-0 left-0
+            className="flex items-center justify-between w-full absolute top-0 left-0 z-30
             pt-[--header--pt] pb-[--header--pb] pl-[--header--pl] pr-[--header--pr] bg-[--header--bg]"
         >
 
@@ -41,7 +42,7 @@ export default function Header() {
                     </p>
                 </Link>
 
-                <div className="flex items-center gap-x-5">
+                <div className="flex items-center gap-x-5 max-md:hidden">
                     <NavLink
                         text="HOME"
                     />
@@ -65,6 +66,7 @@ export default function Header() {
 
             <Button
                 text="DOWNLOAD APP"
+                className="max-md:hidden"
                 style={{
                     fontSize: "var(--header__btn--font-size)",
                     fontFamily: "var(--header__btn--font-family)",
@@ -75,6 +77,8 @@ export default function Header() {
                     rounded: "var(--header__btn--border-radius)"
                 }}
             />
+
+            <MobileMenu_1 className="md:hidden" />
 
         </nav>
     )

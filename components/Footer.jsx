@@ -5,9 +5,9 @@ export default function Footer() {
     return (
         <div className="w-full py-10 bg-[--dark-blue]">
 
-            <div className="w-10/12 mx-auto">
+            <div className="w-11/12 md:w-10/12 mx-auto">
 
-                <div className="w-full flex items-center justify-between">
+                <div className="w-full flex max-md:flex-col gap-y-5 items-center md:justify-between">
 
                     <img
                         alt="Finance Flow Logo"
@@ -35,7 +35,7 @@ export default function Footer() {
                     
                 </div>
 
-                <div className="w-full flex items-start justify-between mt-16 py-10">
+                <div className="w-full flex max-md:flex-col gap-y-10 items-center md:items-start md:justify-between mt-16 py-10">
 
                     {/* menu */}
                     <div className="w-full max-w-xs">

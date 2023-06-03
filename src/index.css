@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html {
+      -webkit-tap-highlight-color: transparent;
+    }
+}
+
 :root {
     --primary-color: #0328EE;
     --bg-color: #010725;
@@ -275,6 +281,16 @@
     --section-group-1__right-text--letter-spacing: unset;
 
     /* End ---------- SectionGroup_1 ---------- End */
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --header--pl: 1.5rem;
+        --header--pr: 1.5rem;
+
+        --hero-section__title--font-size: 1.5rem;
+        --hero-section__title--line-height: 1.875rem;
+    }
 }
 
 * {

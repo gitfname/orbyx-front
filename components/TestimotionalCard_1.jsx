@@ -3,7 +3,7 @@ import ProfileCard_1 from "./ProfileCard_1";
 export default function TestimotionalCard_1({text, img}) {
     return (
         <div
-            className="p-[--testimotionals-card-1--padding] min-w-[--testimotionals-card-1--min-w]
+            className="p-[--testimotionals-card-1--padding] max-sm:w-[90vw] sm:min-w-[--testimotionals-card-1--min-w]
             rounded-[--testimotionals-card-1--border-radius] bg-[--testimotionals-card-1--bg]
             shadow-sm shadow-black/5"
         >

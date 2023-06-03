@@ -6,10 +6,16 @@ import FeatureCard_1 from "../components/FeatureCard_1";
 import SectionGroup_1 from "../components/SectionGroup_1";
 import TestimotionalsSlider_1 from "../components/TestimotionalSlider_1";
 import VideoPlayer_1 from "../components/VideoPlayer_1";
+import { useMediaQuery } from "@chakra-ui/react"
 
 export default function HomePage() {
+    const [sm, md] = useMediaQuery([
+        "(max-width: 768px)",
+        "(max-width: 1024px)"
+    ])
+
     return (
-        <div className="pb-10">
+        <div className="pb-10 relative overflow-hidden">
 
             {/* light circles*/}
             <div className="bg-[--dark-blue] absolute top-3 left-44 w-48 h-48 rounded-full blur-3xl -z-10"></div>
@@ -17,7 +23,7 @@ export default function HomePage() {
 
             
             {/* hero section */}
-            <div className="w-full grid grid-cols-[56%_1fr] place-items-center pt-40 pl-14">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-y-10 place-items-center pt-24 lg:pt-40 max-lg:px-6 lg:pl-14">
 
                 <div className="space-y-3">
                     <div>
@@ -52,7 +58,7 @@ export default function HomePage() {
                     >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aenean dis placerat.
                     </p>
-                    <div className="flex items-center gap-x-6 !mt-7">
+                    <div className="flex max-lg:flex-col max-lg:items-stretch gap-y-4 items-center gap-x-6 !mt-7">
                         <Button
                             text="DOWNLOAD APP"
                             style={{
@@ -86,28 +92,30 @@ export default function HomePage() {
                     <div className="bg-[--dark-blue] absolute right-0 -bottom-2 blur-3xl w-56 h-56 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
                     <img
                         alt="Apple Computer"
-                        src={import.meta.env.BASE_URL+"/images/Apple-Computers.png"}
+                        src={import.meta.env.BASE_URL+(md ? "/images/Apple-Computers-mobile.png" : "/images/Apple-Computers.png")}
                         className="h-auto"
                     />
                 </div>
 
             </div>
 
+            <p className="text-sm text-white font-[Inter] font-light text-center md:hidden mb-6 mt-36">Finance flow has been featured on</p>
             <img
                 alt="logos"
-                src={import.meta.env.BASE_URL+"/logos-blue.png"}
-                className="w-10/12 h-auto block mx-auto mt-36"
+                src={import.meta.env.BASE_URL+(sm ? "/logos-blue-mobile.png" : "/logos-blue.png")}
+                className="w-10/12 h-auto block mx-auto md:mt-36 max-md:max-w-sm"
             />
 
+
             {/* section-3 */}
-            <div className="w-10/12 mx-auto mt-36">
+            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36">
 
                 <p
                     style={{
                         fontFamily: "var(--home__section-3__title--font-family)",
                         fontSize: "var(--home__section-3__title--font-size)",
                     }}
-                    className="text-center text-[--home__section-3__title--color]
+                    className="lg:text-center text-[--home__section-3__title--color]
                     font-[--home__section-3__title--font-weight]"
                 >
                     Build your crypto portfolio
@@ -120,15 +128,15 @@ export default function HomePage() {
                         fontFamily: "var(--home__section-3__subtitle--font-family)",
                         lineHeight: "var(--home__section-3__subtitle--line-height)"
                     }}
-                    className="max-w-[50ch] tracking-wide mt-4 text-center mx-auto text-[--home__section-3__subtitle--color]
-                    font-[--home__section-3__subtitle--font-weight]"
+                    className="max-w-[50ch] tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
+                    font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch]"
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
                 </p>
 
-                <div className="w-full mt-20 grid grid-cols-[1fr_40%_1fr] gap-x-6">
+                <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-[1fr_40%_1fr] gap-6">
 
-                    <div className="space-y-8 h-full flex flex-col">
+                    <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8">
                         <Card_1
                             title="Send & Receive"
                             subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
@@ -148,7 +156,7 @@ export default function HomePage() {
                         img={import.meta.env.BASE_URL+"/images/iPhones.png"}
                     />
 
-                    <div className="space-y-8 flex flex-col">
+                    <div className="flex flex-col sm:flex-row md:flex-col gap-8">
                         <Card_1
                             title="Trading Charts"
                             subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
@@ -181,9 +189,9 @@ export default function HomePage() {
             </div>
 
             {/* section-4 */}
-            <div className="w-10/12 mx-auto mt-36">
+            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36">
 
-                <div className="w-full grid grid-cols-2 place-items-center">
+                <div className="w-full grid grid-cols-1 gap-y-6 md:grid-cols-2 place-items-center">
 
                     <img
                         alt=""
@@ -236,11 +244,11 @@ export default function HomePage() {
             </div>
 
             {/* section-5 */}
-            <div className="w-full mx-auto mt-36">
+            <div className="w-full max-md:px-6 mx-auto mt-36">
 
-                <div className="w-full grid grid-cols-[45%_55%] place-items-center">
+                <div className="w-full gap-y-6 grid grid-cols-1 md:grid-cols-[45%_55%] place-items-center">
 
-                    <div className="pl-10">
+                    <div className="md:pl-10">
                         <p
                             style={{
                                 fontFamily: "var(--home__section-5__title--font-family)",
@@ -282,7 +290,7 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL+"/images/Apple-Computers-2.png"}
+                        src={import.meta.env.BASE_URL+( md ? "/images/Apple-Computers-mobile.png" : "/images/Apple-Computers-2.png")}
                         className="w-full h-auto place-self-end"
                     />
 
@@ -293,15 +301,15 @@ export default function HomePage() {
             {/* section-6 */}
             <div className="w-full mt-36 bg-[#0328EE]">
 
-                <div className="w-10/12 mx-auto grid grid-cols-2 place-items-center relative py-20">
+                <div className="w-full md:w-10/12 max-md:px-6 mx-auto grid  grid-cols-1 md:grid-cols-2 place-items-center relative max-md:pb-0 py-20">
 
-                    <div className="pl-10">
+                    <div className="md:pl-10 max-md:translate-y-2 z-10">
                         <p
                             style={{
                                 fontFamily: "var(--home__section-5__title--font-family)",
                                 fontSize: "var(--home__section-5__title--font-size)",
                             }}
-                            className="max-w-[50ch] text-[--home__section-5__title--color]
+                            className="max-w-[50ch] max-md:mx-auto text-[--home__section-5__title--color]
                             font-[--home__section-5__title--font-weight]"
                         >
                             Explore endless possibilities with FinanceFlow
@@ -312,7 +320,7 @@ export default function HomePage() {
                                 fontFamily: "var(--home__section-5__subtitle--font-family)",
                                 fontSize: "var(--home__section-5__subtitle--font-size)",
                             }}
-                            className="mt-4 max-w-[40ch] text-[--home__section-5__subtitle--color]
+                            className="mt-4 max-w-[40ch] max-md:max-w-[30ch] text-center mx-auto text-[--home__section-5__subtitle--color]
                             font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
                             tracking-[--home__section-5__subtitle--letter-spacing]"
                         >
@@ -321,7 +329,7 @@ export default function HomePage() {
 
                         <Button
                             text="DOWNLOAD APP"
-                            className="mt-4"
+                            className="mt-4 max-md:w-full"
                             style={{
                                 fontSize: "var(1rem)",
                                 fontFamily: "var(--header__btn--font-family)",
@@ -338,7 +346,7 @@ export default function HomePage() {
                     <img
                         alt=""
                         src={import.meta.env.BASE_URL+"/images/two-iphones-2.png"}
-                        className="w-[30rem] h-auto place-self-end absolute bottom-0 -right-2"
+                        className="w-64 md:w-[30rem] max-md:z-10 h-auto place-self-end md:absolute max-md:block max-md:mx-auto md:bottom-0 md:-right-2"
                     />
 
                 </div>
@@ -350,7 +358,7 @@ export default function HomePage() {
                 {/* light circles*/}
                 <div className="bg-[rgba(3,40,238,0.4)] absolute -bottom-28 left-64 w-56 h-56 rounded-full blur-3xl -z-10"></div>
 
-                <div className="w-10/12 mx-auto flex items-center justify-between mb-8">
+                <div className="w-full max-md:px-6 max-md:flex-col md:w-10/12 mx-auto flex gap-y-4 md:items-center justify-between mb-8">
                     <p
                         style={{
                             fontSize: "var(--home__testimotionals__title--font-size)",
@@ -379,9 +387,9 @@ export default function HomePage() {
             </div>
 
             {/* section-7 */}
-            <div className="w-10/12 mx-auto mt-36">
+            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36">
 
-                <div className="w-full grid grid-cols-2 place-items-center">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-5">
 
                     <div>
                         <p
@@ -423,7 +431,10 @@ export default function HomePage() {
                         </div>
                     </div>
 
-                    <VideoPlayer_1 />
+                    <div className="max-w-md w-full">
+                        <VideoPlayer_1 />
+                    </div>
+
 
                 </div>
 
@@ -436,7 +447,7 @@ export default function HomePage() {
                 rightText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet ."
             >
                 <>
-                    <div className="w-full grid grid-cols-3 gap-x-4">
+                    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         <ArticleCard_1
                             title="The Basics about Cryptocurrency"
                             info="Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo."
@@ -486,13 +497,13 @@ export default function HomePage() {
             </SectionGroup_1>
 
 
-            {/* latest news */}
+            {/* download our app */}
             <SectionGroup_1
                 leftText="Downlaod our app"
                 rightText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet ."
             >
 
-                <div className="w-full grid grid-cols-2 gap-x-20 place-items-center">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 place-items-center">
 
                     <Card_2
                         title="Download for ios"

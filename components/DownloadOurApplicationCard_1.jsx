@@ -17,11 +17,11 @@ export default function DownloadOurApplicationCard_1() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer 
             </p>
 
-            <div className="mt-6 flex items-center gap-x-4">
+            <div className="mt-6 flex max-md:flex-col md:items-center gap-4">
 
                 <Button
                     text="APPLE STORE"
-                    className="w-max tracking-wide"
+                    className="md:w-max tracking-wide"
                     style={{
                         fontSize: "0.75rem",
                         fontFamily: "Inter",
@@ -43,7 +43,7 @@ export default function DownloadOurApplicationCard_1() {
 
                 <Button
                     text="PLAY STORE"
-                    className="w-max tracking-wide"
+                    className="md:w-max tracking-wide"
                     style={{
                         fontSize: "0.75rem",
                         fontFamily: "Inter",
