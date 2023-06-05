@@ -41,7 +41,7 @@
             },
             {
                 "id": "header-link-pricing",
-                "href": "/pricing",
+                "href": "/pricing-2",
                 "html-attrs": [
                     ["id","header-link-pricing"]
                 ],
