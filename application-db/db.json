@@ -41,12 +41,12 @@
             },
             {
                 "id": "header-link-pricing",
-                "href": "/pricing-2",
+                "href": "/pricing",
                 "html-attrs": [
                     ["id","header-link-pricing"]
                 ],
                 "text": {
-                    "en": "PRICING",
+                    "en": "PRICING--2",
                     "pr": "قیمت ها"
                 }
             },
