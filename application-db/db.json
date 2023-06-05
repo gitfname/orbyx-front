@@ -1,0 +1,203 @@
+{
+    "tab-logo": "",
+    "title": {
+        "home": "FinanceFlow - Home",
+        "about": "FinanceFlow - About"
+    },
+    "header": {
+        "links": [
+            {
+                "id": "header-link-home",
+                "href": "/",
+                "html-attrs": [
+                    ["id","header-link-home"]
+                ],
+                "text": {
+                    "en": "HOME",
+                    "pr": "خانه"
+                }
+            },
+            {
+                "id": "header-link-about",
+                "href": "/about",
+                "html-attrs": [
+                    ["id","header-link-about"]
+                ],
+                "text": {
+                    "en": "ABOUT",
+                    "pr": "درباره ما"
+                }
+            },
+            {
+                "id": "header-link-tokens",
+                "href": "/tokens",
+                "html-attrs": [
+                    ["id","header-link-tokens"]
+                ],
+                "text": {
+                    "en": "TOKENS",
+                    "pr": "توکن ها"
+                }
+            },
+            {
+                "id": "header-link-pricing",
+                "href": "/pricing",
+                "html-attrs": [
+                    ["id","header-link-pricing"]
+                ],
+                "text": {
+                    "en": "PRICING",
+                    "pr": "قیمت ها"
+                }
+            },
+            {
+                "id": "header-link-blog",
+                "href": "/blog",
+                "html-attrs": [
+                    ["id","header-link-blog"]
+                ],
+                "text": {
+                    "en": "BLOG",
+                    "pr": "بلاگ"
+                }
+            },
+            {
+                "id": "header-link-contact",
+                "href": "/contact",
+                "html-attrs": [
+                    ["id","header-link-contact"]
+                ],
+                "text": {
+                    "en": "CONTACT US",
+                    "pr": "ارتباط با ما"
+                }
+            }
+        ]
+    },
+    "download-our-app-link": "https://play-store/app-3869",
+    "hero": {
+        "img": {
+            "md": "/images/Apple-Computers.png",
+            "sm": "/images/Apple-Computers-mobile.png"
+        },
+        "text": [
+            "Buy, trade, and hold",
+            "350+ cryptocurrencies"
+        ],
+        "subtext": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aenean dis placerat."
+        ]
+    },
+    "home-page-sections": {
+        "section-2": {
+            "img": {
+                "blue": {
+                    "md": "/logos-blue.png",
+                    "sm": "/logos-blue-mobile.png"
+                }
+            }
+        },
+
+        "section-3": {
+            "title": "Build your crypto portfolio",
+            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
+        },
+
+        "section-4": {
+            "img": "/images/two-iphones.png",
+            "title": "Build your crypto portfolio",
+            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
+        },
+
+        "section-5": {
+            "img": {
+                "md": "/images/Apple-Computers-mobile.png",
+                "sm": "/images/Apple-Computers-2.png"
+            },
+            "title": "Build your crypto portfolio",
+            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
+        },
+
+        "section-6": {
+            "img": "/images/two-iphones-2.png",
+            "title": "Explore endless possibilities with FinanceFlow",
+            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
+        },
+        
+        "testimotionals": {
+            "title": {
+                "en": "What our users say?"
+            },
+            "items": [
+                {
+                    "id": "h5s9c69cd2n37s",
+                    "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui neque quas mollitia quis nobis quae consequuntur aliquam commodi? Dolorem illum error perspiciatis! Eaque voluptatibus tempora voluptatum laudantium magni aperiam ex recusandae, doloremque quas quam eligendi dolorem? Nam impedit soluta quas!",
+                    "username": "Mark Johny",
+                    "company": "Role, Company",
+                    "img": "/images/user-profiles/user-1.jpg"
+                },
+                {
+                    "id": "g4297d62nf826gs",
+                    "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui neque quas mollitia quis nobis quae consequuntur aliquam commodi? Dolorem illum error perspiciatis! Eaque voluptatibus tempora voluptatum laudantium magni aperiam ex recusandae, doloremque quas quam eligendi dolorem? Nam impedit soluta quas!",
+                    "username": "Alex Termuis",
+                    "company": "Tech, Company",
+                    "img": "/images/user-profiles/user-2.jpg"
+                },
+                {
+                    "id": "hd5297f6mf027f2s",
+                    "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui neque quas mollitia quis nobis quae consequuntur aliquam commodi? Dolorem illum error perspiciatis! Eaque voluptatibus tempora voluptatum laudantium magni aperiam ex recusandae, doloremque quas quam eligendi dolorem? Nam impedit soluta quas!",
+                    "username": "Burak Martin",
+                    "company": "Tech, Company",
+                    "img": "/images/user-profiles/user-3.jpg"
+                },
+                {
+                    "id": "fs52937662hfw5g",
+                    "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui neque quas mollitia quis nobis quae consequuntur aliquam commodi? Dolorem illum error perspiciatis! Eaque voluptatibus tempora voluptatum laudantium magni aperiam ex recusandae, doloremque quas quam eligendi dolorem? Nam impedit soluta quas!",
+                    "username": "Jenifer Pirosku",
+                    "company": "Finance, Company",
+                    "img": "/images/user-profiles/user-4.jpg"
+                }
+            ]
+        }
+    },
+    "latest-news": {
+        "title": {
+            "en": "Browse our latest news"
+        },
+        "items": [
+            {
+                "id": "hd22846dfwx386",
+                "img": "/images/articles/thumbnail/article-1_thumbnail.png",
+                "title": "Learn the basics of Cryptocorrency",
+                "info": "Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo.",
+                "pubDate": "AUGUST, 2, 2023",
+                "author": {
+                    "img": "/images/user-profiles/user-1.jpg",
+                    "username": "Jhon Smith"
+                }
+            },
+            {
+                "id": "h746bw53bdw936",
+                "img": "/images/articles/thumbnail/article-1_thumbnail.png",
+                "title": "How to become a successful trader in 2023",
+                "info": "Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo.",
+                "pubDate": "AUGUST, 2, 2023",
+                "author": {
+                    "img": "/images/user-profiles/user-2.jpg",
+                    "username": "Jack Martin"
+                }
+            },
+            {
+                "id": "hdg375937g25hd6",
+                "img": "/images/articles/thumbnail/article-1_thumbnail.png",
+                "title": "Minimum required system for start trading",
+                "info": "Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo.",
+                "pubDate": "AUGUST, 2, 2023",
+                "author": {
+                    "img": "/images/user-profiles/user-1.jpg",
+                    "username": "Jhon Smith"
+                }
+            }
+        ]
+    }
+}

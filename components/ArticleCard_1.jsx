@@ -1,7 +1,7 @@
 import ProfileCard_1 from "./ProfileCard_1";
 
 export default function ArticleCard_1({
-    tag="", title="", info="", author={img:"", username: ""}, pubDate=""}) {
+    tag="", img="", title="", info="", author={img:"", username: ""}, pubDate=""}) {
     
     return (
         <div
@@ -10,7 +10,7 @@ export default function ArticleCard_1({
             
             <img
                 alt=""
-                src={import.meta.env.BASE_URL+"/images/articles/thumbnail/article-1_thumbnail.png"}
+                src={img}
                 className="w-full h-auto object-center object-cover"
             />
 

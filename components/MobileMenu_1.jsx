@@ -2,7 +2,7 @@ import { useState } from "react"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Link } from "react-router-dom"
 
-export default function MobileMenu_1({className}) {
+export default function MobileMenu_1({className, navLinks}) {
     const [isOpen, setIsOPen] = useState(false)
     
     return (
@@ -29,29 +29,13 @@ export default function MobileMenu_1({className}) {
                     -translate-x-[102%] overflow-y-auto p-4 pt-8 flex items-center flex-col gap-5 ${isOpen&&"!translate-x-0"}`}
                 >
 
-                    <Link to="/" className="text-sm  text-white tracking-wide font-normal font-[Inter]">
-                        HOME
-                    </Link>
-
-                    <Link to="/" className="text-sm  text-white tracking-wide font-normal font-[Inter]">
-                        ABOUT
-                    </Link>
-
-                    <Link to="/" className="text-sm  text-white tracking-wide font-normal font-[Inter]">
-                        PRICING
-                    </Link>
-
-                    <Link to="/" className="text-sm  text-white tracking-wide font-normal font-[Inter]">
-                        TOKENS
-                    </Link>
-                    
-                    <Link to="/" className="text-sm  text-white tracking-wide font-normal font-[Inter]">
-                        BLOG
-                    </Link>
-
-                    <Link to="/" className="text-sm none text-white tracking-wide font-normal font-[Inter]">
-                        CONTACT US
-                    </Link>
+                    {
+                        navLinks.map(item => (
+                            <Link id={item.id} to={item.href} className="text-sm none text-white tracking-wide font-normal font-[Inter]">
+                                {item.text.en}
+                            </Link>
+                        ))
+                    }
 
                 </div>
             </div>

@@ -7,11 +7,15 @@ import SectionGroup_1 from "../components/SectionGroup_1";
 import TestimotionalsSlider_1 from "../components/TestimotionalSlider_1";
 import VideoPlayer_1 from "../components/VideoPlayer_1";
 import { useMediaQuery } from "@chakra-ui/react"
+import { useContext } from "react";
+import ApplicationDataContext from "../context/ApplicationData";
+import TestimotionalCard_1 from "../components/TestimotionalCard_1";
 
 export default function HomePage() {
+    const applicationData = useContext(ApplicationDataContext)
     const [sm, md] = useMediaQuery([
         "(max-width: 768px)",
-        "(max-width: 1024px)"
+        "(min-width: 768px)"
     ])
 
     return (
@@ -27,37 +31,35 @@ export default function HomePage() {
 
                 <div className="space-y-3">
                     <div>
-                        <p
-                            style={{
-                                fontSize: "var(--hero-section__title--font-size)",
-                                fontFamily: "var(--hero-section__title--font-family)"
-                            }}
-                            className="text-[--hero-section__title--color] font-[--hero-section__title--font-weight]
-                            leading-[--hero-section__title--line-height]"
-                        >
-                            Buy, trade, and hold
-                        </p>
-                        <p
-                            style={{
-                                fontSize: "var(--hero-section__title--font-size)",
-                                fontFamily: "var(--hero-section__title--font-family)"
-                            }}
-                            className="text-[--hero-section__title--color] font-[--hero-section__title--font-weight]
-                            leading-[--hero-section__title--line-height]"
-                        >
-                            350+ cryptocurrencies
-                        </p>
+                        {
+                            applicationData?.hero?.["text"]?.map(text => (
+                                <p
+                                    style={{
+                                        fontSize: "var(--hero-section__title--font-size)",
+                                        fontFamily: "var(--hero-section__title--font-family)"
+                                    }}
+                                    className="text-[--hero-section__title--color] font-[--hero-section__title--font-weight]
+                                    leading-[--hero-section__title--line-height]"
+                                >
+                                    {text}
+                                </p>
+                            ))
+                        }
                     </div>
-                    <p
-                        style={{
-                            fontSize: "var(--hero-section__subtitle--font-size)",
-                            fontFamily: "var(--hero-section__subtitle--font-family)"
-                        }}
-                        className="max-w-[50ch] text-[--hero-section__subtitle--color] font-[--hero-section__subtitle--font-weight]
-                        leading-[--hero-section__subtitle--line-height] tracking-[--hero-section__subtitle--letter-spacing]"
-                    >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aenean dis placerat.
-                    </p>
+                    {
+                            applicationData?.hero?.["subtext"]?.map(text => (
+                                <p
+                                    style={{
+                                        fontSize: "var(--hero-section__subtitle--font-size)",
+                                        fontFamily: "var(--hero-section__subtitle--font-family)"
+                                    }}
+                                    className="max-w-[50ch] text-[--hero-section__subtitle--color] font-[--hero-section__subtitle--font-weight]
+                                    leading-[--hero-section__subtitle--line-height] tracking-[--hero-section__subtitle--letter-spacing]"
+                                >
+                                    {text}
+                                </p>
+                            ))
+                        }
                     <div className="flex max-lg:flex-col max-lg:items-stretch gap-y-4 items-center gap-x-6 !mt-7">
                         <Button
                             text="DOWNLOAD APP"
@@ -69,6 +71,10 @@ export default function HomePage() {
                                 px: "var(--hero-section__cta1--px)",
                                 py: "var(--hero-section__cta1--py)",
                                 rounded: "var(--hero-section__cta1--border-radius)"
+                            }}
+                            href={{
+                                link: applicationData["download-our-app-link"],
+                                target: "_blank"
                             }}
                         />
                         <Button
@@ -92,17 +98,27 @@ export default function HomePage() {
                     <div className="bg-[--dark-blue] absolute right-0 -bottom-2 blur-3xl w-56 h-56 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
                     <img
                         alt="Apple Computer"
-                        src={import.meta.env.BASE_URL+(md ? "/images/Apple-Computers-mobile.png" : "/images/Apple-Computers.png")}
+                        src={import.meta.env.BASE_URL+(md ? applicationData?.hero?.img?.md : applicationData?.hero?.img?.sm)}
                         className="h-auto"
                     />
                 </div>
 
             </div>
 
+            {/* section-2 */}
             <p className="text-sm text-white font-[Inter] font-light text-center md:hidden mb-6 mt-36">Finance flow has been featured on</p>
             <img
                 alt="logos"
-                src={import.meta.env.BASE_URL+(sm ? "/logos-blue-mobile.png" : "/logos-blue.png")}
+                src={
+                    import.meta.env.BASE_URL+
+                    (
+                        sm
+                        ?
+                            applicationData?.["home-page-sections"]?.["section-2"].img.blue.sm
+                        :
+                            applicationData?.["home-page-sections"]?.["section-2"].img.blue.md
+                    )
+                }
                 className="w-10/12 h-auto block mx-auto md:mt-36 max-md:max-w-sm"
             />
 
@@ -118,7 +134,7 @@ export default function HomePage() {
                     className="lg:text-center text-[--home__section-3__title--color]
                     font-[--home__section-3__title--font-weight]"
                 >
-                    Build your crypto portfolio
+                    {applicationData?.["home-page-sections"]?.["section-3"].title}
                 </p>
 
                 <p
@@ -131,7 +147,7 @@ export default function HomePage() {
                     className="max-w-[50ch] tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
                     font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch]"
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                    {applicationData?.["home-page-sections"]?.["section-3"].subtitle}
                 </p>
 
                 <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-[1fr_40%_1fr] gap-6">
@@ -174,7 +190,7 @@ export default function HomePage() {
 
                 <Button
                     text="DOWNLOAD APP"
-                    className="block mx-auto mt-12"
+                    className="block mx-auto mt-12 w-max"
                     style={{
                         fontSize: "var(--header__btn--font-size)",
                         fontFamily: "var(--header__btn--font-family)",
@@ -183,6 +199,10 @@ export default function HomePage() {
                         px: "1.75rem",
                         py: "1.1rem",
                         rounded: "var(--header__btn--border-radius)"
+                    }}
+                    href={{
+                        link: (applicationData?.["download-our-app-link"]),
+                        target: "_blank"
                     }}
                 />
 
@@ -195,7 +215,7 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL+"/images/two-iphones.png"}
+                        src={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-4"]?.img)}
                         className="w-96 h-auto"
                     />
 
@@ -208,7 +228,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-4__title--color]
                             font-[--home__section-4__title--font-weight]"
                         >
-                            Earn daily rewards on your idle tokens
+                            {applicationData?.["home-page-sections"]?.["section-4"]?.title}
                         </p>
 
                         <p
@@ -220,7 +240,7 @@ export default function HomePage() {
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
                             tracking-[--home__section-4__subtitle--letter-spacing]"
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                            {applicationData?.["home-page-sections"]?.["section-4"]?.subtitle}
                         </p>
 
                         <div className="space-y-3 mt-4">
@@ -257,7 +277,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-5__title--color]
                             font-[--home__section-5__title--font-weight]"
                         >
-                            Earn daily rewards on your idle tokens
+                            {applicationData?.["home-page-sections"]?.["section-5"]?.title}
                         </p>
 
                         <p
@@ -269,7 +289,7 @@ export default function HomePage() {
                             font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
                             tracking-[--home__section-5__subtitle--letter-spacing]"
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                            {applicationData?.["home-page-sections"]?.["section-5"]?.subtitle}
                         </p>
 
                         <div className="space-y-3 mt-4">
@@ -290,7 +310,7 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL+( md ? "/images/Apple-Computers-mobile.png" : "/images/Apple-Computers-2.png")}
+                        src={import.meta.env.BASE_URL+( md ? applicationData?.["home-page-sections"]?.["section-5"]?.img?.md : applicationData?.["home-page-sections"]?.["section-5"]?.img?.sm)}
                         className="w-full h-auto place-self-end"
                     />
 
@@ -301,7 +321,7 @@ export default function HomePage() {
             {/* section-6 */}
             <div className="w-full mt-36 bg-[#0328EE]">
 
-                <div className="w-full md:w-10/12 max-md:px-6 mx-auto grid  grid-cols-1 md:grid-cols-2 place-items-center relative max-md:pb-0 py-20">
+                <div className="w-full md:w-10/12 max-md:px-6 mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center relative max-md:pb-0 py-20">
 
                     <div className="md:pl-10 max-md:translate-y-2 z-10">
                         <p
@@ -312,7 +332,7 @@ export default function HomePage() {
                             className="max-w-[50ch] max-md:mx-auto text-[--home__section-5__title--color]
                             font-[--home__section-5__title--font-weight]"
                         >
-                            Explore endless possibilities with FinanceFlow
+                            {applicationData?.["home-page-sections"]?.["section-6"]?.title}
                         </p>
 
                         <p
@@ -320,16 +340,16 @@ export default function HomePage() {
                                 fontFamily: "var(--home__section-5__subtitle--font-family)",
                                 fontSize: "var(--home__section-5__subtitle--font-size)",
                             }}
-                            className="mt-4 max-w-[40ch] max-md:max-w-[30ch] text-center mx-auto text-[--home__section-5__subtitle--color]
+                            className="mt-4 max-w-[40ch] max-md:max-w-[30ch] max-md:text-center max-md:mx-auto text-[--home__section-5__subtitle--color]
                             font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
                             tracking-[--home__section-5__subtitle--letter-spacing]"
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                            {applicationData?.["home-page-sections"]?.["section-6"]?.subtitle}
                         </p>
 
                         <Button
                             text="DOWNLOAD APP"
-                            className="mt-4 max-md:w-full"
+                            className="mt-4 max-md:w-full w-max"
                             style={{
                                 fontSize: "var(1rem)",
                                 fontFamily: "var(--header__btn--font-family)",
@@ -340,12 +360,16 @@ export default function HomePage() {
                                 py: "1.1rem",
                                 rounded: "var(--header__btn--border-radius)"
                             }}
+                            href={{
+                                link: (applicationData?.["download-our-app-link"]),
+                                target: "_blank"
+                            }}
                         />
                     </div>
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL+"/images/two-iphones-2.png"}
+                        src={import.meta.env.BASE_URL+applicationData?.["home-page-sections"]?.["section-6"]?.img}
                         className="w-64 md:w-[30rem] max-md:z-10 h-auto place-self-end md:absolute max-md:block max-md:mx-auto md:bottom-0 md:-right-2"
                     />
 
@@ -367,7 +391,7 @@ export default function HomePage() {
                         className="text-[--home__testimotionals__title--color]
                         font-[--home__testimotionals__title--font-weight]"
                     >
-                        What our users say?
+                        {applicationData?.["home-page-sections"]?.["testimotionals"]?.title?.en}
                     </p>
 
                     <Button
@@ -381,9 +405,24 @@ export default function HomePage() {
                             py: "var(--home__testimotionals__btn--py)",
                             rounded: "var(--home__testimotionals__btn--border-radius)"
                         }}
+                        href={{
+                            link: (applicationData?.["download-our-app-link"]),
+                            target: "_blank"
+                        }}
                     />
                 </div>
-                <TestimotionalsSlider_1 />
+                <TestimotionalsSlider_1
+                    items={applicationData?.["home-page-sections"]?.testimotionals?.items}
+                    renderer={data => (
+                        <TestimotionalCard_1
+                            key={data.id}
+                            text={data.text}
+                            username={data.username}
+                            company={data.company}
+                            img={import.meta.env.BASE_URL+data.img}
+                        />
+                    )}
+                />
             </div>
 
             {/* section-7 */}
@@ -443,45 +482,31 @@ export default function HomePage() {
 
             {/* latest news */}
             <SectionGroup_1
-                leftText="Browse our latest news"
+                leftText={applicationData?.["latest-news"]?.title?.en}
                 rightText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet ."
             >
                 <>
                     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <ArticleCard_1
-                            title="The Basics about Cryptocurrency"
-                            info="Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo."
-                            author={{
-                                img: import.meta.env.BASE_URL+"/images/user-profiles/user-1.jpg",
-                                username: "Jhon Smith"
-                            }}
-                            pubDate="AUGUST, 2, 2023"
-                        />
-
-                        <ArticleCard_1
-                            title="How to become a successful trader in 2023 "
-                            info="Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo."
-                            author={{
-                                img: import.meta.env.BASE_URL+"/images/user-profiles/user-2.jpg",
-                                username: "Markus Parker"
-                            }}
-                            pubDate="AUGUST, 2, 2023"
-                        />
-
-                        <ArticleCard_1
-                            title="Best Cryptocurrencies to buy in 2023"
-                            info="Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo."
-                            author={{
-                                img: import.meta.env.BASE_URL+"/images/user-profiles/user-1.jpg",
-                                username: "Jhon Smith"
-                            }}
-                            pubDate="AUGUST, 2, 2023"
-                        />
+                        {
+                            applicationData?.["latest-news"]?.items?.map(latestNew => (
+                                <ArticleCard_1
+                                    key={latestNew.id}
+                                    title={latestNew.title}
+                                    info={latestNew.info}
+                                    img={import.meta.env.BASE_URL+latestNew.img}
+                                    author={{
+                                        img: import.meta.env.BASE_URL+latestNew.author.img,
+                                        username: latestNew.author.username
+                                    }}
+                                    pubDate={latestNew.pubDate}
+                                />
+                            ))
+                        }
                     </div>
 
                     <Button
                         text="VIEW ALL ARTICLES"
-                        className="mt-8 block mx-auto tracking-widest"
+                        className="mt-8 block mx-auto tracking-widest w-max"
                         style={{
                             fontSize: "0.75rem",
                             fontFamily: "Inter",
@@ -491,6 +516,10 @@ export default function HomePage() {
                             px: "1.75rem",
                             py: "1.1rem",
                             rounded: "100px"
+                        }}
+                        href={{
+                            link: (applicationData?.["header"]?.links?.find(link => link.id === "header-link-blog")?.href),
+                            target: "_self"
                         }}
                     />
                 </>

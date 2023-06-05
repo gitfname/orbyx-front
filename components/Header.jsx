@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom"
 import Button from "./Button"
 import MobileMenu_1 from "./MobileMenu_1"
+import { useContext } from "react"
+import ApplicationDataContext from "../context/ApplicationData"
 
 function NavLink({text, href="/"}) {
     return (
@@ -19,6 +21,8 @@ function NavLink({text, href="/"}) {
 
 
 export default function Header() {
+    const applicationData = useContext(ApplicationDataContext)
+
     return (
         <nav
             className="flex items-center justify-between w-full absolute top-0 left-0 z-30
@@ -43,24 +47,15 @@ export default function Header() {
                 </Link>
 
                 <div className="flex items-center gap-x-5 max-md:hidden">
-                    <NavLink
-                        text="HOME"
-                    />
-                    <NavLink
-                        text="ABOUT"
-                    />
-                    <NavLink
-                        text="PRICING"
-                    />
-                    <NavLink
-                        text="TOKENS"
-                    />
-                    <NavLink
-                        text="BLOG"
-                    />
-                    <NavLink
-                        text="CONTACT US"
-                    />
+                    {
+                        applicationData?.header.links.map(item => (
+                            <NavLink
+                                key={item.id}
+                                text={item.text.en}
+                                href={item.href}
+                            />
+                        ))
+                    }
                 </div>
             </div>
 
@@ -76,9 +71,13 @@ export default function Header() {
                     py: "var(--header__btn--py)",
                     rounded: "var(--header__btn--border-radius)"
                 }}
+                href={{
+                    link: applicationData["download-our-app-link"],
+                    target: "_blank"
+                }}
             />
 
-            <MobileMenu_1 className="md:hidden" />
+            <MobileMenu_1 navLinks={applicationData?.header?.links} className="md:hidden" />
 
         </nav>
     )
