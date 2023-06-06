@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Link } from "react-router-dom"
+import getText from "../application-db/getText"
 
 export default function MobileMenu_1({className, navLinks}) {
     const [isOpen, setIsOPen] = useState(false)
@@ -31,8 +32,8 @@ export default function MobileMenu_1({className, navLinks}) {
 
                     {
                         navLinks.map(item => (
-                            <Link id={item.id} to={item.href} className="text-sm none text-white tracking-wide font-normal font-[Inter]">
-                                {item.text.en}
+                            <Link key={item.id} id={item.id} to={item.href} className="text-sm none text-white tracking-wide font-normal font-[Inter]">
+                                {getText(item.text)}
                             </Link>
                         ))
                     }

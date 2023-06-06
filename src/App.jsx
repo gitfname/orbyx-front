@@ -5,10 +5,25 @@ import HomePage from '../pages/Home'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ApplicationDataContext, { APplicationInitialData } from '../context/ApplicationData'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import useApplicationLanguage from '../hooks/useApplicationLanguage'
 
 function App() {
   const [applicationData, setApplicationData] = useState(APplicationInitialData)
+  const lang = useMemo(() => useApplicationLanguage(), [] )
+
+  useEffect(
+    () => {
+      if(lang.lang === "pr") {
+        const link = document.createElement("link")
+        link.rel = "stylesheet"
+        link.href= import.meta.env.BASE_URL+"/index-pr.css"
+  
+        document.head.append(link)
+      }
+    },
+    [lang.lang]
+  )
   
   useEffect(
     () => {

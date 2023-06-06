@@ -1,6 +1,10 @@
 import Button from "./Button";
+import { useContext } from "react";
+import ApplicationDataContext from "../context/ApplicationData";
 
 export default function DownloadOurApplicationCard_1() {
+    const applicationData = useContext(ApplicationDataContext)
+
 
     return (
         <div className="bg-white/10 rounded-3xl px-5 py-9">
@@ -39,6 +43,10 @@ export default function DownloadOurApplicationCard_1() {
                             className="w-6 h-6 object-center object-scale-down"
                         />
                     }
+                    href={{
+                        link: (applicationData?.["download-our-app-link-ios"]),
+                        target: "_blank"
+                    }}
                 />
 
                 <Button
@@ -61,6 +69,10 @@ export default function DownloadOurApplicationCard_1() {
                             className="w-5 h-5 object-center object-scale-down"
                         />
                     }
+                    href={{
+                        link: (applicationData?.["download-our-app-link"]),
+                        target: "_blank"
+                    }}
                 />
 
             </div>

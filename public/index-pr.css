@@ -1,15 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-    html {
-      -webkit-tap-highlight-color: transparent;
-    }
-}
-
 :root {
     --primary-color: #0328EE;
     --bg-color: #010725;
@@ -37,7 +25,7 @@
     --header__btn--px: 1.6rem;
     --header__btn--py: 0.75rem;
     --header__btn--color: white;
-    --header__btn--font-size: 0.8rem;
+    --header__btn--font-size: 0.95rem;
     --header__btn--font-weight: 500;
     --header__btn--font-family: 'DM Sans';
     --header__btn--bg: var(--primary-color);
@@ -63,7 +51,7 @@
     --hero-section__subtitle--letter-spacing: 0.025rem;
 
 
-    --hero-section__cta1--font-size: 0.8rem;
+    --hero-section__cta1--font-size: 0.95rem;
     --hero-section__cta1--font-family: 'DM Sans';
     --hero-section__cta1--bg: var(--primary-color);
     --hero-section__cta1--color: white;
@@ -71,7 +59,7 @@
     --hero-section__cta1--py: 1.05rem;
     --hero-section__cta1--border-radius: 100px;
 
-    --hero-section__cta2--font-size: 0.8rem;
+    --hero-section__cta2--font-size: 0.95rem;
     --hero-section__cta2--font-family: 'DM Sans';
     --hero-section__cta2--bg: rgba(255, 255, 255, 0.1);
     --hero-section__cta2--color: white;
@@ -224,7 +212,7 @@
     --home__testimotionals__btn--px: 1.75rem;
     --home__testimotionals__btn--py: 1rem;
     --home__testimotionals__btn--color: white;
-    --home__testimotionals__btn--font-size: 0.8rem;
+    --home__testimotionals__btn--font-size: 0.95rem;
     --home__testimotionals__btn--font-weight: 500;
     --home__testimotionals__btn--font-family: 'DM Sans';
     --home__testimotionals__btn--bg: var(--primary-color);
@@ -301,7 +289,7 @@
 
 * {
     @apply text-[16px] xl:text-[18px] 2xl:text-[20px];
-    /* font-family: Yekan, sans-serif!important; */
+    font-family: Yekan, sans-serif!important;
 }
 
 body {

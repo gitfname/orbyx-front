@@ -1,4 +1,5 @@
 
+
 const styleProps = {
     card: {
         w:"", h:"", px:"", py:"",
@@ -19,7 +20,8 @@ export default function Card_1({
     img,
     title,
     subtitle,
-    style=styleProps
+    style=styleProps,
+    dir="ltr"
 }) {
 
     const styleProps = {
@@ -66,6 +68,7 @@ export default function Card_1({
 
     return (
         <div
+            dir={dir}
             style={{
                 width: _style.card.w,
                 height: _style.card.h,

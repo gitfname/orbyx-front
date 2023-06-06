@@ -4,6 +4,7 @@ import Button from "./Button"
 import MobileMenu_1 from "./MobileMenu_1"
 import { useContext } from "react"
 import ApplicationDataContext from "../context/ApplicationData"
+import getText from "../application-db/getText"
 
 function NavLink({text, href="/"}) {
     return (
@@ -32,18 +33,9 @@ export default function Header() {
             <div className="flex items-center gap-x-9">
                 <Link to="/" className="flex items-center gap-x-3">
                     <img
-                        src={import.meta.env.BASE_URL+"/logo.svg"}
+                        src={import.meta.env.BASE_URL+applicationData?.logo}
                         className="w-[--logo--width] h-[--logo--height] object-center object-cover"
                     />
-                    <p
-                        style={{
-                            fontSize: "var(--logo__text--font-size)",
-                            fontFamily: "var(--logo__text--font-family)"
-                        }}
-                        className="text-[--logo__text--color] font-[--logo__text--font-weight]"
-                    >
-                        FinanceFlow
-                    </p>
                 </Link>
 
                 <div className="flex items-center gap-x-5 max-md:hidden">
@@ -51,7 +43,7 @@ export default function Header() {
                         applicationData?.header.links.map(item => (
                             <NavLink
                                 key={item.id}
-                                text={item.text.en}
+                                text={getText(item.text)}
                                 href={item.href}
                             />
                         ))
@@ -60,7 +52,7 @@ export default function Header() {
             </div>
 
             <Button
-                text="DOWNLOAD APP"
+                text={getText(applicationData?.header?.["button-text"])}
                 className="max-md:hidden"
                 style={{
                     fontSize: "var(--header__btn--font-size)",

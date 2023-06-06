@@ -1,6 +1,11 @@
 import DownloadOurApplicationCard_1 from "./DownloadOurApplicationCard_1";
+import { useContext } from "react";
+import ApplicationDataContext from "../context/ApplicationData";
+import { Link } from "react-router-dom";
+import getText from "../application-db/getText";
 
 export default function Footer() {
+    const applicationData = useContext(ApplicationDataContext)
     
     return (
         <div className="w-full py-10 bg-[--dark-blue]">
@@ -9,28 +14,33 @@ export default function Footer() {
 
                 <div className="w-full flex max-md:flex-col gap-y-5 items-center md:justify-between">
 
-                    <img
-                        alt="Finance Flow Logo"
-                        src={import.meta.env.BASE_URL+"/logo.png"}
-                        className="h-auto w-28 object-center object-cover"
-                    />
+                    <Link
+                        to="/"
+                    >
+                        <img
+                            alt="Finance Flow Logo"
+                            src={import.meta.env.BASE_URL+applicationData?.logo}
+                            className="h-auto w-28 object-center object-cover"
+                        />
+                    </Link>
+
 
                     <div className="flex items-center gap-x-3">
-                        <img
-                            alt="Instagram"
-                            src={import.meta.env.BASE_URL+"/images/insta.png"}
-                            className="w-7 h-7 object-center object-cover"
-                        />
-                        <img
-                            alt="Facebook"
-                            src={import.meta.env.BASE_URL+"/images/facebook.png"}
-                            className="w-7 h-7 object-center object-cover"
-                        />
-                        <img
-                            alt="Linkdin"
-                            src={import.meta.env.BASE_URL+"/images/linkedin.png"}
-                            className="w-7 h-7 object-center object-cover"
-                        />
+                        {
+                            applicationData?.footer?.["social-links"]?.items?.map(socialLink => (
+                                <Link
+                                    target="_blank"
+                                    key={socialLink.id}
+                                    to={socialLink.link}
+                                >
+                                    <img
+                                        alt={socialLink["img-alt"]}
+                                        src={import.meta.env.BASE_URL+socialLink.img}
+                                        className="w-7 h-7 object-center object-cover"
+                                    />
+                                </Link>
+                            ))
+                        }
                     </div>
                     
                 </div>
@@ -42,48 +52,24 @@ export default function Footer() {
                         <p
                             className="text-lg text-white font-medium tracking-wide"
                         >
-                            Menu
+                            {getText(applicationData?.footer?.["menu-title"])}
                         </p>
 
                         <hr className="border-white/50 my-6" />
 
                         <div className="grid grid-cols-2 gap-4">
 
-                            <p
-                                className="text-xs text-white font-normal tracking-wide"
-                            >
-                                HOME
-                            </p>
-
-                            <p
-                                className="text-xs text-white font-normal tracking-wide"
-                            >
-                                TOKENS
-                            </p>
-
-                            <p
-                                className="text-xs text-white font-normal tracking-wide"
-                            >
-                                ABOUT
-                            </p>
-
-                            <p
-                                className="text-xs text-white font-normal tracking-wide"
-                            >
-                                BLOG
-                            </p>
-
-                            <p
-                                className="text-xs text-white font-normal tracking-wide"
-                            >
-                                PRICING
-                            </p>
-
-                            <p
-                                className="text-xs text-white font-normal tracking-wide"
-                            >
-                                CONTACT US
-                            </p>
+                            {
+                                applicationData?.header?.links?.map(link => (
+                                    <Link
+                                        to={link.href}
+                                        key={link.id}
+                                        className="text-sm text-white font-normal tracking-wide"
+                                    >
+                                        { getText(link.text) }
+                                    </Link>
+                                ))
+                            }
 
                         </div>
 

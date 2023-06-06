@@ -12,7 +12,7 @@ const stypeProps = {
     }
 }
 
-export default function Card_2({title, subtitle, img, style=stypeProps, className="", content=null}) {
+export default function Card_2({title, subtitle, img, style=stypeProps, className="", content=null, dir="ltr"}) {
 
     const stypeProps = {
         card: {
@@ -56,6 +56,7 @@ export default function Card_2({title, subtitle, img, style=stypeProps, classNam
 
     return (
         <div
+            dir={dir}
             style={{
                 width: _style.card.w,
                 height: _style.card.h,

@@ -5,6 +5,7 @@ export default function ArticleCard_1({
     
     return (
         <div
+            dir="ltr"
             className="w-full rounded-3xl overflow-hidden bg-[--dark-blue]"
         >
             

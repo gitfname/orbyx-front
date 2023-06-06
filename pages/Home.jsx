@@ -7,9 +7,11 @@ import SectionGroup_1 from "../components/SectionGroup_1";
 import TestimotionalsSlider_1 from "../components/TestimotionalSlider_1";
 import VideoPlayer_1 from "../components/VideoPlayer_1";
 import { useMediaQuery } from "@chakra-ui/react"
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import ApplicationDataContext from "../context/ApplicationData";
 import TestimotionalCard_1 from "../components/TestimotionalCard_1";
+import getText from "../application-db/getText";
+import useApplicationLanguage from "../hooks/useApplicationLanguage";
 
 export default function HomePage() {
     const applicationData = useContext(ApplicationDataContext)
@@ -17,6 +19,7 @@ export default function HomePage() {
         "(max-width: 768px)",
         "(min-width: 768px)"
     ])
+    const lang = useMemo(() => useApplicationLanguage(), [])
 
     return (
         <div className="pb-10 relative overflow-hidden">
@@ -29,10 +32,10 @@ export default function HomePage() {
             {/* hero section */}
             <div className="w-full grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-y-10 place-items-center pt-24 lg:pt-40 max-lg:px-6 lg:pl-14">
 
-                <div className="space-y-3">
+                <div dir={lang.dir} className="space-y-3">
                     <div>
                         {
-                            applicationData?.hero?.["text"]?.map(text => (
+                            getText(applicationData?.hero?.["text"])?.map(text => (
                                 <p
                                     style={{
                                         fontSize: "var(--hero-section__title--font-size)",
@@ -47,7 +50,7 @@ export default function HomePage() {
                         }
                     </div>
                     {
-                            applicationData?.hero?.["subtext"]?.map(text => (
+                            getText(applicationData?.hero?.["subtext"])?.map(text => (
                                 <p
                                     style={{
                                         fontSize: "var(--hero-section__subtitle--font-size)",
@@ -62,7 +65,7 @@ export default function HomePage() {
                         }
                     <div className="flex max-lg:flex-col max-lg:items-stretch gap-y-4 items-center gap-x-6 !mt-7">
                         <Button
-                            text="DOWNLOAD APP"
+                            text={getText(applicationData?.["hero"]?.["button-1-text"])}
                             style={{
                                 fontSize: "var(--hero-section__cta1--font-size)",
                                 fontFamily: "var(--hero-section__cta1--font-family)",
@@ -78,7 +81,7 @@ export default function HomePage() {
                             }}
                         />
                         <Button
-                            text="VIEW PRICING"
+                            text={getText(applicationData?.["hero"]?.["button-2-text"])}
                             style={{
                                 fontSize: "var(--hero-section__cta2--font-size)",
                                 fontFamily: "var(--hero-section__cta2--font-family)",
@@ -131,10 +134,11 @@ export default function HomePage() {
                         fontFamily: "var(--home__section-3__title--font-family)",
                         fontSize: "var(--home__section-3__title--font-size)",
                     }}
-                    className="lg:text-center text-[--home__section-3__title--color]
-                    font-[--home__section-3__title--font-weight]"
+                    className={`lg:text-center text-[--home__section-3__title--color]
+                    font-[--home__section-3__title--font-weight] ${lang.classname}`}
+                    dir={lang.dir}
                 >
-                    {applicationData?.["home-page-sections"]?.["section-3"].title}
+                    {getText(applicationData?.["home-page-sections"]?.["section-3"].title)}
                 </p>
 
                 <p
@@ -144,52 +148,58 @@ export default function HomePage() {
                         fontFamily: "var(--home__section-3__subtitle--font-family)",
                         lineHeight: "var(--home__section-3__subtitle--line-height)"
                     }}
-                    className="max-w-[50ch] tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
-                    font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch]"
+                    className={`max-w-[50ch] ${lang.dir==="rtl"&&"ml-auto"} tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
+                    font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch] ${lang.classname} !w-full`}
+                    dir={lang.dir}
                 >
-                    {applicationData?.["home-page-sections"]?.["section-3"].subtitle}
+                    {getText(applicationData?.["home-page-sections"]?.["section-3"].subtitle)}
                 </p>
 
                 <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-[1fr_40%_1fr] gap-6">
 
                     <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8">
                         <Card_1
-                            title="Send & Receive"
-                            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
-                            img={import.meta.env.BASE_URL+"/images/send-receive.png"}
+                            dir={lang.dir}
+                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.title)}
+                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.subtitle)}
+                            img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
                         />
 
                         <Card_1
-                            title="100% Secure Wallet"
-                            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
-                            img={import.meta.env.BASE_URL+"/images/vallet.png"}
+                            dir={lang.dir}
+                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.title)}
+                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.subtitle)}
+                            img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
                         />
                     </div>
 
                     <Card_2
-                        title="iOS & Android App"
-                        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In amet, morbi non at sed neque."
-                        img={import.meta.env.BASE_URL+"/images/iPhones.png"}
+                        dir={lang.dir}
+                        title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.title)}
+                        subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.subtitle)}
+                        img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.img)}
                     />
 
                     <div className="flex flex-col sm:flex-row md:flex-col gap-8">
                         <Card_1
-                            title="Trading Charts"
-                            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
-                            img={import.meta.env.BASE_URL+"/images/trading-charts.png"}
+                            dir={lang.dir}
+                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.title)}
+                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.subtitle)}
+                            img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.img)}
                         />
 
                         <Card_1
-                            title="Real Time Trading"
-                            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene."
-                            img={import.meta.env.BASE_URL+"/images/real-time.png"}
+                            dir={lang.dir}
+                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.title)}
+                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.subtitle)}
+                            img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.img)}
                         />
                     </div>
 
                 </div>
 
                 <Button
-                    text="DOWNLOAD APP"
+                    text={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["button-text"])}
                     className="block mx-auto mt-12 w-max"
                     style={{
                         fontSize: "var(--header__btn--font-size)",
@@ -209,7 +219,7 @@ export default function HomePage() {
             </div>
 
             {/* section-4 */}
-            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36">
+            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36" dir={lang.dir}>
 
                 <div className="w-full grid grid-cols-1 gap-y-6 md:grid-cols-2 place-items-center">
 
@@ -228,7 +238,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-4__title--color]
                             font-[--home__section-4__title--font-weight]"
                         >
-                            {applicationData?.["home-page-sections"]?.["section-4"]?.title}
+                            {getText(applicationData?.["home-page-sections"]?.["section-4"]?.title)}
                         </p>
 
                         <p
@@ -240,22 +250,19 @@ export default function HomePage() {
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
                             tracking-[--home__section-4__subtitle--letter-spacing]"
                         >
-                            {applicationData?.["home-page-sections"]?.["section-4"]?.subtitle}
+                            {getText(applicationData?.["home-page-sections"]?.["section-4"]?.subtitle)}
                         </p>
 
                         <div className="space-y-3 mt-4">
-                            <FeatureCard_1
-                                text="Lowest fees in market"
-                                img={import.meta.env.BASE_URL+"/images/low-charts.png"}
-                            />
-                            <FeatureCard_1
-                                text="Fast and secure transactions"
-                                img={import.meta.env.BASE_URL+"/images/thunder.png"}
-                            />
-                            <FeatureCard_1
-                                text="256-bit secure encryption"
-                                img={import.meta.env.BASE_URL+"/images/lock.png"}
-                            />
+                            {
+                                applicationData?.["home-page-sections"]?.["section-4"]?.features?.map(feature => (
+                                    <FeatureCard_1
+                                        key={feature.id}
+                                        text={getText(feature.title)}
+                                        img={import.meta.env.BASE_URL+feature.img}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
 
@@ -268,7 +275,7 @@ export default function HomePage() {
 
                 <div className="w-full gap-y-6 grid grid-cols-1 md:grid-cols-[45%_55%] place-items-center">
 
-                    <div className="md:pl-10">
+                    <div dir={lang.dir} className="md:pl-10">
                         <p
                             style={{
                                 fontFamily: "var(--home__section-5__title--font-family)",
@@ -277,7 +284,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-5__title--color]
                             font-[--home__section-5__title--font-weight]"
                         >
-                            {applicationData?.["home-page-sections"]?.["section-5"]?.title}
+                            {getText(applicationData?.["home-page-sections"]?.["section-5"]?.title)}
                         </p>
 
                         <p
@@ -289,22 +296,19 @@ export default function HomePage() {
                             font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
                             tracking-[--home__section-5__subtitle--letter-spacing]"
                         >
-                            {applicationData?.["home-page-sections"]?.["section-5"]?.subtitle}
+                            {getText(applicationData?.["home-page-sections"]?.["section-5"]?.subtitle)}
                         </p>
 
                         <div className="space-y-3 mt-4">
-                            <FeatureCard_1
-                                text="100% Private data"
-                                img={import.meta.env.BASE_URL+"/images/shield.png"}
-                            />
-                            <FeatureCard_1
-                                text="99.99% Uptime guarantee"
-                                img={import.meta.env.BASE_URL+"/images/99-percent.png"}
-                            />
-                            <FeatureCard_1
-                                text="24/7 Dedicated support"
-                                img={import.meta.env.BASE_URL+"/images/message.png"}
-                            />
+                            {
+                                applicationData?.["home-page-sections"]?.["section-5"]?.features?.map(feature => (
+                                    <FeatureCard_1
+                                        key={feature.id}
+                                        text={getText(feature.title)}
+                                        img={import.meta.env.BASE_URL+feature.img}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
 
@@ -319,7 +323,7 @@ export default function HomePage() {
             </div>
 
             {/* section-6 */}
-            <div className="w-full mt-36 bg-[#0328EE]">
+            <div className="w-full mt-36 bg-[#0328EE]" dir={lang.dir}>
 
                 <div className="w-full md:w-10/12 max-md:px-6 mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center relative max-md:pb-0 py-20">
 
@@ -332,7 +336,7 @@ export default function HomePage() {
                             className="max-w-[50ch] max-md:mx-auto text-[--home__section-5__title--color]
                             font-[--home__section-5__title--font-weight]"
                         >
-                            {applicationData?.["home-page-sections"]?.["section-6"]?.title}
+                            {getText(applicationData?.["home-page-sections"]?.["section-6"]?.title)}
                         </p>
 
                         <p
@@ -344,14 +348,14 @@ export default function HomePage() {
                             font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
                             tracking-[--home__section-5__subtitle--letter-spacing]"
                         >
-                            {applicationData?.["home-page-sections"]?.["section-6"]?.subtitle}
+                            {getText(applicationData?.["home-page-sections"]?.["section-6"]?.subtitle)}
                         </p>
 
                         <Button
-                            text="DOWNLOAD APP"
+                            text={getText(applicationData?.["home-page-sections"]?.["section-6"]?.["button-text"])}
                             className="mt-4 max-md:w-full w-max"
                             style={{
-                                fontSize: "var(1rem)",
+                                fontSize: "0.8rem",
                                 fontFamily: "var(--header__btn--font-family)",
                                 fontWeight: 700,
                                 bg: "white",
@@ -370,7 +374,7 @@ export default function HomePage() {
                     <img
                         alt=""
                         src={import.meta.env.BASE_URL+applicationData?.["home-page-sections"]?.["section-6"]?.img}
-                        className="w-64 md:w-[30rem] max-md:z-10 h-auto place-self-end md:absolute max-md:block max-md:mx-auto md:bottom-0 md:-right-2"
+                        className={`w-64 md:w-[30rem] max-md:z-10 h-auto place-self-end md:absolute max-md:block max-md:mx-auto md:bottom-0 ${lang.dir==="ltr" ? 'md:-right-2' : "md:-left-2"}`}
                     />
 
                 </div>
@@ -378,7 +382,7 @@ export default function HomePage() {
             </div>
 
             {/* testimotionals */}
-            <div className="mt-36 w-full relative">
+            <div className="mt-36 w-full relative" dir={lang.dir}>
                 {/* light circles*/}
                 <div className="bg-[rgba(3,40,238,0.4)] absolute -bottom-28 left-64 w-56 h-56 rounded-full blur-3xl -z-10"></div>
 
@@ -391,11 +395,11 @@ export default function HomePage() {
                         className="text-[--home__testimotionals__title--color]
                         font-[--home__testimotionals__title--font-weight]"
                     >
-                        {applicationData?.["home-page-sections"]?.["testimotionals"]?.title?.en}
+                        {getText(applicationData?.["home-page-sections"]?.["testimotionals"]?.title)}
                     </p>
 
                     <Button
-                        text="DOWNLOAD APP"
+                        text={getText(applicationData?.["home-page-sections"]?.["testimotionals"]?.["button-text"])}
                         style={{
                             fontSize: "var(--home__testimotionals__btn--font-size)",
                             fontFamily: "var(--home__testimotionals__btn--font-family)",
@@ -416,7 +420,7 @@ export default function HomePage() {
                     renderer={data => (
                         <TestimotionalCard_1
                             key={data.id}
-                            text={data.text}
+                            text={getText(data.text)}
                             username={data.username}
                             company={data.company}
                             img={import.meta.env.BASE_URL+data.img}
@@ -426,7 +430,7 @@ export default function HomePage() {
             </div>
 
             {/* section-7 */}
-            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36">
+            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36" dir={lang.dir}>
 
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-5">
 
@@ -439,7 +443,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-4__title--color]
                             font-[--home__section-4__title--font-weight]"
                         >
-                            Get started today
+                            {getText(applicationData?.["home-page-sections"]?.["section-7"]?.title)}
                         </p>
 
                         <p
@@ -451,22 +455,19 @@ export default function HomePage() {
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
                             tracking-[--home__section-4__subtitle--letter-spacing]"
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                            {getText(applicationData?.["home-page-sections"]?.["section-7"]?.subtitle)}
                         </p>
 
                         <div className="space-y-3 mt-4">
-                            <FeatureCard_1
-                                text="Download app"
-                                img={import.meta.env.BASE_URL+"/images/download.png"}
-                            />
-                            <FeatureCard_1
-                                text="Create a free account"
-                                img={import.meta.env.BASE_URL+"/images/user.png"}
-                            />
-                            <FeatureCard_1
-                                text="Start trading"
-                                img={import.meta.env.BASE_URL+"/images/money.png"}
-                            />
+                            {
+                                applicationData?.["home-page-sections"]?.["section-7"]?.features?.map(feature => (
+                                    <FeatureCard_1
+                                        key={feature.id}
+                                        text={getText(feature.title)}
+                                        img={import.meta.env.BASE_URL+feature.img}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
 
@@ -482,8 +483,9 @@ export default function HomePage() {
 
             {/* latest news */}
             <SectionGroup_1
-                leftText={applicationData?.["latest-news"]?.title?.en}
-                rightText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet ."
+                dir={lang.dir}
+                leftText={getText(applicationData?.["latest-news"]?.title)}
+                rightText={getText(applicationData?.["latest-news"]?.subtitle)}
             >
                 <>
                     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -505,10 +507,10 @@ export default function HomePage() {
                     </div>
 
                     <Button
-                        text="VIEW ALL ARTICLES"
+                        text={getText(applicationData?.["latest-news"]?.["button-text"])}
                         className="mt-8 block mx-auto tracking-widest w-max"
                         style={{
-                            fontSize: "0.75rem",
+                            fontSize: "0.9rem",
                             fontFamily: "Inter",
                             fontWeight: 500,
                             bg: "rgba(255, 255, 255, 0.1)",
@@ -526,85 +528,62 @@ export default function HomePage() {
             </SectionGroup_1>
 
 
+            {/* section-8 */}
             {/* download our app */}
             <SectionGroup_1
-                leftText="Downlaod our app"
-                rightText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet ."
+                dir={lang.dir}
+                leftText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.title)}
+                rightText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.subtitle)}
             >
 
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 place-items-center">
 
-                    <Card_2
-                        title="Download for ios"
-                        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer in pellentesque tortor semper elementum. Felis."
-                        img={import.meta.env.BASE_URL+"/images/iPhones.png"}
-                        style={{
-                            card: {
-                                bg: "var(--dark-blue)",
-                                px: "2.2rem"
-                            }
-                        }}
-                        className="!h-72 !w-auto"
-                        content={
-                            <Button
-                                text="APPLE STORE"
-                                className="my-7 w-max tracking-wide"
+                    {
+                        applicationData?.["home-page-sections"]?.["section-8"]?.items?.map(item => (
+                            <Card_2
+                                dir={lang.dir}
+                                key={item.id}
+                                title={getText(item.title)}
+                                subtitle={getText(item.subtitle)}
+                                img={import.meta.env.BASE_URL+item.img}
                                 style={{
-                                    fontSize: "0.75rem",
-                                    fontFamily: "Inter",
-                                    fontWeight: 500,
-                                    bg: "var(--blue)",
-                                    color: "white",
-                                    px: "1.75rem",
-                                    py: "1.1rem",
-                                    rounded: "100px"
+                                    card: {
+                                        bg: "var(--dark-blue)",
+                                        px: "2.2rem"
+                                    }
                                 }}
-                                left={
-                                    <img
-                                        alt=""
-                                        src={import.meta.env.BASE_URL+"/images/ios.png"}
-                                        className="w-6 h-6 object-center object-scale-down"
+                                className="!h-72 !w-auto"
+                                content={
+                                    <Button
+                                        text={item?.["button-text"]}
+                                        className="my-7 w-max tracking-wide"
+                                        style={{
+                                            fontSize: "0.75rem",
+                                            fontFamily: "Inter",
+                                            fontWeight: 500,
+                                            bg: "var(--blue)",
+                                            color: "white",
+                                            px: "1.75rem",
+                                            py: "1.1rem",
+                                            rounded: "100px"
+                                        }}
+                                        left={
+                                            <img
+                                                alt=""
+                                                src={import.meta.env.BASE_URL+item["button-left-icon"]}
+                                                className="w-6 h-6 object-center object-scale-down"
+                                            />
+                                        }
+                                        href={{
+                                            link: (item["button-link"]),
+                                            target: "_blank"
+                                        }}
                                     />
                                 }
                             />
-                        }
-                    />
+                        ))
+                    }
 
-                    <Card_2
-                        title="Download for android"
-                        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer in pellentesque tortor semper elementum. Felis."
-                        img={import.meta.env.BASE_URL+"/images/Samsung-Galaxys.png"}
-                        style={{
-                            card: {
-                                bg: "var(--dark-blue)",
-                                px: "2.2rem"
-                            }
-                        }}
-                        className="!h-72 !w-auto"
-                        content={
-                            <Button
-                                text="PLAY STORE"
-                                className="my-7 w-max tracking-wide"
-                                style={{
-                                    fontSize: "0.75rem",
-                                    fontFamily: "Inter",
-                                    fontWeight: 500,
-                                    bg: "var(--blue)",
-                                    color: "white",
-                                    px: "1.75rem",
-                                    py: "1.1rem",
-                                    rounded: "100px"
-                                }}
-                                left={
-                                    <img
-                                        alt=""
-                                        src={import.meta.env.BASE_URL+"/images/play-store.png"}
-                                        className="w-5 h-5 object-center object-scale-down"
-                                    />
-                                }
-                            />
-                        }
-                    />
 
                 </div>
 

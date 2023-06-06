@@ -8,7 +8,7 @@ const styleProps = {
     }
 }
 
-export default function SectionGroup_1({className, left=null, right=null, leftText="", rightText="", style=styleProps, children}) {
+export default function SectionGroup_1({dir="ltr", className, left=null, right=null, leftText="", rightText="", style=styleProps, children}) {
 
     const _style = {
         leftText: {
@@ -35,7 +35,7 @@ export default function SectionGroup_1({className, left=null, right=null, leftTe
 
 
     return (
-        <div className={"w-11/12 md:w-10/12 mx-auto mt-36 " + className}>
+        <div className={"w-11/12 md:w-10/12 mx-auto mt-36 " + className} dir={dir}>
 
             <div className="w-full max-md:flex-col gap-4 max-md:items-start flex items-center justify-between mb-8">
                 {
