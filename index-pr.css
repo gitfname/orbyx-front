@@ -1,0 +1,329 @@
+:root {
+    --primary-color: #0328EE;
+    --bg-color: #010725;
+    --dark-blue: #010D50;
+    --blue: #0328EE;
+
+
+    /* ---------- header ---------- */
+
+    --header--width: 100%;
+    --header--height: max-content;
+    --header--pl: 7.5rem;
+    --header--pr: 7.5rem;
+    --header--pt: 1.9rem;
+    --header--pb: 1.25rem;
+    --header--bg: transparent;
+
+    --logo--width: 6.8rem;
+    --logo--height: auto;
+    --logo__text--color: white;
+    --logo__text--font-size: 0.9rem;
+    --logo__text--font-weight: 400;
+    --logo__text--font-family: 'DM Sans';
+
+    --header__btn--px: 1.6rem;
+    --header__btn--py: 0.75rem;
+    --header__btn--color: white;
+    --header__btn--font-size: 0.95rem;
+    --header__btn--font-weight: 500;
+    --header__btn--font-family: 'DM Sans';
+    --header__btn--bg: var(--primary-color);
+    --header__btn--border-radius: 100px;
+
+    /* End ---------- header ---------- End */
+
+
+
+    /* ---------- Hero section ---------- */
+
+    --hero-section__title--color: white;
+    --hero-section__title--font-size: 3rem;
+    --hero-section__title--font-weight: 600;
+    --hero-section__title--font-family: 'DM Sans';
+    --hero-section__title--line-height: 3.5rem;
+
+    --hero-section__subtitle--color: white;
+    --hero-section__subtitle--font-size: 0.875rem;
+    --hero-section__subtitle--font-weight: 100;
+    --hero-section__subtitle--font-family: 'DM Sans';
+    --hero-section__subtitle--line-height: 1.75rem;
+    --hero-section__subtitle--letter-spacing: 0.025rem;
+
+
+    --hero-section__cta1--font-size: 0.95rem;
+    --hero-section__cta1--font-family: 'DM Sans';
+    --hero-section__cta1--bg: var(--primary-color);
+    --hero-section__cta1--color: white;
+    --hero-section__cta1--px: 1.8rem;
+    --hero-section__cta1--py: 1.05rem;
+    --hero-section__cta1--border-radius: 100px;
+
+    --hero-section__cta2--font-size: 0.95rem;
+    --hero-section__cta2--font-family: 'DM Sans';
+    --hero-section__cta2--bg: rgba(255, 255, 255, 0.1);
+    --hero-section__cta2--color: white;
+    --hero-section__cta2--px: 1.8rem;
+    --hero-section__cta2--py: 1.05rem;
+    --hero-section__cta2--border-radius: 100px;
+
+    /* End ---------- Hero section ---------- End */
+
+
+
+    /* ---------- Home__section-3 ---------- */
+
+    --home__section-3__title--color: white;
+    --home__section-3__title--font-size: 1.875rem;
+    --home__section-3__title--font-weight: 700;
+    --home__section-3__title--letter-spacing: 0.025rem;
+    --home__section-3__title--font-family: 'DM Sans';
+
+    --home__section-3__subtitle--color: white;
+    --home__section-3__subtitle--font-size: 0.875rem;
+    --home__section-3__subtitle--font-weight: 400;
+    --home__section-3__subtitle--letter-spacing: 0.025rem;
+    --home__section-3__subtitle--font-family: 'DM Sans';
+    --home__section-3__subtitle--line-height: 1.25rem;
+
+
+    /* End ---------- Home__section-3 ---------- End */
+
+
+
+    /* ---------- Card_1 ---------- */
+
+    --card_1--w: 100%;
+    --card_1--h: 100%;
+    --card_1--py: 2.5rem;
+    --card_1--px: 1rem;
+    --card_1--border-radius: 1.75rem;
+    --card_1--bg: var(--dark-blue);
+
+    --card_1__img--w: 3.1rem;
+    --card_1__img--h: 3.1rem;
+
+    --card_1__title--color: white;
+    --card_1__title--font-size: 1rem;
+    --card_1__title--font-weight: 700;
+    --card_1__title--font-family: 'DM Sans';
+    --card_1__title--letter-spacing: 0.025rem;
+
+    --card_1__subtitle--color: white;
+    --card_1__subtitle--font-size: 0.8rem;
+    --card_1__subtitle--font-weight: 300;
+    --card_1__subtitle--font-family: 'DM Sans';
+    --card_1__subtitle--letter-spacing: 0.025rem;
+    --card_1__subtitle--line-height: 1.2rem;
+
+    /* End ---------- Card_1 ---------- End */
+
+
+
+    /* ---------- Card_2 ---------- */
+
+    --card_2--w: 100%;
+    --card_2--h: 100%;
+    --card_2--py: 1.6rem 0;
+    --card_2--px: 1rem;
+    --card_2--border-radius: 1.75rem;
+    --card_2--bg: var(--blue);
+
+    --vard_2__title--color: white;
+    --vard_2__title--font-family: 'DM Sans';
+    --vard_2__title--font-size: 1.3rem;
+    --vard_2__title--font-weight: 700;
+    --vard_2__title--letter-spacing: 0.075rem;
+    --vard_2__title--line-height: unset;
+    --vard_2__title--mb: unset;
+    --vard_2__title--mt: unset;
+
+    --vard_2__subtitle--color: white;
+    --vard_2__subtitle--font-family: 'DM Sans';
+    --vard_2__subtitle--font-size: 0.8rem;
+    --vard_2__subtitle--font-weight: 400;
+    --vard_2__subtitle--letter-spacing: 0.075rem;
+    --vard_2__subtitle--line-height: 1.2rem;
+    --vard_2__subtitle--mb: unset;
+    --vard_2__subtitle--mt: 0.75rem;
+    
+    /* End ---------- Card_2 ---------- End */
+
+
+
+    /* ---------- FeaturCard_1 ---------- */
+
+    --feature-card-1__text--color: white;
+    --feature-card-1__text--font-size: 0.8rem;
+    --feature-card-1__text--font-family: 'DM Sans';
+    --feature-card-1__text--font-weight: 400;
+    --feature-card-1__text--letter-spacing: 0.07rem;
+    --feature-card-1__text--mt: unset;
+    --feature-card-1__text--mb: unset;
+
+    /* End ---------- FeaturCard_1 ---------- End */
+
+
+
+    /* ---------- Home__section-4 ---------- */
+
+    --home__section-4__title--color: white;
+    --home__section-4__title--font-size: 1.8rem;
+    --home__section-4__title--font-weight: 700;
+    --home__section-4__title--letter-spacing: 0.025rem;
+    --home__section-4__title--font-family: 'DM Sans';
+
+    --home__section-4__subtitle--color: white;
+    --home__section-4__subtitle--font-size: 0.875rem;
+    --home__section-4__subtitle--font-weight: 400;
+    --home__section-4__subtitle--letter-spacing: unset;
+    --home__section-4__subtitle--font-family: 'DM Sans';
+    --home__section-4__subtitle--line-height: 1.25rem;
+
+    /* End ---------- Home__section-4 ---------- End */
+
+
+
+    /* ---------- Home__section-5 ---------- */
+
+    --home__section-5__title--color: white;
+    --home__section-5__title--font-size: 1.8rem;
+    --home__section-5__title--font-weight: 700;
+    --home__section-5__title--letter-spacing: 0.025rem;
+    --home__section-5__title--font-family: 'DM Sans';
+
+    --home__section-5__subtitle--color: white;
+    --home__section-5__subtitle--font-size: 0.875rem;
+    --home__section-5__subtitle--font-weight: 400;
+    --home__section-5__subtitle--letter-spacing: unset;
+    --home__section-5__subtitle--font-family: 'DM Sans';
+    --home__section-5__subtitle--line-height: 1.25rem;
+
+    /* End ---------- Home__section-5 ---------- End */
+
+
+    /* ---------- Home__testimotionals ---------- */
+
+    --home__testimotionals__title--color: white;
+    --home__testimotionals__title--font-size: 2rem;
+    --home__testimotionals__title--font-weight: 700;
+    --home__testimotionals__title--font-family: 'DM Sans';
+
+    --home__testimotionals__btn--px: 1.75rem;
+    --home__testimotionals__btn--py: 1rem;
+    --home__testimotionals__btn--color: white;
+    --home__testimotionals__btn--font-size: 0.95rem;
+    --home__testimotionals__btn--font-weight: 500;
+    --home__testimotionals__btn--font-family: 'DM Sans';
+    --home__testimotionals__btn--bg: var(--primary-color);
+    --home__testimotionals__btn--border-radius: 100px;
+
+    /* End ---------- Home__testimotionals ---------- End */
+
+
+    
+    /* ---------- TestimotionalCard_1 ---------- */
+
+    --testimotionals-card-1--bg: var(--dark-blue);
+    --testimotionals-card-1--border-radius: 1.5rem;
+    --testimotionals-card-1--padding: 2.5rem;
+    --testimotionals-card-1--min-w: 24rem;
+
+    --testimotionals-card-1__username--color: white;
+    --testimotionals-card-1__username--font-size: 1rem;
+    --testimotionals-card-1__username--font-weight: 500;
+    --testimotionals-card-1__username--font-family: 'DM Sans';
+
+    --testimotionals-card-1__company--color: white;
+    --testimotionals-card-1__company--font-size: 0.8rem;;
+    --testimotionals-card-1__company--font-weight: 300;
+    --testimotionals-card-1__company--font-family: 'Inter';
+ 
+
+    /* End ---------- TestimotionalCard_1 ---------- End */
+
+
+
+    /* ---------- VideoPlayer_1 ----------  */
+
+    --video-player-1--bg: var(--dark-blue);
+
+    /* End ---------- VideoPlayer_1 ---------- End  */
+
+
+
+    /* ---------- SectionGroup_1 ----------  */
+
+    --section-group-1__left-text--color: white;
+    --section-group-1__left-text--font-size: 1.875rem;
+    --section-group-1__left-text--font-weight: 700;
+    --section-group-1__left-text--font-family: 'DM Sans';
+    --section-group-1__left-text--line-height: 1.1rem;
+    --section-group-1__left-text--letter-spacing: 0.0875rem;
+
+    --section-group-1__right-text--color: white;
+    --section-group-1__right-text--font-size: 0.875rem;
+    --section-group-1__right-text--font-weight: 300;
+    --section-group-1__right-text--font-family: 'Inter';
+    --section-group-1__right-text--line-height: 1.1rem;
+    --section-group-1__right-text--letter-spacing: unset;
+
+    /* End ---------- SectionGroup_1 ---------- End */
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --header--pl: 1.5rem;
+        --header--pr: 1.5rem;
+
+        --hero-section__title--font-size: 1.5rem;
+        --hero-section__title--line-height: 1.875rem;
+    }
+}
+
+
+@font-face {
+    font-family: Yekan;
+    src: url("/fonts/B-Yekan.TTF");
+}
+
+* {
+    @apply text-[16px] xl:text-[18px] 2xl:text-[20px];
+    font-family: Yekan, sans-serif!important;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+
+  
+*::-webkit-scrollbar {
+    width: 0.3rem;
+    height: 0.4rem;
+}
+*::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.09);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 1px;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
+
+
+
+.swiper-slide {
+    @apply opacity-20 transition-opacity duration-300;
+}
+
+.swiper-slide.swiper-slide-active {
+    @apply opacity-100;
+}
