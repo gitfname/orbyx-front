@@ -5,12 +5,14 @@ import HomePage from '../pages/Home'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ApplicationDataContext, { APplicationInitialData } from '../context/ApplicationData'
-import { useEffect, useMemo, useState } from 'react'
-import useApplicationLanguage from '../hooks/useApplicationLanguage'
+import { useContext, useEffect, useMemo, useState } from 'react'
+import { ApplicationLanguageContetx, useApplicationLanguage } from '../hooks/useApplicationLanguage'
+// import useApplicationLanguage from '../hooks/useApplicationLanguage'
 
 function App() {
   const [applicationData, setApplicationData] = useState(APplicationInitialData)
-  const lang = useMemo(() => useApplicationLanguage(), [] )
+  // const [lang] = useApplicationLanguage()
+  const [lang] = useContext(ApplicationLanguageContetx)
 
   useEffect(
     () => {
@@ -19,6 +21,13 @@ function App() {
         link.rel = "stylesheet"
         link.href= import.meta.env.BASE_URL+"/index-pr.css"
   
+        document.head.append(link)
+      }
+      else {
+        const link = document.createElement("link")
+        link.rel = "stylesheet"
+        link.href= import.meta.env.BASE_URL+"/index-en.css"
+
         document.head.append(link)
       }
     },

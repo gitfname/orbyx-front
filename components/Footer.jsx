@@ -3,9 +3,11 @@ import { useContext } from "react";
 import ApplicationDataContext from "../context/ApplicationData";
 import { Link } from "react-router-dom";
 import getText from "../application-db/getText";
+import { ApplicationLanguageContetx } from "../hooks/useApplicationLanguage";
 
 export default function Footer() {
     const applicationData = useContext(ApplicationDataContext)
+    const [lang] = useContext(ApplicationLanguageContetx)
     
     return (
         <div className="w-full py-10 bg-[--dark-blue]">
@@ -48,11 +50,11 @@ export default function Footer() {
                 <div className="w-full flex max-md:flex-col gap-y-10 items-center md:items-start md:justify-between mt-16 py-10">
 
                     {/* menu */}
-                    <div className="w-full max-w-xs">
+                    <div dir={lang.dir} className="w-full max-w-xs">
                         <p
                             className="text-lg text-white font-medium tracking-wide"
                         >
-                            {getText(applicationData?.footer?.["menu-title"])}
+                            {getText(applicationData?.footer?.["menu-title"], lang.lang)}
                         </p>
 
                         <hr className="border-white/50 my-6" />
@@ -66,7 +68,7 @@ export default function Footer() {
                                         key={link.id}
                                         className="text-sm text-white font-normal tracking-wide"
                                     >
-                                        { getText(link.text) }
+                                        { getText(link.text, lang.lang) }
                                     </Link>
                                 ))
                             }

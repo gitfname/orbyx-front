@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      -webkit-tap-highlight-color: transparent;
+    }
+}
+
 :root {
     --primary-color: #0328EE;
     --bg-color: #010725;
@@ -20,14 +32,14 @@
     --logo__text--color: white;
     --logo__text--font-size: 0.9rem;
     --logo__text--font-weight: 400;
-    --logo__text--font-family: Yekan;
+    --logo__text--font-family: 'DM Sans';
 
     --header__btn--px: 1.6rem;
     --header__btn--py: 0.75rem;
     --header__btn--color: white;
-    --header__btn--font-size: 0.95rem;
+    --header__btn--font-size: 0.8rem;
     --header__btn--font-weight: 500;
-    --header__btn--font-family: Yekan;
+    --header__btn--font-family: 'DM Sans';
     --header__btn--bg: var(--primary-color);
     --header__btn--border-radius: 100px;
 
@@ -40,27 +52,27 @@
     --hero-section__title--color: white;
     --hero-section__title--font-size: 3rem;
     --hero-section__title--font-weight: 600;
-    --hero-section__title--font-family: Yekan;
+    --hero-section__title--font-family: 'DM Sans';
     --hero-section__title--line-height: 3.5rem;
 
     --hero-section__subtitle--color: white;
     --hero-section__subtitle--font-size: 0.875rem;
     --hero-section__subtitle--font-weight: 100;
-    --hero-section__subtitle--font-family: Yekan;
+    --hero-section__subtitle--font-family: 'DM Sans';
     --hero-section__subtitle--line-height: 1.75rem;
     --hero-section__subtitle--letter-spacing: 0.025rem;
 
 
-    --hero-section__cta1--font-size: 0.95rem;
-    --hero-section__cta1--font-family: Yekan;
+    --hero-section__cta1--font-size: 0.8rem;
+    --hero-section__cta1--font-family: 'DM Sans';
     --hero-section__cta1--bg: var(--primary-color);
     --hero-section__cta1--color: white;
     --hero-section__cta1--px: 1.8rem;
     --hero-section__cta1--py: 1.05rem;
     --hero-section__cta1--border-radius: 100px;
 
-    --hero-section__cta2--font-size: 0.95rem;
-    --hero-section__cta2--font-family: Yekan;
+    --hero-section__cta2--font-size: 0.8rem;
+    --hero-section__cta2--font-family: 'DM Sans';
     --hero-section__cta2--bg: rgba(255, 255, 255, 0.1);
     --hero-section__cta2--color: white;
     --hero-section__cta2--px: 1.8rem;
@@ -77,13 +89,13 @@
     --home__section-3__title--font-size: 1.875rem;
     --home__section-3__title--font-weight: 700;
     --home__section-3__title--letter-spacing: 0.025rem;
-    --home__section-3__title--font-family: Yekan;
+    --home__section-3__title--font-family: 'DM Sans';
 
     --home__section-3__subtitle--color: white;
     --home__section-3__subtitle--font-size: 0.875rem;
     --home__section-3__subtitle--font-weight: 400;
     --home__section-3__subtitle--letter-spacing: 0.025rem;
-    --home__section-3__subtitle--font-family: Yekan;
+    --home__section-3__subtitle--font-family: 'DM Sans';
     --home__section-3__subtitle--line-height: 1.25rem;
 
 
@@ -106,13 +118,13 @@
     --card_1__title--color: white;
     --card_1__title--font-size: 1rem;
     --card_1__title--font-weight: 700;
-    --card_1__title--font-family: Yekan;
+    --card_1__title--font-family: 'DM Sans';
     --card_1__title--letter-spacing: 0.025rem;
 
     --card_1__subtitle--color: white;
     --card_1__subtitle--font-size: 0.8rem;
     --card_1__subtitle--font-weight: 300;
-    --card_1__subtitle--font-family: Yekan;
+    --card_1__subtitle--font-family: 'DM Sans';
     --card_1__subtitle--letter-spacing: 0.025rem;
     --card_1__subtitle--line-height: 1.2rem;
 
@@ -130,7 +142,7 @@
     --card_2--bg: var(--blue);
 
     --vard_2__title--color: white;
-    --vard_2__title--font-family: Yekan;
+    --vard_2__title--font-family: 'DM Sans';
     --vard_2__title--font-size: 1.3rem;
     --vard_2__title--font-weight: 700;
     --vard_2__title--letter-spacing: 0.075rem;
@@ -139,7 +151,7 @@
     --vard_2__title--mt: unset;
 
     --vard_2__subtitle--color: white;
-    --vard_2__subtitle--font-family: Yekan;
+    --vard_2__subtitle--font-family: 'DM Sans';
     --vard_2__subtitle--font-size: 0.8rem;
     --vard_2__subtitle--font-weight: 400;
     --vard_2__subtitle--letter-spacing: 0.075rem;
@@ -155,7 +167,7 @@
 
     --feature-card-1__text--color: white;
     --feature-card-1__text--font-size: 0.8rem;
-    --feature-card-1__text--font-family: Yekan;
+    --feature-card-1__text--font-family: 'DM Sans';
     --feature-card-1__text--font-weight: 400;
     --feature-card-1__text--letter-spacing: 0.07rem;
     --feature-card-1__text--mt: unset;
@@ -171,13 +183,13 @@
     --home__section-4__title--font-size: 1.8rem;
     --home__section-4__title--font-weight: 700;
     --home__section-4__title--letter-spacing: 0.025rem;
-    --home__section-4__title--font-family: Yekan;
+    --home__section-4__title--font-family: 'DM Sans';
 
     --home__section-4__subtitle--color: white;
     --home__section-4__subtitle--font-size: 0.875rem;
     --home__section-4__subtitle--font-weight: 400;
     --home__section-4__subtitle--letter-spacing: unset;
-    --home__section-4__subtitle--font-family: Yekan;
+    --home__section-4__subtitle--font-family: 'DM Sans';
     --home__section-4__subtitle--line-height: 1.25rem;
 
     /* End ---------- Home__section-4 ---------- End */
@@ -190,13 +202,13 @@
     --home__section-5__title--font-size: 1.8rem;
     --home__section-5__title--font-weight: 700;
     --home__section-5__title--letter-spacing: 0.025rem;
-    --home__section-5__title--font-family: Yekan;
+    --home__section-5__title--font-family: 'DM Sans';
 
     --home__section-5__subtitle--color: white;
     --home__section-5__subtitle--font-size: 0.875rem;
     --home__section-5__subtitle--font-weight: 400;
     --home__section-5__subtitle--letter-spacing: unset;
-    --home__section-5__subtitle--font-family: Yekan;
+    --home__section-5__subtitle--font-family: 'DM Sans';
     --home__section-5__subtitle--line-height: 1.25rem;
 
     /* End ---------- Home__section-5 ---------- End */
@@ -207,14 +219,14 @@
     --home__testimotionals__title--color: white;
     --home__testimotionals__title--font-size: 2rem;
     --home__testimotionals__title--font-weight: 700;
-    --home__testimotionals__title--font-family: Yekan;
+    --home__testimotionals__title--font-family: 'DM Sans';
 
     --home__testimotionals__btn--px: 1.75rem;
     --home__testimotionals__btn--py: 1rem;
     --home__testimotionals__btn--color: white;
-    --home__testimotionals__btn--font-size: 0.95rem;
+    --home__testimotionals__btn--font-size: 0.8rem;
     --home__testimotionals__btn--font-weight: 500;
-    --home__testimotionals__btn--font-family: Yekan;
+    --home__testimotionals__btn--font-family: 'DM Sans';
     --home__testimotionals__btn--bg: var(--primary-color);
     --home__testimotionals__btn--border-radius: 100px;
 
@@ -232,7 +244,7 @@
     --testimotionals-card-1__username--color: white;
     --testimotionals-card-1__username--font-size: 1rem;
     --testimotionals-card-1__username--font-weight: 500;
-    --testimotionals-card-1__username--font-family: Yekan;
+    --testimotionals-card-1__username--font-family: 'DM Sans';
 
     --testimotionals-card-1__company--color: white;
     --testimotionals-card-1__company--font-size: 0.8rem;;
@@ -257,7 +269,7 @@
     --section-group-1__left-text--color: white;
     --section-group-1__left-text--font-size: 1.875rem;
     --section-group-1__left-text--font-weight: 700;
-    --section-group-1__left-text--font-family: Yekan;
+    --section-group-1__left-text--font-family: 'DM Sans';
     --section-group-1__left-text--line-height: 1.1rem;
     --section-group-1__left-text--letter-spacing: 0.0875rem;
 
@@ -289,6 +301,7 @@
 
 * {
     @apply text-[16px] xl:text-[18px] 2xl:text-[20px];
+    /* font-family: Yekan, sans-serif!important; */
 }
 
 body {

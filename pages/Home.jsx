@@ -11,7 +11,7 @@ import { useContext, useMemo } from "react";
 import ApplicationDataContext from "../context/ApplicationData";
 import TestimotionalCard_1 from "../components/TestimotionalCard_1";
 import getText from "../application-db/getText";
-import useApplicationLanguage from "../hooks/useApplicationLanguage";
+import {useApplicationLanguage, ApplicationLanguageContetx} from "../hooks/useApplicationLanguage";
 
 export default function HomePage() {
     const applicationData = useContext(ApplicationDataContext)
@@ -19,7 +19,8 @@ export default function HomePage() {
         "(max-width: 768px)",
         "(min-width: 768px)"
     ])
-    const lang = useMemo(() => useApplicationLanguage(), [])
+    const [lang] = useContext(ApplicationLanguageContetx)
+    // const [lang] = useApplicationLanguage()
 
     return (
         <div className="pb-10 relative overflow-hidden">
@@ -35,7 +36,7 @@ export default function HomePage() {
                 <div dir={lang.dir} className="space-y-3">
                     <div>
                         {
-                            getText(applicationData?.hero?.["text"])?.map(text => (
+                            getText(applicationData?.hero?.["text"], lang.lang)?.map(text => (
                                 <p
                                     style={{
                                         fontSize: "var(--hero-section__title--font-size)",
@@ -50,7 +51,7 @@ export default function HomePage() {
                         }
                     </div>
                     {
-                            getText(applicationData?.hero?.["subtext"])?.map(text => (
+                            getText(applicationData?.hero?.["subtext"], lang.lang)?.map(text => (
                                 <p
                                     style={{
                                         fontSize: "var(--hero-section__subtitle--font-size)",
@@ -65,7 +66,7 @@ export default function HomePage() {
                         }
                     <div className="flex max-lg:flex-col max-lg:items-stretch gap-y-4 items-center gap-x-6 !mt-7">
                         <Button
-                            text={getText(applicationData?.["hero"]?.["button-1-text"])}
+                            text={getText(applicationData?.["hero"]?.["button-1-text"], lang.lang)}
                             style={{
                                 fontSize: "var(--hero-section__cta1--font-size)",
                                 fontFamily: "var(--hero-section__cta1--font-family)",
@@ -81,7 +82,7 @@ export default function HomePage() {
                             }}
                         />
                         <Button
-                            text={getText(applicationData?.["hero"]?.["button-2-text"])}
+                            text={getText(applicationData?.["hero"]?.["button-2-text"], lang.lang)}
                             style={{
                                 fontSize: "var(--hero-section__cta2--font-size)",
                                 fontFamily: "var(--hero-section__cta2--font-family)",
@@ -138,7 +139,7 @@ export default function HomePage() {
                     font-[--home__section-3__title--font-weight] ${lang.classname}`}
                     dir={lang.dir}
                 >
-                    {getText(applicationData?.["home-page-sections"]?.["section-3"].title)}
+                    {getText(applicationData?.["home-page-sections"]?.["section-3"].title, lang.lang)}
                 </p>
 
                 <p
@@ -152,7 +153,7 @@ export default function HomePage() {
                     font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch] ${lang.classname} !w-full`}
                     dir={lang.dir}
                 >
-                    {getText(applicationData?.["home-page-sections"]?.["section-3"].subtitle)}
+                    {getText(applicationData?.["home-page-sections"]?.["section-3"].subtitle, lang.lang)}
                 </p>
 
                 <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-[1fr_40%_1fr] gap-6">
@@ -160,38 +161,38 @@ export default function HomePage() {
                     <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8">
                         <Card_1
                             dir={lang.dir}
-                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.title)}
-                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.subtitle)}
+                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.title, lang.lang)}
+                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.subtitle, lang.lang)}
                             img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
                         />
 
                         <Card_1
                             dir={lang.dir}
-                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.title)}
-                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.subtitle)}
+                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.title, lang.lang)}
+                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.subtitle, lang.lang)}
                             img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
                         />
                     </div>
 
                     <Card_2
                         dir={lang.dir}
-                        title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.title)}
-                        subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.subtitle)}
+                        title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.title, lang.lang)}
+                        subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.subtitle, lang.lang)}
                         img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.img)}
                     />
 
                     <div className="flex flex-col sm:flex-row md:flex-col gap-8">
                         <Card_1
                             dir={lang.dir}
-                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.title)}
-                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.subtitle)}
+                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.title, lang.lang)}
+                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.subtitle, lang.lang)}
                             img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.img)}
                         />
 
                         <Card_1
                             dir={lang.dir}
-                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.title)}
-                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.subtitle)}
+                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.title, lang.lang)}
+                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.subtitle, lang.lang)}
                             img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.img)}
                         />
                     </div>
@@ -199,7 +200,7 @@ export default function HomePage() {
                 </div>
 
                 <Button
-                    text={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["button-text"])}
+                    text={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["button-text"], lang.lang)}
                     className="block mx-auto mt-12 w-max"
                     style={{
                         fontSize: "var(--header__btn--font-size)",
@@ -238,7 +239,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-4__title--color]
                             font-[--home__section-4__title--font-weight]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-4"]?.title)}
+                            {getText(applicationData?.["home-page-sections"]?.["section-4"]?.title, lang.lang)}
                         </p>
 
                         <p
@@ -250,7 +251,7 @@ export default function HomePage() {
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
                             tracking-[--home__section-4__subtitle--letter-spacing]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-4"]?.subtitle)}
+                            {getText(applicationData?.["home-page-sections"]?.["section-4"]?.subtitle, lang.lang)}
                         </p>
 
                         <div className="space-y-3 mt-4">
@@ -258,7 +259,7 @@ export default function HomePage() {
                                 applicationData?.["home-page-sections"]?.["section-4"]?.features?.map(feature => (
                                     <FeatureCard_1
                                         key={feature.id}
-                                        text={getText(feature.title)}
+                                        text={getText(feature.title, lang.lang)}
                                         img={import.meta.env.BASE_URL+feature.img}
                                     />
                                 ))
@@ -284,7 +285,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-5__title--color]
                             font-[--home__section-5__title--font-weight]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-5"]?.title)}
+                            {getText(applicationData?.["home-page-sections"]?.["section-5"]?.title, lang.lang)}
                         </p>
 
                         <p
@@ -296,7 +297,7 @@ export default function HomePage() {
                             font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
                             tracking-[--home__section-5__subtitle--letter-spacing]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-5"]?.subtitle)}
+                            {getText(applicationData?.["home-page-sections"]?.["section-5"]?.subtitle, lang.lang)}
                         </p>
 
                         <div className="space-y-3 mt-4">
@@ -304,7 +305,7 @@ export default function HomePage() {
                                 applicationData?.["home-page-sections"]?.["section-5"]?.features?.map(feature => (
                                     <FeatureCard_1
                                         key={feature.id}
-                                        text={getText(feature.title)}
+                                        text={getText(feature.title, lang.lang)}
                                         img={import.meta.env.BASE_URL+feature.img}
                                     />
                                 ))
@@ -336,7 +337,7 @@ export default function HomePage() {
                             className="max-w-[50ch] max-md:mx-auto text-[--home__section-5__title--color]
                             font-[--home__section-5__title--font-weight]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-6"]?.title)}
+                            {getText(applicationData?.["home-page-sections"]?.["section-6"]?.title, lang.lang)}
                         </p>
 
                         <p
@@ -348,11 +349,11 @@ export default function HomePage() {
                             font-[--home__section-5__subtitle--font-weight] leading-[--home__section-5__subtitle--line-height]
                             tracking-[--home__section-5__subtitle--letter-spacing]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-6"]?.subtitle)}
+                            {getText(applicationData?.["home-page-sections"]?.["section-6"]?.subtitle, lang.lang)}
                         </p>
 
                         <Button
-                            text={getText(applicationData?.["home-page-sections"]?.["section-6"]?.["button-text"])}
+                            text={getText(applicationData?.["home-page-sections"]?.["section-6"]?.["button-text"], lang.lang)}
                             className="mt-4 max-md:w-full w-max"
                             style={{
                                 fontSize: "0.8rem",
@@ -382,11 +383,11 @@ export default function HomePage() {
             </div>
 
             {/* testimotionals */}
-            <div className="mt-36 w-full relative" dir={lang.dir}>
+            <div className="mt-36 w-full relative">
                 {/* light circles*/}
                 <div className="bg-[rgba(3,40,238,0.4)] absolute -bottom-28 left-64 w-56 h-56 rounded-full blur-3xl -z-10"></div>
 
-                <div className="w-full max-md:px-6 max-md:flex-col md:w-10/12 mx-auto flex gap-y-4 md:items-center justify-between mb-8">
+                <div dir={lang.dir} className="w-full max-md:px-6 max-md:flex-col md:w-10/12 mx-auto flex gap-y-4 md:items-center justify-between mb-8">
                     <p
                         style={{
                             fontSize: "var(--home__testimotionals__title--font-size)",
@@ -395,11 +396,11 @@ export default function HomePage() {
                         className="text-[--home__testimotionals__title--color]
                         font-[--home__testimotionals__title--font-weight]"
                     >
-                        {getText(applicationData?.["home-page-sections"]?.["testimotionals"]?.title)}
+                        {getText(applicationData?.["home-page-sections"]?.["testimotionals"]?.title, lang.lang)}
                     </p>
 
                     <Button
-                        text={getText(applicationData?.["home-page-sections"]?.["testimotionals"]?.["button-text"])}
+                        text={getText(applicationData?.["home-page-sections"]?.["testimotionals"]?.["button-text"], lang.lang)}
                         style={{
                             fontSize: "var(--home__testimotionals__btn--font-size)",
                             fontFamily: "var(--home__testimotionals__btn--font-family)",
@@ -420,7 +421,7 @@ export default function HomePage() {
                     renderer={data => (
                         <TestimotionalCard_1
                             key={data.id}
-                            text={getText(data.text)}
+                            text={getText(data.text, lang.lang)}
                             username={data.username}
                             company={data.company}
                             img={import.meta.env.BASE_URL+data.img}
@@ -443,7 +444,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-4__title--color]
                             font-[--home__section-4__title--font-weight]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-7"]?.title)}
+                            {getText(applicationData?.["home-page-sections"]?.["section-7"]?.title, lang.lang)}
                         </p>
 
                         <p
@@ -455,7 +456,7 @@ export default function HomePage() {
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
                             tracking-[--home__section-4__subtitle--letter-spacing]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-7"]?.subtitle)}
+                            {getText(applicationData?.["home-page-sections"]?.["section-7"]?.subtitle, lang.lang)}
                         </p>
 
                         <div className="space-y-3 mt-4">
@@ -463,7 +464,7 @@ export default function HomePage() {
                                 applicationData?.["home-page-sections"]?.["section-7"]?.features?.map(feature => (
                                     <FeatureCard_1
                                         key={feature.id}
-                                        text={getText(feature.title)}
+                                        text={getText(feature.title, lang.lang)}
                                         img={import.meta.env.BASE_URL+feature.img}
                                     />
                                 ))
@@ -484,8 +485,8 @@ export default function HomePage() {
             {/* latest news */}
             <SectionGroup_1
                 dir={lang.dir}
-                leftText={getText(applicationData?.["latest-news"]?.title)}
-                rightText={getText(applicationData?.["latest-news"]?.subtitle)}
+                leftText={getText(applicationData?.["latest-news"]?.title, lang.lang)}
+                rightText={getText(applicationData?.["latest-news"]?.subtitle, lang.lang)}
             >
                 <>
                     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -507,7 +508,7 @@ export default function HomePage() {
                     </div>
 
                     <Button
-                        text={getText(applicationData?.["latest-news"]?.["button-text"])}
+                        text={getText(applicationData?.["latest-news"]?.["button-text"], lang.lang)}
                         className="mt-8 block mx-auto tracking-widest w-max"
                         style={{
                             fontSize: "0.9rem",
@@ -532,8 +533,8 @@ export default function HomePage() {
             {/* download our app */}
             <SectionGroup_1
                 dir={lang.dir}
-                leftText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.title)}
-                rightText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.subtitle)}
+                leftText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.title,lang.lang)}
+                rightText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.subtitle,lang.lang)}
             >
 
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 place-items-center">
@@ -543,8 +544,8 @@ export default function HomePage() {
                             <Card_2
                                 dir={lang.dir}
                                 key={item.id}
-                                title={getText(item.title)}
-                                subtitle={getText(item.subtitle)}
+                                title={getText(item.title, lang.lang)}
+                                subtitle={getText(item.subtitle,lang.lang)}
                                 img={import.meta.env.BASE_URL+item.img}
                                 style={{
                                     card: {
