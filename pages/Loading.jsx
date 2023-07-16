@@ -4,7 +4,7 @@ import loadingAnimationData from "../assets/loading-animation.json";
 
 function Loading() {
     return (
-        <div className="w-full h-screen grid place-items-center">
+        <div className="w-full min-h-screen grid place-items-center">
             <Lottie duration={0.1} animationData={loadingAnimationData}
                 className="w-[33rem] h-[33rem] opacity-[0.035] animate-fade-in absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2" />
 

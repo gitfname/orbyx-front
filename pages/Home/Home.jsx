@@ -16,8 +16,26 @@ import { Tilt } from "react-tilt";
 import SocialLinks from "./components/SocialLinks";
 import { Link } from "react-router-dom";
 import OurTechnologies from "./components/OurTechnologies";
+import useSWR from "swr"
 
 export default function HomePage() {
+
+    const {
+        data: pageDetails,
+        error: pageDetailsError,
+        isLoading: isPageDetailsLoading
+    } = useSWR(
+        "/home-page-details",
+        async () => await (await fetch(STRAPI_HOME_PAGE_DETAILS_API_URL)).json(),
+        {
+            shouldRetryOnError: true,
+            errorRetryCount: 2,
+            revalidateOnFocus: false
+        }
+    )
+
+    console.log(pageDetails);
+
     const applicationData = useContext(ApplicationDataContext)
     const [sm, md] = useMediaQuery([
         "(max-width: 768px)",
@@ -44,18 +62,28 @@ export default function HomePage() {
                 <div dir={lang.dir} className="space-y-3 max-sm:w-full z-10">
                     <div>
                         {
-                            getText(applicationData?.hero?.["text"], lang.lang)?.map(text => (
-                                <p
-                                    style={{
-                                        fontSize: "var(--hero-section__title--font-size)",
-                                        fontFamily: "var(--hero-section__title--font-family)"
-                                    }}
-                                    className="text-[--hero-section__title--color] font-[--hero-section__title--font-weight]
+                            // getText(applicationData?.hero?.["text"], lang.lang)?.map(text => (
+                            //     <p
+                            //         style={{
+                            //             fontSize: "var(--hero-section__title--font-size)",
+                            //             fontFamily: "var(--hero-section__title--font-family)"
+                            //         }}
+                            //         className="text-[--hero-section__title--color] font-[--hero-section__title--font-weight]
+                            //         leading-[--hero-section__title--line-height]"
+                            //     >
+                            //         {text}
+                            //     </p>
+                            // ))
+                            <p
+                                style={{
+                                    fontSize: "var(--hero-section__title--font-size)",
+                                    fontFamily: "var(--hero-section__title--font-family)"
+                                }}
+                                className="text-[--hero-section__title--color] font-[--hero-section__title--font-weight]
                                     leading-[--hero-section__title--line-height]"
-                                >
-                                    {text}
-                                </p>
-                            ))
+                            >
+                                {pageDetails?.data?.attributes?.hero_text_1}
+                            </p>
                         }
                     </div>
                     {/* {

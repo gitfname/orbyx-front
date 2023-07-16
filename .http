@@ -1,0 +1,2 @@
+
+GET http://localhost:1337/api/home-page-detail?populate=*
