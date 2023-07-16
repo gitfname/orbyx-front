@@ -1,17 +1,21 @@
-import ArticleCard_1 from "../components/ArticleCard_1";
-import Button from "../components/Button";
-import Card_1 from "../components/Card_1";
-import Card_2 from "../components/Card_2";
-import FeatureCard_1 from "../components/FeatureCard_1";
-import SectionGroup_1 from "../components/SectionGroup_1";
-import TestimotionalsSlider_1 from "../components/TestimotionalSlider_1";
-import VideoPlayer_1 from "../components/VideoPlayer_1";
+import ArticleCard_1 from "../../components/ArticleCard_1";
+import Button from "../../components/Button";
+import Card_1 from "../../components/Card_1";
+import Card_2 from "../../components/Card_2";
+import FeatureCard_1 from "../../components/FeatureCard_1";
+import SectionGroup_1 from "../../components/SectionGroup_1";
+import TestimotionalsSlider_1 from "../../components/TestimotionalSlider_1";
+import VideoPlayer_1 from "../../components/VideoPlayer_1";
 import { useMediaQuery } from "@chakra-ui/react"
 import { useContext, useMemo } from "react";
-import ApplicationDataContext from "../context/ApplicationData";
-import TestimotionalCard_1 from "../components/TestimotionalCard_1";
-import getText from "../application-db/getText";
-import {useApplicationLanguage, ApplicationLanguageContetx} from "../hooks/useApplicationLanguage";
+import ApplicationDataContext from "../../context/ApplicationData";
+import TestimotionalCard_1 from "../../components/TestimotionalCard_1";
+import getText from "../../application-db/getText";
+import { useApplicationLanguage, ApplicationLanguageContetx } from "../../hooks/useApplicationLanguage";
+import { Tilt } from "react-tilt";
+import SocialLinks from "./components/SocialLinks";
+import { Link } from "react-router-dom";
+import OurTechnologies from "./components/OurTechnologies";
 
 export default function HomePage() {
     const applicationData = useContext(ApplicationDataContext)
@@ -29,11 +33,15 @@ export default function HomePage() {
             <div className="bg-[--dark-blue] absolute top-3 left-44 w-48 h-48 rounded-full blur-3xl -z-10"></div>
             <div className="bg-[--dark-blue] absolute top-48 left-2 w-48 h-48 rounded-full blur-3xl -z-10"></div>
 
-            
-            {/* hero section */}
-            <div className="w-full grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-y-10 place-items-center pt-24 lg:pt-40 max-lg:px-6 lg:pl-14">
 
-                <div dir={lang.dir} className="space-y-3">
+            {/* hero section */}
+            <div
+                dir={lang.dir}
+                className={`w-full grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-y-10 place-items-center pt-24
+                lg:pt-40 max-lg:px-6 ${lang.dir !== "rtl" ? "lg:pl-8" : ""}`}
+            >
+
+                <div dir={lang.dir} className="space-y-3 max-sm:w-full z-10">
                     <div>
                         {
                             getText(applicationData?.hero?.["text"], lang.lang)?.map(text => (
@@ -50,20 +58,24 @@ export default function HomePage() {
                             ))
                         }
                     </div>
-                    {
-                            getText(applicationData?.hero?.["subtext"], lang.lang)?.map(text => (
-                                <p
-                                    style={{
-                                        fontSize: "var(--hero-section__subtitle--font-size)",
-                                        fontFamily: "var(--hero-section__subtitle--font-family)"
-                                    }}
-                                    className="max-w-[50ch] text-[--hero-section__subtitle--color] font-[--hero-section__subtitle--font-weight]
+                    {/* {
+                        getText(applicationData?.hero?.["subtext"], lang.lang)?.map(text => (
+                            <p
+                                style={{
+                                    fontSize: "var(--hero-section__subtitle--font-size)",
+                                    fontFamily: "var(--hero-section__subtitle--font-family)"
+                                }}
+                                className="max-w-[50ch] text-[--hero-section__subtitle--color] font-[--hero-section__subtitle--font-weight]
                                     leading-[--hero-section__subtitle--line-height] tracking-[--hero-section__subtitle--letter-spacing]"
-                                >
-                                    {text}
-                                </p>
-                            ))
-                        }
+                            >
+                                {text}
+                            </p>
+                        ))
+                    } */}
+                    <div className="flex items-center gap-x-2 w-full h-11">
+                        <SocialLinks />
+                    </div>
+
                     <div className="flex max-lg:flex-col max-lg:items-stretch gap-y-4 items-center gap-x-6 !mt-7">
                         <Button
                             text={getText(applicationData?.["hero"]?.["button-1-text"], lang.lang)}
@@ -81,7 +93,7 @@ export default function HomePage() {
                                 target: "_blank"
                             }}
                         />
-                        <Button
+                        {/* <Button
                             text={getText(applicationData?.["hero"]?.["button-2-text"], lang.lang)}
                             style={{
                                 fontSize: "var(--hero-section__cta2--font-size)",
@@ -92,7 +104,40 @@ export default function HomePage() {
                                 py: "var(--hero-section__cta2--py)",
                                 rounded: "var(--hero-section__cta2--border-radius)"
                             }}
-                        />
+                        /> */}
+                        <div
+                            className="flex-1 p-4 py-6 rounded-3xl bg-white/10 self-stretch shadow-md shadow-black/10
+                            flex items-center justify-center gap-x-7 relative"
+                        >
+
+                            <div>
+                                <p className="text-2xl text-white/60 font-[Inter] font-semibold text-center">8.4M</p>
+                                <hr className="mx-auto w-3/4 h-px bg-white/10 border-none my-0.5" />
+                                <p className="text-xs text-white/30 font-[Inter] text-center">Customers</p>
+                            </div>
+
+                            <div>
+                                <p className="text-2xl text-white/60 font-[Inter] font-semibold text-center">3.2K</p>
+                                <hr className="mx-auto w-3/4 h-px bg-white/10 border-none my-0.5" />
+                                <p className="text-xs text-white/30 font-[Inter] text-center">Projects</p>
+                            </div>
+
+                            <div>
+                                <p className="text-2xl text-white/60 font-[Inter] font-semibold text-center">69</p>
+                                <hr className="mx-auto w-3/4 h-px bg-white/10 border-none my-0.5" />
+                                <p className="text-xs text-white/30 font-[Inter] text-center">Games</p>
+                            </div>
+
+                            <Link
+                                to="/order-project"
+                                className="text-sm capitalize text-gray-50 font-[Inter] tracking-wide
+                                rounded-xl bg-[--primary-color] w-max p-3.5 px-6 absolute bottom-0 -right-5
+                                translate-y-3/4 active:scale-95 transition-transform duration-300 max-sm:left-1/2 max-sm:-translate-x-1/2"
+                            >
+                                Create Your Project
+                            </Link>
+
+                        </div>
                     </div>
                 </div>
 
@@ -102,29 +147,130 @@ export default function HomePage() {
                     <div className="bg-[--dark-blue] absolute right-0 -bottom-2 blur-3xl w-56 h-56 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
                     <img
                         alt="Apple Computer"
-                        src={import.meta.env.BASE_URL+(md ? applicationData?.hero?.img?.md : applicationData?.hero?.img?.sm)}
-                        className="h-auto"
+                        src={import.meta.env.BASE_URL + (md ? applicationData?.hero?.img?.md : applicationData?.hero?.img?.sm)}
+                        className={`h-auto ${lang.dir === "rtl" ? "-scale-x-100" : ""}`}
                     />
                 </div>
 
             </div>
 
             {/* section-2 */}
-            <p className="text-sm text-white font-[Inter] font-light text-center md:hidden mb-6 mt-36">Finance flow has been featured on</p>
-            <img
+            <p className="text-sm text-gray-300 font-[Inter] font-normal text-center mb-6 mt-36">Finance flow has been featured on</p>
+            <div className="w-full overflow-y-hidden overflow-x-auto pt-3 py-2">
+
+                <div className="w-max mx-auto px-4 flex items-center gap-x-8 justify-center">
+                    <Tilt
+                        max={50}
+                        reverse={true}
+                        transition={true}
+                    >
+                        <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
+                            <img
+                                alt=""
+                                src={import.meta.env.BASE_URL + "/company-1.png"}
+                                className="w-9 h-auto"
+                            />
+                            <p
+                                className="text-xl text-gray-200 font-[Inter] font-semibold"
+                            >
+                                Company
+                            </p>
+                        </div>
+
+                    </Tilt>
+
+                    <Tilt
+                        max={50}
+                        reverse={true}
+                        transition={true}
+                    >
+                        <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
+                            <img
+                                alt=""
+                                src={import.meta.env.BASE_URL + "/company-2.png"}
+                                className="w-9 h-auto"
+                            />
+                            <p
+                                className="text-xl text-gray-200 font-[Inter] font-semibold"
+                            >
+                                Company
+                            </p>
+                        </div>
+                    </Tilt>
+
+                    <Tilt
+                        max={50}
+                        reverse={true}
+                        transition={true}
+                    >
+                        <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
+                            <img
+                                alt=""
+                                src={import.meta.env.BASE_URL + "/company-1.png"}
+                                className="w-9 h-auto"
+                            />
+                            <p
+                                className="text-xl text-gray-200 font-[Inter] font-semibold"
+                            >
+                                Company
+                            </p>
+                        </div>
+                    </Tilt>
+
+                    <Tilt
+                        max={50}
+                        reverse={true}
+                        transition={true}
+                    >
+                        <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
+                            <img
+                                alt=""
+                                src={import.meta.env.BASE_URL + "/company-2.png"}
+                                className="w-9 h-auto"
+                            />
+                            <p
+                                className="text-xl text-gray-200 font-[Inter] font-semibold"
+                            >
+                                Company
+                            </p>
+                        </div>
+                    </Tilt>
+
+                    <Tilt
+                        max={50}
+                        reverse={true}
+                        transition={true}
+                    >
+                        <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
+                            <img
+                                alt=""
+                                src={import.meta.env.BASE_URL + "/company-1.png"}
+                                className="w-9 h-auto"
+                            />
+                            <p
+                                className="text-xl text-gray-200 font-[Inter] font-semibold"
+                            >
+                                Company
+                            </p>
+                        </div>
+                    </Tilt>
+                </div>
+
+            </div>
+            {/* <img
                 alt="logos"
                 src={
-                    import.meta.env.BASE_URL+
+                    import.meta.env.BASE_URL +
                     (
                         sm
-                        ?
+                            ?
                             applicationData?.["home-page-sections"]?.["section-2"].img.blue.sm
-                        :
+                            :
                             applicationData?.["home-page-sections"]?.["section-2"].img.blue.md
                     )
                 }
                 className="w-10/12 h-auto block mx-auto md:mt-36 max-md:max-w-sm"
-            />
+            /> */}
 
 
             {/* section-3 */}
@@ -149,57 +295,112 @@ export default function HomePage() {
                         fontFamily: "var(--home__section-3__subtitle--font-family)",
                         lineHeight: "var(--home__section-3__subtitle--line-height)"
                     }}
-                    className={`max-w-[50ch] ${lang.dir==="rtl"&&"ml-auto"} tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
+                    className={`max-w-[50ch] ${lang.dir === "rtl" && "ml-auto"} tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
                     font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch] ${lang.classname} !w-full`}
                     dir={lang.dir}
                 >
                     {getText(applicationData?.["home-page-sections"]?.["section-3"].subtitle, lang.lang)}
                 </p>
 
-                <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-[1fr_40%_1fr] gap-6">
+                <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                    <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8">
-                        <Card_1
-                            dir={lang.dir}
-                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.title, lang.lang)}
-                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.subtitle, lang.lang)}
-                            img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
-                        />
+                    <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8 ali">
+                        <Tilt
+                            max={35}
+                            reverse={true}
+                            transition={true}
+                        >
+                            <Card_1
+                                dir={lang.dir}
+                                title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.title, lang.lang)}
+                                subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.subtitle, lang.lang)}
+                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
+                            />
+                        </Tilt>
 
-                        <Card_1
-                            dir={lang.dir}
-                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.title, lang.lang)}
-                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.subtitle, lang.lang)}
-                            img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
-                        />
+                        <Tilt
+                            max={35}
+                            reverse={true}
+                            transition={true}
+                        >
+                            <Card_1
+                                dir={lang.dir}
+                                title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.title, lang.lang)}
+                                subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.subtitle, lang.lang)}
+                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
+                            />
+                        </Tilt>
                     </div>
 
-                    <Card_2
+                    {/* <Card_2
                         dir={lang.dir}
                         title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.title, lang.lang)}
                         subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.subtitle, lang.lang)}
-                        img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.img)}
-                    />
+                        img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.img)}
+                    /> */}
+
+                    <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8">
+                        <Tilt
+                            max={35}
+                            reverse={true}
+                            transition={true}
+                        >
+                            <Card_1
+                                dir={lang.dir}
+                                title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.title, lang.lang)}
+                                subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.subtitle, lang.lang)}
+                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
+                            />
+                        </Tilt>
+
+
+                        <Tilt
+                            max={35}
+                            reverse={true}
+                            transition={true}
+                        >
+                            <Card_1
+                                dir={lang.dir}
+                                title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.title, lang.lang)}
+                                subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.subtitle, lang.lang)}
+                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
+                            />
+                        </Tilt>
+
+                    </div>
 
                     <div className="flex flex-col sm:flex-row md:flex-col gap-8">
-                        <Card_1
-                            dir={lang.dir}
-                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.title, lang.lang)}
-                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.subtitle, lang.lang)}
-                            img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.img)}
-                        />
+                        <Tilt
+                            max={35}
+                            reverse={true}
+                            transition={true}
+                        >
+                            <Card_1
+                                dir={lang.dir}
+                                title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.title, lang.lang)}
+                                subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.subtitle, lang.lang)}
+                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.img)}
+                            />
+                        </Tilt>
 
-                        <Card_1
-                            dir={lang.dir}
-                            title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.title, lang.lang)}
-                            subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.subtitle, lang.lang)}
-                            img={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.img)}
-                        />
+                        <Tilt
+                            max={35}
+                            reverse={true}
+                            transition={true}
+                        >
+                            <Card_1
+                                dir={lang.dir}
+                                title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.title, lang.lang)}
+                                subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.subtitle, lang.lang)}
+                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.img)}
+                            />
+                        </Tilt>
+
                     </div>
 
                 </div>
 
-                <Button
+                {/* <Button
                     text={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["button-text"], lang.lang)}
                     className="block mx-auto mt-12 w-max"
                     style={{
@@ -215,7 +416,7 @@ export default function HomePage() {
                         link: (applicationData?.["download-our-app-link"]),
                         target: "_blank"
                     }}
-                />
+                /> */}
 
             </div>
 
@@ -226,7 +427,7 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL+(applicationData?.["home-page-sections"]?.["section-4"]?.img)}
+                        src={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-4"]?.img)}
                         className="w-96 h-auto"
                     />
 
@@ -260,7 +461,7 @@ export default function HomePage() {
                                     <FeatureCard_1
                                         key={feature.id}
                                         text={getText(feature.title, lang.lang)}
-                                        img={import.meta.env.BASE_URL+feature.img}
+                                        img={import.meta.env.BASE_URL + feature.img}
                                     />
                                 ))
                             }
@@ -272,7 +473,7 @@ export default function HomePage() {
             </div>
 
             {/* section-5 */}
-            <div className="w-full max-md:px-6 mx-auto mt-36">
+            {/* <div className="w-full max-md:px-6 mx-auto mt-36">
 
                 <div className="w-full gap-y-6 grid grid-cols-1 md:grid-cols-[45%_55%] place-items-center">
 
@@ -306,7 +507,7 @@ export default function HomePage() {
                                     <FeatureCard_1
                                         key={feature.id}
                                         text={getText(feature.title, lang.lang)}
-                                        img={import.meta.env.BASE_URL+feature.img}
+                                        img={import.meta.env.BASE_URL + feature.img}
                                     />
                                 ))
                             }
@@ -315,18 +516,18 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL+( md ? applicationData?.["home-page-sections"]?.["section-5"]?.img?.md : applicationData?.["home-page-sections"]?.["section-5"]?.img?.sm)}
+                        src={import.meta.env.BASE_URL + (md ? applicationData?.["home-page-sections"]?.["section-5"]?.img?.md : applicationData?.["home-page-sections"]?.["section-5"]?.img?.sm)}
                         className="w-full h-auto place-self-end"
                     />
 
                 </div>
 
-            </div>
+            </div> */}
 
             {/* section-6 */}
-            <div className="w-full mt-36 bg-[#0328EE]" dir={lang.dir}>
+            <div className="w-full mt-36 bg-white/5 py-12" dir={lang.dir}>
 
-                <div className="w-full md:w-10/12 max-md:px-6 mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center relative max-md:pb-0 py-20">
+                {/* <div className="w-full md:w-10/12 max-md:px-6 mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center relative max-md:pb-0 py-20">
 
                     <div className="md:pl-10 max-md:translate-y-2 z-10">
                         <p
@@ -374,11 +575,13 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL+applicationData?.["home-page-sections"]?.["section-6"]?.img}
-                        className={`w-64 md:w-[30rem] max-md:z-10 h-auto place-self-end md:absolute max-md:block max-md:mx-auto md:bottom-0 ${lang.dir==="ltr" ? 'md:-right-2' : "md:-left-2"}`}
+                        src={import.meta.env.BASE_URL + applicationData?.["home-page-sections"]?.["section-6"]?.img}
+                        className={`w-64 md:w-[30rem] max-md:z-10 h-auto place-self-end md:absolute max-md:block max-md:mx-auto md:bottom-0 ${lang.dir === "ltr" ? 'md:-right-2' : "md:-left-2"}`}
                     />
 
-                </div>
+                </div> */}
+
+                <OurTechnologies />
 
             </div>
 
@@ -424,7 +627,7 @@ export default function HomePage() {
                             text={getText(data.text, lang.lang)}
                             username={data.username}
                             company={data.company}
-                            img={import.meta.env.BASE_URL+data.img}
+                            img={import.meta.env.BASE_URL + data.img}
                         />
                     )}
                 />
@@ -465,7 +668,7 @@ export default function HomePage() {
                                     <FeatureCard_1
                                         key={feature.id}
                                         text={getText(feature.title, lang.lang)}
-                                        img={import.meta.env.BASE_URL+feature.img}
+                                        img={import.meta.env.BASE_URL + feature.img}
                                     />
                                 ))
                             }
@@ -496,9 +699,9 @@ export default function HomePage() {
                                     key={latestNew.id}
                                     title={latestNew.title}
                                     info={latestNew.info}
-                                    img={import.meta.env.BASE_URL+latestNew.img}
+                                    img={import.meta.env.BASE_URL + latestNew.img}
                                     author={{
-                                        img: import.meta.env.BASE_URL+latestNew.author.img,
+                                        img: import.meta.env.BASE_URL + latestNew.author.img,
                                         username: latestNew.author.username
                                     }}
                                     pubDate={latestNew.pubDate}
@@ -521,7 +724,7 @@ export default function HomePage() {
                             rounded: "100px"
                         }}
                         href={{
-                            link: (applicationData?.["header"]?.links?.find(link => link.id === "header-link-blog")?.href),
+                            link: "/blog",
                             target: "_self"
                         }}
                     />
@@ -533,8 +736,8 @@ export default function HomePage() {
             {/* download our app */}
             <SectionGroup_1
                 dir={lang.dir}
-                leftText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.title,lang.lang)}
-                rightText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.subtitle,lang.lang)}
+                leftText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.title, lang.lang)}
+                rightText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.subtitle, lang.lang)}
             >
 
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 place-items-center">
@@ -545,8 +748,8 @@ export default function HomePage() {
                                 dir={lang.dir}
                                 key={item.id}
                                 title={getText(item.title, lang.lang)}
-                                subtitle={getText(item.subtitle,lang.lang)}
-                                img={import.meta.env.BASE_URL+item.img}
+                                subtitle={getText(item.subtitle, lang.lang)}
+                                img={import.meta.env.BASE_URL + item.img}
                                 style={{
                                     card: {
                                         bg: "var(--dark-blue)",
@@ -571,7 +774,7 @@ export default function HomePage() {
                                         left={
                                             <img
                                                 alt=""
-                                                src={import.meta.env.BASE_URL+item["button-left-icon"]}
+                                                src={import.meta.env.BASE_URL + item["button-left-icon"]}
                                                 className="w-6 h-6 object-center object-scale-down"
                                             />
                                         }

@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { ApplicationLanguageProvider } from '../hooks/useApplicationLanguage.jsx'
+import Loading from '../pages/Loading'
+// const sleep = async (ms) => {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve()
+//     }, ms);
+//   })
+// }
+
+// const App = lazy(async () => {
+//   await sleep(7000)
+//   return import("./App.jsx")
+// })
+import App from './App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename='/orbyx-front'>
       <ApplicationLanguageProvider>
-        <App />
+        <Suspense fallback={<Loading />}>
+          <App />
+        </Suspense>
       </ApplicationLanguageProvider>
     </BrowserRouter>
   </React.StrictMode>,

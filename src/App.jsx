@@ -1,12 +1,12 @@
 
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import HomePage from '../pages/Home'
+import { HomePage } from '../pages/Home'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ApplicationDataContext, { APplicationInitialData } from '../context/ApplicationData'
 import { useContext, useEffect, useMemo, useState } from 'react'
 import { ApplicationLanguageContetx, useApplicationLanguage } from '../hooks/useApplicationLanguage'
+import Constact from '../pages/Constact'
 // import useApplicationLanguage from '../hooks/useApplicationLanguage'
 
 function App() {
@@ -16,27 +16,27 @@ function App() {
 
   useEffect(
     () => {
-      if(lang.lang === "pr") {
+      if (lang.lang === "pr") {
         const link = document.createElement("link")
         link.rel = "stylesheet"
-        link.href= import.meta.env.BASE_URL+"/index-pr.css"
-  
+        link.href = import.meta.env.BASE_URL + "/index-pr.css"
+
         document.head.append(link)
       }
       else {
         const link = document.createElement("link")
         link.rel = "stylesheet"
-        link.href= import.meta.env.BASE_URL+"/index-en.css"
+        link.href = import.meta.env.BASE_URL + "/index-en.css"
 
         document.head.append(link)
       }
     },
     [lang.lang]
   )
-  
+
   useEffect(
     () => {
-      
+
       async function getApplicationData() {
         const res = await (await (fetch(import.meta.env.VITE_APPLICATION_DB_URL))).json()
         setApplicationData(res)
@@ -50,16 +50,32 @@ function App() {
 
   return (
     <>
-    <ApplicationDataContext.Provider value={applicationData}>
-      <Header />
-      <Routes>
-        <Route
-          index
-          element={<HomePage />}
-        />
-      </Routes>
-      <Footer />
-    </ApplicationDataContext.Provider>
+      <ApplicationDataContext.Provider value={applicationData}>
+
+        <Header />
+
+        <Routes>
+
+          <Route
+            index
+            element={<HomePage />}
+          />
+
+          <Route
+            path={"/order-project"}
+            element={<Constact />}
+          />
+
+          <Route
+            path="*"
+            element={<div className='w-full h-screen'></div>}
+          />
+
+        </Routes>
+
+        <Footer />
+
+      </ApplicationDataContext.Provider>
     </>
   )
 }

@@ -16,12 +16,15 @@
     "@chakra-ui/react": "^2.7.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@heroicons/react": "^2.0.18",
     "daisyui": "^3.0.3",
     "framer-motion": "^10.12.16",
+    "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.11.2",
+    "react-tilt": "^1.0.2",
     "swiper": "^9.3.2"
   },
   "devDependencies": {

@@ -68,6 +68,7 @@ export default function Card_1({
 
     return (
         <div
+            className="shadow-md shadow-black/10"
             dir={dir}
             style={{
                 width: _style.card.w,

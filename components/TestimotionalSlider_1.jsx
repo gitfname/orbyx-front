@@ -12,7 +12,7 @@ export default function TestimotionalsSlider_1({items=[], renderer}) {
         >
             {
                 items.map(item => (
-                    <SwiperSlide key={item.id} className="w-max">
+                    <SwiperSlide key={item.id} className="!w-max">
                         {
                             renderer(item)
                         }

@@ -330,12 +330,91 @@ body::-webkit-scrollbar-thumb {
     border-radius: 8px;
 }
 
-
-
 .swiper-slide {
-    @apply opacity-20 transition-opacity duration-300;
+    @apply opacity-20 !transition-all !duration-300;
 }
 
 .swiper-slide.swiper-slide-active {
     @apply opacity-100;
+}
+
+
+
+
+.fadein-x-anim {
+    opacity: 0;
+    display: inline-block;
+    transform: translateX(var(--trx));
+    animation-name: fadein-right-anim-1;
+    animation-duration: var(--duration);
+    animation-delay: var(--delay);
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes fadein-right-anim-1{
+    to {
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+  }
+
+  .loading-container span span {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.8);
+    animation-name: anim-1;
+    animation-duration: 1.4s;
+    animation-delay: 4s;
+    animation-iteration-count: 10;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+  }
+  @keyframes anim-1 {
+    to {
+      text-shadow: 0 0 80px rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
+
+
+
+
+
+@keyframes animate-fade-in {
+    from {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.035;
+    }
+}
+.animate-fade-in {
+    animation-name: animate-fade-in;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+
+
+
+@keyframes scroll-1 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-60%);
+    }
+}
+.test-anim {
+    animation-name: scroll-1;
+    animation-duration: 45s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }

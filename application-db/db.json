@@ -15,69 +15,43 @@
         },
         "links": [
             {
-                "id": "header-link-home",
-                "href": "/",
-                "html-attrs": [
-                    ["id","header-link-home"]
-                ],
+                "id": "header-link-services",
+                "href": "/services",
                 "text": {
-                    "en": "HOME",
-                    "pr": "خانه"
+                    "en": "SERVICES",
+                    "pr": "خدمات ما"
                 }
             },
             {
-                "id": "header-link-about",
-                "href": "/about",
-                "html-attrs": [
-                    ["id","header-link-about"]
-                ],
+                "id": "header-link-projects",
+                "href": "/our-projects",
                 "text": {
-                    "en": "ABOUT",
-                    "pr": "درباره ما"
+                    "en": "PROJECTS",
+                    "pr": "پروژه های ما"
                 }
             },
             {
-                "id": "header-link-tokens",
-                "href": "/tokens",
-                "html-attrs": [
-                    ["id","header-link-tokens"]
-                ],
+                "id": "header-link-team",
+                "href": "/our-team",
                 "text": {
-                    "en": "TOKENS",
-                    "pr": "توکن ها"
-                }
-            },
-            {
-                "id": "header-link-pricing",
-                "href": "/pricing",
-                "html-attrs": [
-                    ["id","header-link-pricing"]
-                ],
-                "text": {
-                    "en": "PRICING",
-                    "pr": "قیمت ها"
+                    "en": "OUR TEAM",
+                    "pr": "تیم ما"
                 }
             },
             {
                 "id": "header-link-blog",
                 "href": "/blog",
-                "html-attrs": [
-                    ["id","header-link-blog"]
-                ],
                 "text": {
                     "en": "BLOG",
-                    "pr": "بلاگ"
+                    "pr": "وبلاگ"
                 }
             },
             {
-                "id": "header-link-contact",
-                "href": "/contact",
-                "html-attrs": [
-                    ["id","header-link-contact"]
-                ],
+                "id": "header-link-order-project",
+                "href": "/order-project",
                 "text": {
-                    "en": "CONTACT US",
-                    "pr": "ارتباط با ما"
+                    "en": "ORDER PROJECT",
+                    "pr": "سفارش پروژه"
                 }
             }
         ]
