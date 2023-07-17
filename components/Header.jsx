@@ -8,10 +8,12 @@ import getText from "../application-db/getText"
 import { useApplicationLanguage, ApplicationLanguageContetx } from "../hooks/useApplicationLanguage"
 import useSWR from "swr"
 import { STRAPI_HOME_PAGE_NAV_LINKS_API_URL } from "../constants"
+import getBaseUrl from "../utils/base-url"
+import { HashLink } from "react-router-hash-link"
 
 function NavLink({ text, href = "/" }) {
     return (
-        <Link
+        <HashLink
             to={href}
         >
             <p
@@ -19,7 +21,7 @@ function NavLink({ text, href = "/" }) {
             >
                 {text}
             </p>
-        </Link>
+        </HashLink>
     )
 }
 
@@ -58,12 +60,12 @@ export default function Header() {
         >
 
             <div className="flex items-center gap-x-12">
-                <Link to="/" className="flex items-center gap-x-3">
+                <HashLink to={"/#hero"} className="flex items-center gap-x-3">
                     <img
-                        src={import.meta.env.BASE_URL + applicationData?.logo}
+                        src={getBaseUrl() + applicationData?.logo}
                         className="w-[--logo--width] h-[--logo--height] object-center object-cover"
                     />
-                </Link>
+                </HashLink>
 
                 <div className="flex items-center gap-x-5 max-md:hidden">
                     {

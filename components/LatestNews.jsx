@@ -51,7 +51,7 @@ function LatestNews({ leftText, rightText, showSeeAllBtn = true, showAllBtnText 
             leftText={leftText}
             rightText={rightText}
         >
-            <>
+            <div id="blog">
                 <div dir="ltr" className="w-full" id="latest-news-container">
                     <div className="w-max flex items-center gap-6">
                         {
@@ -87,9 +87,9 @@ function LatestNews({ leftText, rightText, showSeeAllBtn = true, showAllBtnText 
                                         key={latestNew.id}
                                         title={latestNew.title}
                                         info={latestNew.info}
-                                        img={import.meta.env.BASE_URL + latestNew.img}
+                                        img={getBaseUrl() + latestNew.img}
                                         author={{
-                                            img: import.meta.env.BASE_URL + latestNew.author.img,
+                                            img: getBaseUrl() + latestNew.author.img,
                                             username: latestNew.author.username
                                         }}
                                         pubDate={latestNew.pubDate}
@@ -123,7 +123,7 @@ function LatestNews({ leftText, rightText, showSeeAllBtn = true, showAllBtnText 
                         }}
                     />
                 }
-            </>
+            </div>
         </SectionGroup_1>
     )
 }

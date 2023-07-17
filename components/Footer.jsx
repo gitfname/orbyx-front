@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import getText from "../application-db/getText";
 import { ApplicationLanguageContetx } from "../hooks/useApplicationLanguage";
 import useSWR from "swr"
+import getBaseUrl from "../utils/base-url";
 
 export default function Footer() {
     const applicationData = useContext(ApplicationDataContext)
@@ -37,7 +38,7 @@ export default function Footer() {
                     >
                         <img
                             alt="Finance Flow Logo"
-                            src={import.meta.env.BASE_URL + applicationData?.logo}
+                            src={getBaseUrl() + applicationData?.logo}
                             className="h-auto w-28 object-center object-cover"
                         />
                     </Link>
@@ -53,7 +54,7 @@ export default function Footer() {
                                 >
                                     <img
                                         alt={socialLink["img-alt"]}
-                                        src={import.meta.env.BASE_URL + socialLink.img}
+                                        src={getBaseUrl() + socialLink.img}
                                         className="w-7 h-7 object-center object-cover"
                                     />
                                 </Link>

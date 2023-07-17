@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { ApplicationLanguageContetx } from "../hooks/useApplicationLanguage"
+import getBaseUrl from "../utils/base-url"
 
 function Constact() {
   const [lang] = useContext(ApplicationLanguageContetx)
@@ -12,7 +13,7 @@ function Constact() {
         <div>
           <img
             alt=""
-            src={import.meta.env.BASE_URL + "/logo.png"}
+            src={getBaseUrl() + "/logo.png"}
             className="w-40 h-auto block mx-auto"
           />
 

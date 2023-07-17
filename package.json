@@ -26,6 +26,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.11.2",
+    "react-router-hash-link": "^2.4.3",
     "react-tilt": "^1.0.2",
     "swiper": "^9.3.2",
     "swr": "^2.2.0"

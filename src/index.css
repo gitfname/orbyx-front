@@ -301,6 +301,7 @@
 
 * {
     @apply text-[16px] xl:text-[18px] 2xl:text-[20px];
+    scroll-behavior: smooth;
     /* font-family: Yekan, sans-serif!important; */
 }
 

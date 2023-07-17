@@ -1,3 +1,4 @@
+import getBaseUrl from "../utils/base-url";
 
 export default function VideoPlayer_1() {
     return (
@@ -10,7 +11,7 @@ export default function VideoPlayer_1() {
 
             <img
                 alt="Play Button"
-                src={import.meta.env.BASE_URL+"/images/play.png"}
+                src={getBaseUrl()+"/images/play.png"}
                 className="w-16 h-16 object-center object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
             />
 

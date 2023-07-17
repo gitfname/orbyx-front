@@ -9,6 +9,7 @@ import { ApplicationLanguageContetx, useApplicationLanguage } from '../hooks/use
 import Constact from '../pages/Constact'
 // import useApplicationLanguage from '../hooks/useApplicationLanguage'
 import FixedHeader from '../components/FixedHeader'
+import getBaseUrl from '../utils/base-url'
 
 function App() {
   const [applicationData, setApplicationData] = useState(APplicationInitialData)
@@ -20,14 +21,14 @@ function App() {
       if (lang.lang === "pr") {
         const link = document.createElement("link")
         link.rel = "stylesheet"
-        link.href = import.meta.env.BASE_URL + "/index-pr.css"
+        link.href = getBaseUrl() + "/index-pr.css"
 
         document.head.append(link)
       }
       else {
         const link = document.createElement("link")
         link.rel = "stylesheet"
-        link.href = import.meta.env.BASE_URL + "/index-en.css"
+        link.href = getBaseUrl() + "/index-en.css"
 
         document.head.append(link)
       }

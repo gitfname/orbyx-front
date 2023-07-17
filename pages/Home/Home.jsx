@@ -21,6 +21,7 @@ import { STRAPI_BASE_URL, STRAPI_HOME_PAGE_DETAILS_API_URL } from "../../constan
 import RecentWorks from "../../components/RecentWorks";
 import LatestNews from "../../components/LatestNews";
 import OurTeam from "../../components/OurTeam";
+import getBaseUrl from "../../utils/base-url";
 
 export default function HomePage() {
 
@@ -65,6 +66,7 @@ export default function HomePage() {
 
             {/* hero section */}
             <div
+                id="hero"
                 dir={lang.dir}
                 className={`w-full grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-y-10 place-items-center pt-24
                 lg:pt-40 ${lang.dir !== "rtl" ? "lg:pl-8" : ""}`}
@@ -198,7 +200,7 @@ export default function HomePage() {
             <p className="text-sm text-gray-300 font-[Inter] font-normal text-center mb-6 mt-36">
                 {pageDetails?.data?.attributes?.section2_text}
             </p>
-            <div className="w-full overflow-y-hidden overflow-x-auto pt-3 py-2">
+            <div id="services" className="w-full overflow-y-hidden overflow-x-auto pt-3 py-2">
 
                 <div className="w-max mx-auto px-4 flex items-center gap-x-8 justify-center">
                     <Tilt
@@ -209,7 +211,7 @@ export default function HomePage() {
                         <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
                             <img
                                 alt=""
-                                src={import.meta.env.BASE_URL + "/company-1.png"}
+                                src={getBaseUrl() + "/company-1.png"}
                                 className="w-9 h-auto"
                             />
                             <p
@@ -229,7 +231,7 @@ export default function HomePage() {
                         <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
                             <img
                                 alt=""
-                                src={import.meta.env.BASE_URL + "/company-2.png"}
+                                src={getBaseUrl() + "/company-2.png"}
                                 className="w-9 h-auto"
                             />
                             <p
@@ -248,7 +250,7 @@ export default function HomePage() {
                         <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
                             <img
                                 alt=""
-                                src={import.meta.env.BASE_URL + "/company-1.png"}
+                                src={getBaseUrl() + "/company-1.png"}
                                 className="w-9 h-auto"
                             />
                             <p
@@ -267,7 +269,7 @@ export default function HomePage() {
                         <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
                             <img
                                 alt=""
-                                src={import.meta.env.BASE_URL + "/company-2.png"}
+                                src={getBaseUrl() + "/company-2.png"}
                                 className="w-9 h-auto"
                             />
                             <p
@@ -286,7 +288,7 @@ export default function HomePage() {
                         <div className="flex items-center gap-x-2 p-5 bg-slate-900/80 rounded-xl">
                             <img
                                 alt=""
-                                src={import.meta.env.BASE_URL + "/company-1.png"}
+                                src={getBaseUrl() + "/company-1.png"}
                                 className="w-9 h-auto"
                             />
                             <p
@@ -302,7 +304,7 @@ export default function HomePage() {
             {/* <img
                 alt="logos"
                 src={
-                    import.meta.env.BASE_URL +
+                    getBaseUrl() +
                     (
                         sm
                             ?
@@ -356,7 +358,7 @@ export default function HomePage() {
                                 dir={lang.dir}
                                 title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.title, lang.lang)}
                                 subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.subtitle, lang.lang)}
-                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
+                                img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
                             />
                         </Tilt>
 
@@ -369,7 +371,7 @@ export default function HomePage() {
                                 dir={lang.dir}
                                 title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.title, lang.lang)}
                                 subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.subtitle, lang.lang)}
-                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
+                                img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
                             />
                         </Tilt>
                     </div>
@@ -378,7 +380,7 @@ export default function HomePage() {
                         dir={lang.dir}
                         title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.title, lang.lang)}
                         subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.subtitle, lang.lang)}
-                        img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.img)}
+                        img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.img)}
                     /> */}
 
                     <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8">
@@ -391,7 +393,7 @@ export default function HomePage() {
                                 dir={lang.dir}
                                 title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.title, lang.lang)}
                                 subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.subtitle, lang.lang)}
-                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
+                                img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-1"]?.img)}
                             />
                         </Tilt>
 
@@ -405,7 +407,7 @@ export default function HomePage() {
                                 dir={lang.dir}
                                 title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.title, lang.lang)}
                                 subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.subtitle, lang.lang)}
-                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
+                                img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
                             />
                         </Tilt>
 
@@ -421,7 +423,7 @@ export default function HomePage() {
                                 dir={lang.dir}
                                 title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.title, lang.lang)}
                                 subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.subtitle, lang.lang)}
-                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.img)}
+                                img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-4"]?.img)}
                             />
                         </Tilt>
 
@@ -434,7 +436,7 @@ export default function HomePage() {
                                 dir={lang.dir}
                                 title={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.title, lang.lang)}
                                 subtitle={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.subtitle, lang.lang)}
-                                img={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.img)}
+                                img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-5"]?.img)}
                             />
                         </Tilt>
 
@@ -462,7 +464,7 @@ export default function HomePage() {
 
             </div>
 
-            <div className="w-full max-md:px-6 mt-36" dir={lang.dir}>
+            <div id="our-projects" className="w-full max-md:px-6 mt-36" dir={lang.dir}>
                 <p className="text-2xl md:text-3xl md:w-10/12 mx-auto  text-gray-50 font-[Inter] tracking-wide font-medium mb-4">
                     {pageDetails?.data?.attributes?.recent_works_section_title}
                 </p>
@@ -556,7 +558,7 @@ export default function HomePage() {
                                     <FeatureCard_1
                                         key={feature.id}
                                         text={getText(feature.title, lang.lang)}
-                                        img={import.meta.env.BASE_URL + feature.img}
+                                        img={getBaseUrl() + feature.img}
                                     />
                                 ))
                             }
@@ -565,7 +567,7 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL + (md ? applicationData?.["home-page-sections"]?.["section-5"]?.img?.md : applicationData?.["home-page-sections"]?.["section-5"]?.img?.sm)}
+                        src={getBaseUrl() + (md ? applicationData?.["home-page-sections"]?.["section-5"]?.img?.md : applicationData?.["home-page-sections"]?.["section-5"]?.img?.sm)}
                         className="w-full h-auto place-self-end"
                     />
 
@@ -624,7 +626,7 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL + applicationData?.["home-page-sections"]?.["section-6"]?.img}
+                        src={getBaseUrl() + applicationData?.["home-page-sections"]?.["section-6"]?.img}
                         className={`w-64 md:w-[30rem] max-md:z-10 h-auto place-self-end md:absolute max-md:block max-md:mx-auto md:bottom-0 ${lang.dir === "ltr" ? 'md:-right-2' : "md:-left-2"}`}
                     />
 
@@ -684,7 +686,7 @@ export default function HomePage() {
                             text={getText(data.text, lang.lang)}
                             username={data.username}
                             company={data.company}
-                            img={import.meta.env.BASE_URL + data.img}
+                            img={getBaseUrl() + data.img}
                         />
                     )}
                 /> */}
@@ -769,7 +771,7 @@ export default function HomePage() {
                                 key={item.id}
                                 title={getText(item.title, lang.lang)}
                                 subtitle={getText(item.subtitle, lang.lang)}
-                                img={import.meta.env.BASE_URL + item.img}
+                                img={getBaseUrl() + item.img}
                                 style={{
                                     card: {
                                         bg: "var(--dark-blue)",
@@ -794,7 +796,7 @@ export default function HomePage() {
                                         left={
                                             <img
                                                 alt=""
-                                                src={import.meta.env.BASE_URL + item["button-left-icon"]}
+                                                src={getBaseUrl() + item["button-left-icon"]}
                                                 className="w-6 h-6 object-center object-scale-down"
                                             />
                                         }

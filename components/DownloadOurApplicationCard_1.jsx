@@ -1,6 +1,7 @@
 import Button from "./Button";
 import { useContext } from "react";
 import ApplicationDataContext from "../context/ApplicationData";
+import getBaseUrl from "../utils/base-url";
 
 export default function DownloadOurApplicationCard_1() {
     const applicationData = useContext(ApplicationDataContext)
@@ -39,7 +40,7 @@ export default function DownloadOurApplicationCard_1() {
                     left={
                         <img
                             alt=""
-                            src={import.meta.env.BASE_URL+"/images/ios.png"}
+                            src={getBaseUrl()+"/images/ios.png"}
                             className="w-6 h-6 object-center object-scale-down"
                         />
                     }
@@ -65,7 +66,7 @@ export default function DownloadOurApplicationCard_1() {
                     left={
                         <img
                             alt=""
-                            src={import.meta.env.BASE_URL+"/images/play-store.png"}
+                            src={getBaseUrl()+"/images/play-store.png"}
                             className="w-5 h-5 object-center object-scale-down"
                         />
                     }
