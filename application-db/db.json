@@ -4,14 +4,14 @@
     "tab-title": {
         "home": {
             "en": "FinanceFlow - Home",
-            "pr": "FinanceFlow - خانه"
+            "fa": "FinanceFlow - خانه"
         },
         "about": "FinanceFlow - About"
     },
     "header": {
         "button-text": {
             "en": "DOWNLOAD APP",
-            "pr": "دانلود برنامه"
+            "fa": "دانلود برنامه"
         },
         "links": [
             {
@@ -19,7 +19,7 @@
                 "href": "/services",
                 "text": {
                     "en": "SERVICES",
-                    "pr": "خدمات ما"
+                    "fa": "خدمات ما"
                 }
             },
             {
@@ -27,7 +27,7 @@
                 "href": "/our-projects",
                 "text": {
                     "en": "PROJECTS",
-                    "pr": "پروژه های ما"
+                    "fa": "پروژه های ما"
                 }
             },
             {
@@ -35,7 +35,7 @@
                 "href": "/our-team",
                 "text": {
                     "en": "OUR TEAM",
-                    "pr": "تیم ما"
+                    "fa": "تیم ما"
                 }
             },
             {
@@ -43,7 +43,7 @@
                 "href": "/blog",
                 "text": {
                     "en": "BLOG",
-                    "pr": "وبلاگ"
+                    "fa": "وبلاگ"
                 }
             },
             {
@@ -51,7 +51,7 @@
                 "href": "/order-project",
                 "text": {
                     "en": "ORDER PROJECT",
-                    "pr": "سفارش پروژه"
+                    "fa": "سفارش پروژه"
                 }
             }
         ]
@@ -59,7 +59,7 @@
     "footer": {
         "menu-title": {
             "en": "MENU",
-            "pr": "منو"
+            "fa": "منو"
         },
         "social-links": {
             "visible": true,
@@ -90,11 +90,11 @@
     "hero": {
         "button-1-text": {
             "en": "DOWNLOAD APP",
-            "pr": "دانلود برنامه"
+            "fa": "دانلود برنامه"
         },
         "button-2-text": {
             "en": "VIEW PRICING",
-            "pr": "مشاهده قیمت ها"
+            "fa": "مشاهده قیمت ها"
         },
         "img": {
             "md": "/images/Apple-Computers.png",
@@ -105,7 +105,7 @@
                 "Buy, trade, and hold",
                 "350+ cryptocurrencies"
             ],
-            "pr": [
+            "fa": [
                 "بخر بفروش و نگه دار",
                 "بیش از 350 ارزدیجیتال"
             ]
@@ -114,7 +114,7 @@
             "en": [
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aenean dis placerat."
             ],
-            "pr": [
+            "fa": [
                 "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تستمتن تست"
             ]
         }
@@ -132,69 +132,69 @@
         "section-3": {
             "button-text": {
                 "en": "DOWNLOAD OUR APP",
-                "pr": "دانلود برنامه ما"
+                "fa": "دانلود برنامه ما"
             },
             "title": {
                 "en": "Build your crypto portfolio",
-                "pr": "پورتفولیو کریپتو ات رو از امروز بساز"
+                "fa": "پورتفولیو کریپتو ات رو از امروز بساز"
             },
             "subtitle": {
                 "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست "
+                "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست "
             },
             "card-1": {
                 "img": "/images/send-receive.png",
                 "title": {
                     "en": "SEND & RECEIVE",
-                    "pr": "دریافت و ارسال"
+                    "fa": "دریافت و ارسال"
                 },
                 "subtitle": {
                     "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                    "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                    "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                 }
             },
             "card-2": {
                 "img": "/images/vallet.png",
                 "title": {
                     "en": "100% Secure Wallet",
-                    "pr": "امنیت 100 در 100"
+                    "fa": "امنیت 100 در 100"
                 },
                 "subtitle": {
                     "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                    "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                    "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                 }
             },
             "card-3": {
                 "img": "/images/iPhones.png",
                 "title": {
                     "en": "iOS & Android App",
-                    "pr": "اپل و اندروید"
+                    "fa": "اپل و اندروید"
                 },
                 "subtitle": {
                     "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                    "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                    "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                 }
             },
             "card-4": {
                 "img": "/images/trading-charts.png",
                 "title": {
                     "en": "Trading Charts",
-                    "pr": "چارت های ترید"
+                    "fa": "چارت های ترید"
                 },
                 "subtitle": {
                     "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                    "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                    "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                 }
             },
             "card-5": {
                 "img": "/images/real-time.png",
                 "title": {
                     "en": "Real Time Trading",
-                    "pr": "تریدینگ لحظه ای"
+                    "fa": "تریدینگ لحظه ای"
                 },
                 "subtitle": {
                     "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                    "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                    "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                 }
             }
         },
@@ -203,11 +203,11 @@
             "img": "/images/two-iphones.png",
             "title": {
                 "en": "Build your crypto portfolio",
-                "pr": "پورتفولیو کریپتو ات رو از مروز بساز"
+                "fa": "پورتفولیو کریپتو ات رو از مروز بساز"
             },
             "subtitle": {
                 "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
             },
             "features": [
                 {
@@ -215,7 +215,7 @@
                     "img": "/images/low-charts.png",
                     "title": {
                         "en": "Lowest fees in market",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 },
                 {
@@ -223,7 +223,7 @@
                     "img": "/images/thunder.png",
                     "title":{
                         "en": "Fast and secure transactions",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 },
                 {
@@ -231,7 +231,7 @@
                     "img": "/images/lock.png",
                     "title": {
                         "en": "256-bit secure encryption",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 }
             ]
@@ -244,11 +244,11 @@
             },
             "title": {
                 "en": "Build your crypto portfolio",
-                "pr": "پورتفولیو کریپتو ات رو از مروز بساز"
+                "fa": "پورتفولیو کریپتو ات رو از مروز بساز"
             },
             "subtitle": {
                 "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
             },
             "features": [
                 {
@@ -256,7 +256,7 @@
                     "img": "/images/shield.png",
                     "title": {
                         "en": "100% Private data",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 },
                 {
@@ -264,7 +264,7 @@
                     "img": "/images/99-percent.png",
                     "title": {
                         "en": "99.99% Uptime guarantee",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 },
                 {
@@ -272,7 +272,7 @@
                     "img": "/images/message.png",
                     "title": {
                         "en": "24/7 Dedicated support",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 }
             ]
@@ -281,34 +281,34 @@
         "section-6": {
             "button-text": {
                 "en": "DOWNLOAD OUR APP",
-                "pr": "دانلود برنامه ما"
+                "fa": "دانلود برنامه ما"
             },
             "img": "/images/two-iphones-2.png",
             "title": {
                 "en": "Explore endless possibilities with FinanceFlow",
-                "pr": "ممکن های نا محدود رو با Financeflow کشف کنید"
+                "fa": "ممکن های نا محدود رو با Financeflow کشف کنید"
             },
             "subtitle": {
                 "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن"
+                "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن"
             }
         },
         
         "testimotionals": {
             "button-text": {
                 "en": "DOWNLOAD OUR APP",
-                "pr": "دانلود برنامه ما"
+                "fa": "دانلود برنامه ما"
             },
             "title": {
                 "en": "What our users say?",
-                "pr": "نظرات کاربران"
+                "fa": "نظرات کاربران"
             },
             "items": [
                 {
                     "id": "h5s9c69cd2n37s",
                     "text": {
                         "en": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui neque quas mollitia quis nobis quae consequuntur aliquam commodi? Dolorem illum error perspiciatis! Eaque voluptatibus tempora voluptatum laudantium magni aperiam ex recusandae, doloremque quas quam eligendi dolorem? Nam impedit soluta quas!",
-                        "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                     },
                     "username": "Mark Johny",
                     "company": "Role, Company",
@@ -318,7 +318,7 @@
                     "id": "g4297d62nf826gs",
                     "text": {
                         "en": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui neque quas mollitia quis nobis quae consequuntur aliquam commodi? Dolorem illum error perspiciatis! Eaque voluptatibus tempora voluptatum laudantium magni aperiam ex recusandae, doloremque quas quam eligendi dolorem? Nam impedit soluta quas!",
-                        "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                     },
                     "username": "Alex Termuis",
                     "company": "Tech, Company",
@@ -328,7 +328,7 @@
                     "id": "hd5297f6mf027f2s",
                     "text": {
                         "en": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui neque quas mollitia quis nobis quae consequuntur aliquam commodi? Dolorem illum error perspiciatis! Eaque voluptatibus tempora voluptatum laudantium magni aperiam ex recusandae, doloremque quas quam eligendi dolorem? Nam impedit soluta quas!",
-                        "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                     },
                     "username": "Burak Martin",
                     "company": "Tech, Company",
@@ -338,7 +338,7 @@
                     "id": "fs52937662hfw5g",
                     "text": {
                         "en": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui neque quas mollitia quis nobis quae consequuntur aliquam commodi? Dolorem illum error perspiciatis! Eaque voluptatibus tempora voluptatum laudantium magni aperiam ex recusandae, doloremque quas quam eligendi dolorem? Nam impedit soluta quas!",
-                        "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                     },
                     "username": "Jenifer Pirosku",
                     "company": "Finance, Company",
@@ -351,11 +351,11 @@
             "video-source": "",
             "title": {
                 "en": "Get started today",
-                "pr": "از همین امروز شروع کن"
+                "fa": "از همین امروز شروع کن"
             },
             "subtitle": {
                 "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.",
-                "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
             },
             "features": [
                 {
@@ -363,7 +363,7 @@
                     "img": "/images/download.png",
                     "title": {
                         "en": "Download app",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 },
                 {
@@ -371,7 +371,7 @@
                     "img": "/images/user.png",
                     "title": {
                         "en": "Create a free account",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 },
                 {
@@ -379,7 +379,7 @@
                     "img": "/images/money.png",
                     "title": {
                         "en": "Start trading",
-                        "pr": "متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست"
                     }
                 }
             ]
@@ -388,22 +388,22 @@
         "section-8": {
             "title": {
                 "en": "Downlaod our app",
-                "pr": "دانلود برنامه ما"
+                "fa": "دانلود برنامه ما"
             },
             "subtitle": {
                 "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet .",
-                "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست "
+                "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست "
             },
             "items": [
                 {
                     "id": "g264926ffsj",
                     "title": {
                         "en": "Download for ios",
-                        "pr": "دانلود برای ایفون"
+                        "fa": "دانلود برای ایفون"
                     },
                     "subtitle": {
                         "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer in pellentesque tortor semper elementum. Felis.",
-                        "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                     },
                     "img": "/images/iPhones.png",
                     "button-left-icon": "/images/ios.png",
@@ -414,11 +414,11 @@
                     "id": "hd52947v2jt2ds",
                     "title": {
                         "en": "Download for android",
-                        "pr": "دانلود برای اندروید"
+                        "fa": "دانلود برای اندروید"
                     },
                     "subtitle": {
                         "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer in pellentesque tortor semper elementum. Felis.",
-                        "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
+                        "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست"
                     },
                     "img": "/images/Samsung-Galaxys.png",
                     "button-left-icon": "/images/play-store.png",
@@ -431,15 +431,15 @@
     "latest-news": {
         "button-text": {
             "en": "VIEW ALL ARTICLES",
-            "pr": "همه مقاله ها"
+            "fa": "همه مقاله ها"
         },
         "title": {
             "en": "Browse our latest news",
-            "pr": "مقاله های ما"
+            "fa": "مقاله های ما"
         },
         "subtitle": {
             "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet .",
-            "pr": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن"
+            "fa": "متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن تست متن"
         },
         "items": [
             {

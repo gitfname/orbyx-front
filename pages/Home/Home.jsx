@@ -6,8 +6,8 @@ import FeatureCard_1 from "../../components/FeatureCard_1";
 import SectionGroup_1 from "../../components/SectionGroup_1";
 import TestimotionalsSlider_1 from "../../components/TestimotionalSlider_1";
 import VideoPlayer_1 from "../../components/VideoPlayer_1";
-import { useMediaQuery } from "@chakra-ui/react"
-import { useContext, useMemo } from "react";
+import { useFocusEffect, useMediaQuery } from "@chakra-ui/react"
+import { useContext, useEffect, useMemo, useState } from "react";
 import ApplicationDataContext from "../../context/ApplicationData";
 import TestimotionalCard_1 from "../../components/TestimotionalCard_1";
 import getText from "../../application-db/getText";
@@ -17,16 +17,23 @@ import SocialLinks from "./components/SocialLinks";
 import { Link } from "react-router-dom";
 import OurTechnologies from "./components/OurTechnologies";
 import useSWR from "swr"
+import { STRAPI_BASE_URL, STRAPI_HOME_PAGE_DETAILS_API_URL } from "../../constants";
+import RecentWorks from "../../components/RecentWorks";
+import LatestNews from "../../components/LatestNews";
+import OurTeam from "../../components/OurTeam";
 
 export default function HomePage() {
+
+    const [lang] = useContext(ApplicationLanguageContetx)
 
     const {
         data: pageDetails,
         error: pageDetailsError,
-        isLoading: isPageDetailsLoading
+        isLoading: isPageDetailsLoading,
+        mutate: mutateHomePageDetails
     } = useSWR(
         "/home-page-details",
-        async () => await (await fetch(STRAPI_HOME_PAGE_DETAILS_API_URL)).json(),
+        async () => await (await fetch(STRAPI_HOME_PAGE_DETAILS_API_URL + "&locale=" + lang.lang)).json(),
         {
             shouldRetryOnError: true,
             errorRetryCount: 2,
@@ -34,15 +41,19 @@ export default function HomePage() {
         }
     )
 
-    console.log(pageDetails);
-
     const applicationData = useContext(ApplicationDataContext)
     const [sm, md] = useMediaQuery([
         "(max-width: 768px)",
         "(min-width: 768px)"
     ])
-    const [lang] = useContext(ApplicationLanguageContetx)
     // const [lang] = useApplicationLanguage()
+
+    useEffect(
+        () => {
+            mutateHomePageDetails()
+        },
+        [lang.lang]
+    )
 
     return (
         <div className="pb-10 relative overflow-hidden">
@@ -56,10 +67,10 @@ export default function HomePage() {
             <div
                 dir={lang.dir}
                 className={`w-full grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-y-10 place-items-center pt-24
-                lg:pt-40 max-lg:px-6 ${lang.dir !== "rtl" ? "lg:pl-8" : ""}`}
+                lg:pt-40 ${lang.dir !== "rtl" ? "lg:pl-8" : ""}`}
             >
 
-                <div dir={lang.dir} className="space-y-3 max-sm:w-full z-10">
+                <div dir={lang.dir} className="space-y-3 max-sm:w-full z-10 max-lg:p-6">
                     <div>
                         {
                             // getText(applicationData?.hero?.["text"], lang.lang)?.map(text => (
@@ -80,7 +91,7 @@ export default function HomePage() {
                                     fontFamily: "var(--hero-section__title--font-family)"
                                 }}
                                 className="text-[--hero-section__title--color] font-[--hero-section__title--font-weight]
-                                    leading-[--hero-section__title--line-height]"
+                                    leading-[--hero-section__title--line-height] max-w-md"
                             >
                                 {pageDetails?.data?.attributes?.hero_text_1}
                             </p>
@@ -106,7 +117,7 @@ export default function HomePage() {
 
                     <div className="flex max-lg:flex-col max-lg:items-stretch gap-y-4 items-center gap-x-6 !mt-7">
                         <Button
-                            text={getText(applicationData?.["hero"]?.["button-1-text"], lang.lang)}
+                            text={pageDetails?.data?.attributes?.hero_cta1_text}
                             style={{
                                 fontSize: "var(--hero-section__cta1--font-size)",
                                 fontFamily: "var(--hero-section__cta1--font-family)",
@@ -162,7 +173,7 @@ export default function HomePage() {
                                 rounded-xl bg-[--primary-color] w-max p-3.5 px-6 absolute bottom-0 -right-5
                                 translate-y-3/4 active:scale-95 transition-transform duration-300 max-sm:left-1/2 max-sm:-translate-x-1/2"
                             >
-                                Create Your Project
+                                {pageDetails?.data?.attributes?.hero_cta2_text}
                             </Link>
 
                         </div>
@@ -174,8 +185,9 @@ export default function HomePage() {
                     <div className="bg-[--dark-blue] absolute left-3 -bottom-2 blur-3xl w-72 h-72 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
                     <div className="bg-[--dark-blue] absolute right-0 -bottom-2 blur-3xl w-56 h-56 translate-y-20 -translate-x-16 rounded-full -z-10"></div>
                     <img
+                        loading="lazy"
                         alt="Apple Computer"
-                        src={import.meta.env.BASE_URL + (md ? applicationData?.hero?.img?.md : applicationData?.hero?.img?.sm)}
+                        src={STRAPI_BASE_URL + (md ? pageDetails?.data?.attributes?.hero_image?.data?.attributes?.url : pageDetails?.data?.attributes?.hero_image_mobile?.data?.attributes?.url)}
                         className={`h-auto ${lang.dir === "rtl" ? "-scale-x-100" : ""}`}
                     />
                 </div>
@@ -183,7 +195,9 @@ export default function HomePage() {
             </div>
 
             {/* section-2 */}
-            <p className="text-sm text-gray-300 font-[Inter] font-normal text-center mb-6 mt-36">Finance flow has been featured on</p>
+            <p className="text-sm text-gray-300 font-[Inter] font-normal text-center mb-6 mt-36">
+                {pageDetails?.data?.attributes?.section2_text}
+            </p>
             <div className="w-full overflow-y-hidden overflow-x-auto pt-3 py-2">
 
                 <div className="w-max mx-auto px-4 flex items-center gap-x-8 justify-center">
@@ -313,7 +327,7 @@ export default function HomePage() {
                     font-[--home__section-3__title--font-weight] ${lang.classname}`}
                     dir={lang.dir}
                 >
-                    {getText(applicationData?.["home-page-sections"]?.["section-3"].title, lang.lang)}
+                    {pageDetails?.data?.attributes?.section3_text}
                 </p>
 
                 <p
@@ -327,7 +341,7 @@ export default function HomePage() {
                     font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch] ${lang.classname} !w-full`}
                     dir={lang.dir}
                 >
-                    {getText(applicationData?.["home-page-sections"]?.["section-3"].subtitle, lang.lang)}
+                    {pageDetails?.data?.attributes?.section3_subtext}
                 </p>
 
                 <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -448,6 +462,15 @@ export default function HomePage() {
 
             </div>
 
+            <div className="w-full max-md:px-6 mt-36" dir={lang.dir}>
+                <p className="text-2xl md:text-3xl md:w-10/12 mx-auto  text-gray-50 font-[Inter] tracking-wide font-medium mb-4">
+                    {pageDetails?.data?.attributes?.recent_works_section_title}
+                </p>
+
+                <RecentWorks />
+
+            </div>
+
             {/* section-4 */}
             <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36" dir={lang.dir}>
 
@@ -455,7 +478,7 @@ export default function HomePage() {
 
                     <img
                         alt=""
-                        src={import.meta.env.BASE_URL + (applicationData?.["home-page-sections"]?.["section-4"]?.img)}
+                        src={STRAPI_BASE_URL + (pageDetails?.data?.attributes?.section4_image?.data?.attributes?.url)}
                         className="w-96 h-auto"
                     />
 
@@ -468,7 +491,7 @@ export default function HomePage() {
                             className="max-w-[15ch] text-[--home__section-4__title--color]
                             font-[--home__section-4__title--font-weight]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-4"]?.title, lang.lang)}
+                            {pageDetails?.data?.attributes?.section4_text}
                         </p>
 
                         <p
@@ -480,19 +503,17 @@ export default function HomePage() {
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
                             tracking-[--home__section-4__subtitle--letter-spacing]"
                         >
-                            {getText(applicationData?.["home-page-sections"]?.["section-4"]?.subtitle, lang.lang)}
+                            {pageDetails?.data?.attributes?.section4_subtext}
                         </p>
 
                         <div className="space-y-3 mt-4">
-                            {
-                                applicationData?.["home-page-sections"]?.["section-4"]?.features?.map(feature => (
-                                    <FeatureCard_1
-                                        key={feature.id}
-                                        text={getText(feature.title, lang.lang)}
-                                        img={import.meta.env.BASE_URL + feature.img}
-                                    />
-                                ))
-                            }
+                            {pageDetails?.data?.attributes?.section4_items?.map(item => (
+                                <FeatureCard_1
+                                    key={item.id}
+                                    text={item.text}
+                                    img={item.img}
+                                />
+                            ))}
                         </div>
                     </div>
 
@@ -627,27 +648,35 @@ export default function HomePage() {
                         className="text-[--home__testimotionals__title--color]
                         font-[--home__testimotionals__title--font-weight]"
                     >
-                        {getText(applicationData?.["home-page-sections"]?.["testimotionals"]?.title, lang.lang)}
+                        {pageDetails?.data?.attributes?.section5_text}
                     </p>
 
-                    <Button
-                        text={getText(applicationData?.["home-page-sections"]?.["testimotionals"]?.["button-text"], lang.lang)}
-                        style={{
-                            fontSize: "var(--home__testimotionals__btn--font-size)",
-                            fontFamily: "var(--home__testimotionals__btn--font-family)",
-                            bg: "var(--home__testimotionals__btn--bg)",
-                            color: "var(--home__testimotionals__btn--color)",
-                            px: "var(--home__testimotionals__btn--px)",
-                            py: "var(--home__testimotionals__btn--py)",
-                            rounded: "var(--home__testimotionals__btn--border-radius)"
-                        }}
-                        href={{
-                            link: (applicationData?.["download-our-app-link"]),
-                            target: "_blank"
-                        }}
-                    />
+                    {
+                        pageDetails?.data?.attributes?.section5_btn_text?.length > 0
+                        &&
+                        <Button
+                            text={pageDetails?.data?.attributes?.section5_btn_text}
+                            style={{
+                                fontSize: "var(--home__testimotionals__btn--font-size)",
+                                fontFamily: "var(--home__testimotionals__btn--font-family)",
+                                bg: "var(--home__testimotionals__btn--bg)",
+                                color: "var(--home__testimotionals__btn--color)",
+                                px: "var(--home__testimotionals__btn--px)",
+                                py: "var(--home__testimotionals__btn--py)",
+                                rounded: "var(--home__testimotionals__btn--border-radius)"
+                            }}
+                            href={{
+                                link: (applicationData?.["download-our-app-link"]),
+                                target: "_blank"
+                            }}
+                        />
+                    }
+
                 </div>
-                <TestimotionalsSlider_1
+                <div className="max-md:px-6 md:w-10/12 mx-auto">
+                    <OurTeam />
+                </div>
+                {/* <TestimotionalsSlider_1
                     items={applicationData?.["home-page-sections"]?.testimotionals?.items}
                     renderer={data => (
                         <TestimotionalCard_1
@@ -658,114 +687,77 @@ export default function HomePage() {
                             img={import.meta.env.BASE_URL + data.img}
                         />
                     )}
-                />
+                /> */}
             </div>
 
             {/* section-7 */}
-            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36" dir={lang.dir}>
+            {
+                pageDetails?.data?.attributes?.show_section6
+                &&
+                <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36" dir={lang.dir}>
 
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-5">
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-5">
 
-                    <div>
-                        <p
-                            style={{
-                                fontFamily: "var(--home__section-4__title--font-family)",
-                                fontSize: "var(--home__section-4__title--font-size)",
-                            }}
-                            className="max-w-[15ch] text-[--home__section-4__title--color]
+                        <div>
+                            <p
+                                style={{
+                                    fontFamily: "var(--home__section-4__title--font-family)",
+                                    fontSize: "var(--home__section-4__title--font-size)",
+                                }}
+                                className="max-w-[15ch] text-[--home__section-4__title--color]
                             font-[--home__section-4__title--font-weight]"
-                        >
-                            {getText(applicationData?.["home-page-sections"]?.["section-7"]?.title, lang.lang)}
-                        </p>
+                            >
+                                {pageDetails?.data?.attributes?.section6_text}
+                            </p>
 
-                        <p
-                            style={{
-                                fontFamily: "var(--home__section-4__subtitle--font-family)",
-                                fontSize: "var(--home__section-4__subtitle--font-size)",
-                            }}
-                            className="mt-4 max-w-[40ch] text-[--home__section-4__subtitle--color]
+                            <p
+                                style={{
+                                    fontFamily: "var(--home__section-4__subtitle--font-family)",
+                                    fontSize: "var(--home__section-4__subtitle--font-size)",
+                                }}
+                                className="mt-4 max-w-[40ch] text-[--home__section-4__subtitle--color]
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
                             tracking-[--home__section-4__subtitle--letter-spacing]"
-                        >
-                            {getText(applicationData?.["home-page-sections"]?.["section-7"]?.subtitle, lang.lang)}
-                        </p>
+                            >
+                                {pageDetails?.data?.attributes?.section6_subtext}
+                            </p>
 
-                        <div className="space-y-3 mt-4">
-                            {
-                                applicationData?.["home-page-sections"]?.["section-7"]?.features?.map(feature => (
+                            <div className="space-y-3 mt-4">
+                                {pageDetails?.data?.attributes?.section6_items?.map(item => (
                                     <FeatureCard_1
-                                        key={feature.id}
-                                        text={getText(feature.title, lang.lang)}
-                                        img={import.meta.env.BASE_URL + feature.img}
+                                        key={item.id}
+                                        text={item.text}
+                                        img={item.img}
                                     />
-                                ))
-                            }
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="max-w-md w-full">
-                        <VideoPlayer_1 />
-                    </div>
+                        <div className="max-w-md w-full">
+                            <VideoPlayer_1 />
+                        </div>
 
+
+                    </div>
 
                 </div>
-
-            </div>
+            }
 
 
             {/* latest news */}
-            <SectionGroup_1
-                dir={lang.dir}
-                leftText={getText(applicationData?.["latest-news"]?.title, lang.lang)}
-                rightText={getText(applicationData?.["latest-news"]?.subtitle, lang.lang)}
-            >
-                <>
-                    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {
-                            applicationData?.["latest-news"]?.items?.map(latestNew => (
-                                <ArticleCard_1
-                                    key={latestNew.id}
-                                    title={latestNew.title}
-                                    info={latestNew.info}
-                                    img={import.meta.env.BASE_URL + latestNew.img}
-                                    author={{
-                                        img: import.meta.env.BASE_URL + latestNew.author.img,
-                                        username: latestNew.author.username
-                                    }}
-                                    pubDate={latestNew.pubDate}
-                                />
-                            ))
-                        }
-                    </div>
-
-                    <Button
-                        text={getText(applicationData?.["latest-news"]?.["button-text"], lang.lang)}
-                        className="mt-8 block mx-auto tracking-widest w-max"
-                        style={{
-                            fontSize: "0.9rem",
-                            fontFamily: "Inter",
-                            fontWeight: 500,
-                            bg: "rgba(255, 255, 255, 0.1)",
-                            color: "white",
-                            px: "1.75rem",
-                            py: "1.1rem",
-                            rounded: "100px"
-                        }}
-                        href={{
-                            link: "/blog",
-                            target: "_self"
-                        }}
-                    />
-                </>
-            </SectionGroup_1>
+            <LatestNews
+                leftText={pageDetails?.data?.attributes?.section7_text}
+                rightText={pageDetails?.data?.attributes?.section7_subtext}
+                showAllBtnText="browse all"
+            />
 
 
             {/* section-8 */}
             {/* download our app */}
             <SectionGroup_1
                 dir={lang.dir}
-                leftText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.title, lang.lang)}
-                rightText={getText(applicationData?.["home-page-sections"]?.["section-8"]?.subtitle, lang.lang)}
+                leftText={pageDetails?.data?.attributes?.section8_text}
+                rightText={pageDetails?.data?.attributes?.section8_subtext}
             >
 
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 place-items-center">

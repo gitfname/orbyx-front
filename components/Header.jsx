@@ -2,10 +2,12 @@
 import { Link } from "react-router-dom"
 import Button from "./Button"
 import MobileMenu_1 from "./MobileMenu_1"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import ApplicationDataContext from "../context/ApplicationData"
 import getText from "../application-db/getText"
 import { useApplicationLanguage, ApplicationLanguageContetx } from "../hooks/useApplicationLanguage"
+import useSWR from "swr"
+import { STRAPI_HOME_PAGE_NAV_LINKS_API_URL } from "../constants"
 
 function NavLink({ text, href = "/" }) {
     return (
@@ -27,6 +29,28 @@ export default function Header() {
     // const [lang, setLang] = useApplicationLanguage()
     const [lang, setLang] = useContext(ApplicationLanguageContetx)
 
+    const {
+        data: navLinks,
+        error: navLinksError,
+        isLoading: isNavLinksLoading,
+        mutate
+    } = useSWR(
+        "/home-nav-links",
+        async () => await (await fetch(STRAPI_HOME_PAGE_NAV_LINKS_API_URL+"?locale="+lang.lang)).json(),
+        {
+            shouldRetryOnError: false,
+            errorRetryCount: 2,
+            revalidateOnFocus: false
+        }
+    )
+
+    useEffect(
+        () => {
+            mutate()
+        },
+        [lang.lang]
+    )
+
     return (
         <nav
             className="flex items-center justify-between w-full absolute top-0 left-0 z-30
@@ -43,11 +67,11 @@ export default function Header() {
 
                 <div className="flex items-center gap-x-5 max-md:hidden">
                     {
-                        applicationData?.header.links.map(item => (
+                        navLinks?.data?.map(item => (
                             <NavLink
-                                key={item.id}
-                                text={getText(item.text, lang.lang)}
-                                href={item.href}
+                                key={item?.id}
+                                text={item?.attributes?.title}
+                                href={item?.attributes?.link}
                             />
                         ))
                     }
@@ -76,17 +100,18 @@ export default function Header() {
                             focus:opacity-100 focus:translate-y-[103%] focus:pointer-events-auto"
                     >
                         <p onClick={() => setLang({ classname: "text-left", dir: "ltr", lang: "en" })} className="text-xs text-white p-2 cursor-pointer hover:bg-white/10 transition-colors duration-200">English</p>
-                        <p onClick={() => setLang({ classname: "text-right", dir: "rtl", lang: "pr" })} className="text-xs text-white p-2 cursor-pointer hover:bg-white/10 transition-colors duration-200">Persian</p>
+                        <p onClick={() => setLang({ classname: "text-right", dir: "rtl", lang: "fa" })} className="text-xs text-white p-2 cursor-pointer hover:bg-white/10 transition-colors duration-200">Persian</p>
                     </div>
                 </button>
 
-                <button
-                    className="self-stretch px-3 aspect-square rounded-xl bg-white/20 active:scale-95 transition-transform duration-300"
+                <Link
+                    to={"/order-project"}
+                    className="self-stretch px-3 grid place-items-center aspect-square rounded-xl bg-white/20 active:scale-95 transition-transform duration-300"
                 >
                     <svg className="w-5 h-5 text-gray-100" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
                     </svg>
-                </button>
+                </Link>
 
                 <Button
                     text={getText(applicationData?.header?.["button-text"], lang.lang)}

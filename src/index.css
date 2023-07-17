@@ -238,7 +238,7 @@
 
     --testimotionals-card-1--bg: var(--dark-blue);
     --testimotionals-card-1--border-radius: 1.5rem;
-    --testimotionals-card-1--padding: 2.5rem;
+    --testimotionals-card-1--padding: 2rem;
     --testimotionals-card-1--min-w: 24rem;
 
     --testimotionals-card-1__username--color: white;
@@ -395,7 +395,7 @@ body::-webkit-scrollbar-thumb {
 }
 .animate-fade-in {
     animation-name: animate-fade-in;
-    animation-duration: 1.5s;
+    animation-duration: 1.1s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
 }
@@ -417,4 +417,14 @@ body::-webkit-scrollbar-thumb {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
+}
+
+
+.tilt {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.translate-z-30 {
+    transform: translateZ(30px);
 }

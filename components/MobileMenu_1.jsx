@@ -34,7 +34,9 @@ export default function MobileMenu_1({ className, navLinks }) {
                 >
 
                     {
-                        navLinks.map(item => (
+                        navLinks?.length > 0
+                        &&
+                        navLinks?.map(item => (
                             <Link key={item.id} id={item.id} to={item.href} className="text-sm none text-white tracking-wide font-normal font-[Inter]">
                                 {getText(item.text, lang.lang)}
                             </Link>
@@ -49,7 +51,7 @@ export default function MobileMenu_1({ className, navLinks }) {
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu space-y-2 py-3 px-0 bg-white/10 rounded-box w-full mb-1">
                             <li onClick={() => setLang({ classname: "text-left", dir: "ltr", lang: "en" })} className="text-white/80 p-2 cursor-pointer px-2.5 hover:bg-white/5">en</li>
-                            <li onClick={() => setLang({ classname: "text-right", dir: "rtl", lang: "pr" })} className="text-white/80 p-2 cursor-pointer px-2.5 hover:bg-white/5">pr</li>
+                            <li onClick={() => setLang({ classname: "text-right", dir: "rtl", lang: "fa" })} className="text-white/80 p-2 cursor-pointer px-2.5 hover:bg-white/5">pr</li>
                         </ul>
                     </div>
 

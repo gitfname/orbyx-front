@@ -6,16 +6,16 @@ export default function ArticleCard_1({
     return (
         <div
             dir="ltr"
-            className="w-full rounded-3xl overflow-hidden bg-[--dark-blue]"
+            className="w-full h-full overflow-hidden rounded-3xl grid grid-rows-[max-content_1fr] bg-[--dark-blue]"
         >
             
             <img
                 alt=""
                 src={img}
-                className="w-full h-auto object-center object-cover"
+                className="w-full aspect-square object-center object-cover"
             />
 
-            <div className="p-5 h-full">
+            <div className="p-5 h-full flex flex-col">
 
                 <p
                     className="text-lg font-bold text-white line-clamp-3 tracking-wide"
@@ -24,12 +24,12 @@ export default function ArticleCard_1({
                 </p>
 
                 <p
-                    className="text-sm font-normal text-white line-clamp-5 tracking-wide mt-4 leading-6"
+                    className="text-sm font-normal text-white line-clamp-5 tracking-wide mt-4 leading-6 mb-3"
                 >
                     {info}
                 </p>
 
-                <hr className="border-white/10 w-full mt-7" />
+                <hr className="border-white/10 w-full mt-auto" />
 
                 <ProfileCard_1
                     img={author.img}

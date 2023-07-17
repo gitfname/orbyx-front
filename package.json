@@ -13,10 +13,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.5.1",
     "@chakra-ui/react": "^2.7.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
+    "ahooks": "^3.7.8",
     "daisyui": "^3.0.3",
     "framer-motion": "^10.12.16",
     "lottie-react": "^2.4.0",

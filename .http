@@ -1,2 +1,20 @@
 
 GET http://localhost:1337/api/home-page-detail?populate=*
+
+
+###
+
+
+GET http://localhost:1337/api/recent-works?populate=*
+
+
+###
+GET http://localhost:1337/api/home-page-nav-links
+
+###
+
+GET https://orbyx-front-strapi.iran.liara.run/api/latest-articles?populate=*
+
+####
+
+GET https://orbyx-front-strapi.iran.liara.run/api/our-team-members?populate=*

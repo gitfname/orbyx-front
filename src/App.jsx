@@ -8,6 +8,7 @@ import { useContext, useEffect, useMemo, useState } from 'react'
 import { ApplicationLanguageContetx, useApplicationLanguage } from '../hooks/useApplicationLanguage'
 import Constact from '../pages/Constact'
 // import useApplicationLanguage from '../hooks/useApplicationLanguage'
+import FixedHeader from '../components/FixedHeader'
 
 function App() {
   const [applicationData, setApplicationData] = useState(APplicationInitialData)
@@ -53,6 +54,9 @@ function App() {
       <ApplicationDataContext.Provider value={applicationData}>
 
         <Header />
+        <div className='max-md:hidden'>
+          <FixedHeader />
+        </div>
 
         <Routes>
 

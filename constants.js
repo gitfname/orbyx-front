@@ -1,4 +1,14 @@
 
-export const STRAPI_BASE_URL = "http://localhost:1337"
+export const STRAPI_BASE_URL = "https://orbyx-front-strapi.iran.liara.run"
+// export const STRAPI_BASE_URL = "http://localhost:1337"
 export const STRAPI_HOME_PAGE_DETAILS_API_ENDPOINT = "/api/home-page-detail?populate=*"
+export const STRAPI_RECENT_WORKS_API_ENDPOINT = "/api/recent-works?populate=*"
+export const STRAPI_HOME_PAGE_NAV_LINKS_API_ENDPOINT = "/api/home-page-nav-links"
+export const STRAPI_LATEST_ARTICLES_END_POINT = "/api/latest-articles?populate=*"
+export const STRAPI_OUR_TEAM_MEMBERS_API_ENDPOINT = "/api/our-team-members?populate=*"
+
 export const STRAPI_HOME_PAGE_DETAILS_API_URL = STRAPI_BASE_URL + STRAPI_HOME_PAGE_DETAILS_API_ENDPOINT
+export const STRAPI_RECENT_WORKS_API_URL = STRAPI_BASE_URL + STRAPI_RECENT_WORKS_API_ENDPOINT
+export const STRAPI_HOME_PAGE_NAV_LINKS_API_URL = STRAPI_BASE_URL + STRAPI_HOME_PAGE_NAV_LINKS_API_ENDPOINT
+export const STRAPI_LATEST_ARTICLES_API_URL = STRAPI_BASE_URL + STRAPI_LATEST_ARTICLES_END_POINT
+export const STRAPI_OUR_TEAM_MEMBERS_API_URL = STRAPI_BASE_URL + STRAPI_OUR_TEAM_MEMBERS_API_ENDPOINT

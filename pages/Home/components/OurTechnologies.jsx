@@ -274,7 +274,7 @@ const ourThechnologies = [
 
 function OurTechnologies() {
     return (
-        <div className="w-full overflow-x-hidden pb-2 pt-3 px-4">
+        <div dir="ltr" className="w-full overflow-x-hidden pb-2 pt-3 px-4">
 
             <div className="w-max flex flex-nowrap items-center gap-6 test-anim">
 
