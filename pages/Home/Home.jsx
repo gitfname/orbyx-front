@@ -22,6 +22,7 @@ import RecentWorks from "../../components/RecentWorks";
 import LatestNews from "../../components/LatestNews";
 import OurTeam from "../../components/OurTeam";
 import getBaseUrl from "../../utils/base-url";
+import Services from "../../components/Services";
 
 export default function HomePage() {
 
@@ -200,7 +201,7 @@ export default function HomePage() {
             <p className="text-sm text-gray-300 font-[Inter] font-normal text-center mb-6 mt-36">
                 {pageDetails?.data?.attributes?.section2_text}
             </p>
-            <div id="services" className="w-full overflow-y-hidden overflow-x-auto pt-3 py-2">
+            <div className="w-full overflow-y-hidden overflow-x-auto pt-3 py-2">
 
                 <div className="w-max mx-auto px-4 flex items-center gap-x-8 justify-center">
                     <Tilt
@@ -318,7 +319,7 @@ export default function HomePage() {
 
 
             {/* section-3 */}
-            <div className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36">
+            <div id="services" className="w-full max-md:px-6 md:w-10/12 mx-auto mt-36">
 
                 <p
                     style={{
@@ -339,16 +340,18 @@ export default function HomePage() {
                         fontFamily: "var(--home__section-3__subtitle--font-family)",
                         lineHeight: "var(--home__section-3__subtitle--line-height)"
                     }}
-                    className={`max-w-[50ch] ${lang.dir === "rtl" && "ml-auto"} tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
+                    className={`max-w-[50ch] ${lang.dir === "rtl" && "ml-auto"} mb-20 tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
                     font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch] ${lang.classname} !w-full`}
                     dir={lang.dir}
                 >
                     {pageDetails?.data?.attributes?.section3_subtext}
                 </p>
 
-                <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Services />
 
-                    <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8 ali">
+                {/* <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-6"> */}
+
+                    {/* <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8 ali">
                         <Tilt
                             max={35}
                             reverse={true}
@@ -374,7 +377,7 @@ export default function HomePage() {
                                 img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-2"]?.img)}
                             />
                         </Tilt>
-                    </div>
+                    </div> */}
 
                     {/* <Card_2
                         dir={lang.dir}
@@ -383,7 +386,7 @@ export default function HomePage() {
                         img={getBaseUrl() + (applicationData?.["home-page-sections"]?.["section-3"]?.["card-3"]?.img)}
                     /> */}
 
-                    <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8">
+                    {/* <div className="h-full flex flex-col sm:flex-row md:flex-col gap-8">
                         <Tilt
                             max={35}
                             reverse={true}
@@ -411,9 +414,9 @@ export default function HomePage() {
                             />
                         </Tilt>
 
-                    </div>
+                    </div> */}
 
-                    <div className="flex flex-col sm:flex-row md:flex-col gap-8">
+                    {/* <div className="flex flex-col sm:flex-row md:flex-col gap-8">
                         <Tilt
                             max={35}
                             reverse={true}
@@ -440,9 +443,9 @@ export default function HomePage() {
                             />
                         </Tilt>
 
-                    </div>
+                    </div> */}
 
-                </div>
+                {/* </div> */}
 
                 {/* <Button
                     text={getText(applicationData?.["home-page-sections"]?.["section-3"]?.["button-text"], lang.lang)}

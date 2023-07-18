@@ -18,3 +18,8 @@ GET https://orbyx-front-strapi.iran.liara.run/api/latest-articles?populate=*
 ####
 
 GET https://orbyx-front-strapi.iran.liara.run/api/our-team-members?populate=*
+
+
+###
+
+GET https://orbyx-front-strapi.iran.liara.run/api/features?populate=*

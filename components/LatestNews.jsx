@@ -65,19 +65,23 @@ function LatestNews({ leftText, rightText, showSeeAllBtn = true, showAllBtnText 
                                 </div>
                                 :
                                 latestArticles?.data?.map(item => (
-                                    <div className="w-64 xl:w-72 self-stretch">
-                                        <ArticleCard_1
-                                            key={item?.attributes?.id}
-                                            title={item?.attributes?.title}
-                                            info={item?.attributes?.info}
-                                            img={STRAPI_BASE_URL + item?.attributes?.image?.data?.attributes?.url}
-                                            author={{
-                                                img: "",
-                                                username: "hello world"
-                                            }}
-                                            pubDate={item?.attributes?.createdAt}
-                                        />
-                                    </div>
+                                    item?.attributes?.visible
+                                        ?
+                                        <div className="w-64 xl:w-72 self-stretch">
+                                            <ArticleCard_1
+                                                key={item?.attributes?.id}
+                                                title={item?.attributes?.title}
+                                                info={item?.attributes?.info}
+                                                img={STRAPI_BASE_URL + item?.attributes?.image?.data?.attributes?.url}
+                                                author={{
+                                                    img: "",
+                                                    username: "hello world"
+                                                }}
+                                                pubDate={item?.attributes?.createdAt}
+                                            />
+                                        </div>
+                                        :
+                                        false
                                 ))
                         }
                         {/* {

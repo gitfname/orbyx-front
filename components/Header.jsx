@@ -55,6 +55,7 @@ export default function Header() {
 
     return (
         <nav
+            dir={lang.dir}
             className="flex items-center justify-between w-full absolute top-0 left-0 z-30
             pt-[--header--pt] pb-[--header--pb] pl-[--header--pl] pr-[--header--pr] bg-[--header--bg]"
         >
@@ -117,7 +118,7 @@ export default function Header() {
 
                 <Button
                     text={getText(applicationData?.header?.["button-text"], lang.lang)}
-                    className="max-md:hidden"
+                    className="max-md:hidden rounded-xl"
                     style={{
                         fontSize: "var(--header__btn--font-size)",
                         fontFamily: "var(--header__btn--font-family)",
@@ -125,7 +126,6 @@ export default function Header() {
                         color: "var(--header__btn--color)",
                         px: "var(--header__btn--px)",
                         py: "var(--header__btn--py)",
-                        rounded: "var(--header__btn--border-radius)"
                     }}
                     href={{
                         link: applicationData["download-our-app-link"],
