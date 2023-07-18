@@ -23,7 +23,7 @@ function NavLink({ text, href = "/" }) {
     )
 }
 
-const Content = ({ visible, links, setLang }) => useMemo(
+const Content = ({ visible, links, setLang, dir }) => useMemo(
     () => {
 
         return (
@@ -31,6 +31,7 @@ const Content = ({ visible, links, setLang }) => useMemo(
             ${visible ? "!translate-y-0" : ""} transition-transform duration-300 p-3`}>
 
                 <div
+                    dir={dir}
                     className="w-full flex items-center justify-between bg-white/10 rounded-xl
                     backdrop-blur-md py-3.5 px-8 shadow-lg shadow-black/10"
                 >
@@ -160,7 +161,7 @@ function FixedHeader() {
     )
 
     return (
-        <Content visible={visible} links={navLinks} setLang={setLang} />
+        <Content visible={visible} links={navLinks} setLang={setLang} dir={lang.dir} />
     )
 }
 
