@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import getText from "../application-db/getText"
 import { useContext } from "react"
 import { ApplicationLanguageContetx } from "../hooks/useApplicationLanguage"
+import { HashLink } from "react-router-hash-link"
 
 export default function MobileMenu_1({ className, navLinks }) {
     const [isOpen, setIsOPen] = useState(false)
@@ -37,9 +38,10 @@ export default function MobileMenu_1({ className, navLinks }) {
                         navLinks?.length > 0
                         &&
                         navLinks?.map(item => (
-                            <Link key={item.id} id={item.id} to={item.href} className="text-sm none text-white tracking-wide font-normal font-[Inter]">
-                                {getText(item.text, lang.lang)}
-                            </Link>
+                            <HashLink key={item?.attributes?.id} id={item?.attributes?.id} to={item?.attributes?.link} className="text-sm none text-white tracking-wide font-normal font-[Inter]">
+                                {/* {getText(item.text, lang.lang)} */}
+                                {item?.attributes?.title}
+                            </HashLink>
                         ))
                     }
 

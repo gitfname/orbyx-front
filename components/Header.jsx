@@ -136,7 +136,7 @@ export default function Header() {
 
 
 
-            <MobileMenu_1 navLinks={applicationData?.header?.links} className="md:hidden" />
+            <MobileMenu_1 navLinks={navLinks?.data} className="md:hidden" />
 
         </nav>
     )

@@ -6,7 +6,7 @@ function Loading() {
     return (
         <div className="w-full min-h-screen grid place-items-center">
             <Lottie duration={0.1} animationData={loadingAnimationData}
-                className="w-[33rem] h-[33rem] opacity-[0.035] animate-fade-in absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2" />
+                className="w-96 h-96 md:w-[33rem] md:h-[33rem] opacity-[0.035] animate-fade-in absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2" />
 
             <p dir="ltr" className="tracking-wide text-gray-50 loading-container text-7xl">
                 <span

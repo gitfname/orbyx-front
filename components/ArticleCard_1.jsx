@@ -29,13 +29,13 @@ export default function ArticleCard_1({
                     {info}
                 </p>
 
-                <hr className="border-white/10 w-full mt-auto" />
+                {/* <hr className="border-white/10 w-full mt-auto" />
 
                 <ProfileCard_1
                     img={author.img}
                     title={author.username}
                     subtitle={pubDate}
-                />
+                /> */}
 
             </div>
 
