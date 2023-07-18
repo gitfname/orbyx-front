@@ -21,11 +21,11 @@ function RecentWorkCard({ text, subtext, img, dir }) {
                 </div>
             </div>
             <div dir={dir} className="px-2 translate-z-30">
-                <p className="text-xs text-gray-50 font-[Inter] font-normal tracking-wide mt-2.5">
+                <p className="text-xs text-gray-50 font-[morabbaRegular] font-normal tracking-wide mt-2.5">
                     {text}
                 </p>
 
-                <p className="text-xs text-gray-400 font-[Inter] font-normal tracking-wide">
+                <p className="text-xs text-gray-400 font-[morabbaRegular] font-normal tracking-wide mt-0.5">
                     {subtext}
                 </p>
             </div>

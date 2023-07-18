@@ -300,7 +300,7 @@ function OurTechnologies() {
                                                 _groupHover={{
                                                     color: item.textColor
                                                 }}
-                                                className="text-sm text-white/80 font-[Inter] font-light text-center"
+                                                className="text-sm text-white/80 font-[morabbaRegular] font-light text-center"
                                             >
                                                 {item.name}
                                             </Text>

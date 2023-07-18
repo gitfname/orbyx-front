@@ -15,7 +15,7 @@ function NavLink({ text, href = "/" }) {
             to={href}
         >
             <p
-                className="text-white text-xs font-normal"
+                className="text-white text-sm font-normal font-[morabbaLight]"
             >
                 {text}
             </p>
@@ -91,10 +91,9 @@ const Content = ({ visible, links, setLang }) => useMemo(
 
                         <Button
                             text={"hello"}
-                            className="max-md:hidden"
+                            className="max-md:hidden font-[morabbaRegular]"
                             style={{
                                 fontSize: "var(--header__btn--font-size)",
-                                fontFamily: "var(--header__btn--font-family)",
                                 bg: "var(--header__btn--bg)",
                                 color: "var(--header__btn--color)",
                                 px: "2rem",

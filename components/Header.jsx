@@ -17,7 +17,7 @@ function NavLink({ text, href = "/" }) {
             to={href}
         >
             <p
-                className="text-white text-xs font-normal"
+                className="text-white text-sm font-normal font-[morabbaRegular]"
             >
                 {text}
             </p>
@@ -118,10 +118,9 @@ export default function Header() {
 
                 <Button
                     text={getText(applicationData?.header?.["button-text"], lang.lang)}
-                    className="max-md:hidden rounded-xl"
+                    className="max-md:hidden rounded-xl font-[morabbaRegular]"
                     style={{
                         fontSize: "var(--header__btn--font-size)",
-                        fontFamily: "var(--header__btn--font-family)",
                         bg: "var(--header__btn--bg)",
                         color: "var(--header__btn--color)",
                         px: "var(--header__btn--px)",

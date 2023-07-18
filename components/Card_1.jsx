@@ -92,12 +92,11 @@ export default function Card_1({
             <p
                 style={{
                     color: _style.title.color,
-                    fontFamily: _style.title.fontFamily,
                     fontSize: _style.title.fontSize,
                     letterSpacing: _style.title.letterSpacing,
                     fontWeight: _style.title.fontWeight
                 }}
-                className="uppercase mt-5"
+                className="uppercase mt-5 font-[morabbaLight]"
             >
                 {title}
             </p>
@@ -105,12 +104,11 @@ export default function Card_1({
             <p
                 style={{
                     fontSize: _style.subtitle.fontSize,
-                    fontFamily: _style.subtitle.fontFamily,
-                    color: _style.subtitle.color,
                     fontWeight: _style.subtitle.fontWeight,
                     letterSpacing: _style.subtitle.letterSpacing,
                     lineHeight: _style.subtitle.lineHeight
                 }}
+                className="font-[morabbaRegular] mt-2 text-white/75"
             >
                 {subtitle}
             </p>

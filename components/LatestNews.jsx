@@ -110,10 +110,9 @@ function LatestNews({ leftText, rightText, showSeeAllBtn = true, showAllBtnText 
                     &&
                     <Button
                         text={showAllBtnText}
-                        className="mt-8 block mx-auto tracking-widest w-max"
+                        className="mt-8 block mx-auto tracking-widest w-max font-[morabbaRegular]"
                         style={{
                             fontSize: "0.9rem",
-                            fontFamily: "Inter",
                             fontWeight: 500,
                             bg: "rgba(255, 255, 255, 0.1)",
                             color: "white",

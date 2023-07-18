@@ -44,12 +44,12 @@ export default function SectionGroup_1({dir="ltr", className, left=null, right=n
                         <p
                             style={{
                                 color: _style.leftText.color,
-                                fontFamily: _style.leftText.fontFamily,
                                 fontSize: _style.leftText.fontSize,
                                 fontWeight: _style.leftText.fontWeight,
                                 letterSpacing: _style.leftText.letterSpacing,
                                 lineHeightStep: _style.leftText.lineHeight
                             }}
+                            className="font-[morabbaRegular]"
                         >
                             {leftText}
                         </p>
@@ -63,13 +63,12 @@ export default function SectionGroup_1({dir="ltr", className, left=null, right=n
                     <p
                         style={{
                             color: _style.rightText.color,
-                            fontFamily: _style.rightText.fontFamily,
                             fontSize: _style.rightText.fontSize,
                             fontWeight: _style.rightText.fontWeight,
                             letterSpacing: _style.rightText.letterSpacing,
                             lineHeightStep: _style.rightText.lineHeight
                         }}
-                        className="max-w-[44ch]"
+                        className="max-w-[44ch] font-[morabbaLight]"
                     >
                         {rightText}
                     </p>

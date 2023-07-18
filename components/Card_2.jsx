@@ -70,9 +70,9 @@ export default function Card_2({title, subtitle, img, style=stypeProps, classNam
 
             <div className="p-4">
                 <p
+                className="font-[morabbaLight]"
                     style={{
                         color: _style.title.color,
-                        fontFamily: _style.title.fontFamily,
                         fontSize: _style.title.fontSize,
                         fontWeight: _style.title.fontWeight,
                         letterSpacing: _style.title.letterSpacing,
@@ -84,9 +84,9 @@ export default function Card_2({title, subtitle, img, style=stypeProps, classNam
                     {title}
                 </p>
                 <p
+                className="font-[morabbaLight]"
                     style={{
                         color: _style.subtitle.color,
-                        fontFamily: _style.subtitle.fontFamily,
                         fontSize: _style.subtitle.fontSize,
                         fontWeight: _style.subtitle.fontWeight,
                         letterSpacing: _style.subtitle.letterSpacing,

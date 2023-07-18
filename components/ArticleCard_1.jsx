@@ -18,13 +18,13 @@ export default function ArticleCard_1({
             <div className="p-5 h-full flex flex-col">
 
                 <p
-                    className="text-lg font-bold text-white line-clamp-3 tracking-wide"
+                    className="text-lg font-bold font-[morabbaRegular] text-white line-clamp-3 tracking-wide"
                 >
                     {title}
                 </p>
 
                 <p
-                    className="text-sm font-normal text-white line-clamp-5 tracking-wide mt-4 leading-6 mb-3"
+                    className="text-sm font-normal font-[morabbaLight] text-white line-clamp-5 tracking-wide mt-4 leading-6 mb-3"
                 >
                     {info}
                 </p>

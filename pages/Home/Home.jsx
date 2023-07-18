@@ -91,10 +91,9 @@ export default function HomePage() {
                             <p
                                 style={{
                                     fontSize: "var(--hero-section__title--font-size)",
-                                    fontFamily: "var(--hero-section__title--font-family)"
                                 }}
                                 className="text-[--hero-section__title--color] font-[--hero-section__title--font-weight]
-                                    leading-[--hero-section__title--line-height] max-w-md"
+                                    leading-[--hero-section__title--line-height] max-w-md font-[morabbaRegular]"
                             >
                                 {pageDetails?.data?.attributes?.hero_text_1}
                             </p>
@@ -120,10 +119,10 @@ export default function HomePage() {
 
                     <div className="flex max-lg:flex-col max-lg:items-stretch gap-y-4 items-center gap-x-6 !mt-7">
                         <Button
+                            className="font-[morabbaRegular]"
                             text={pageDetails?.data?.attributes?.hero_cta1_text}
                             style={{
                                 fontSize: "var(--hero-section__cta1--font-size)",
-                                fontFamily: "var(--hero-section__cta1--font-family)",
                                 bg: "var(--hero-section__cta1--bg)",
                                 color: "var(--hero-section__cta1--color)",
                                 px: "var(--hero-section__cta1--px)",
@@ -172,7 +171,7 @@ export default function HomePage() {
 
                             <Link
                                 to="/order-project"
-                                className="text-sm capitalize text-gray-50 font-[Inter] tracking-wide
+                                className="text-sm capitalize text-gray-50 font-[morabbaRegular] tracking-wide
                                 rounded-xl bg-[--primary-color] w-max p-3.5 px-6 absolute bottom-0 -right-5
                                 translate-y-3/4 active:scale-95 transition-transform duration-300 max-sm:left-1/2 max-sm:-translate-x-1/2"
                             >
@@ -198,7 +197,7 @@ export default function HomePage() {
             </div>
 
             {/* section-2 */}
-            <p className="text-sm text-gray-300 font-[Inter] font-normal text-center mb-6 mt-36">
+            <p className="text-lg text-gray-300 font-[morabbaRegular] font-normal text-center mb-6 mt-36">
                 {pageDetails?.data?.attributes?.section2_text}
             </p>
             <div className="w-full overflow-y-hidden overflow-x-auto pt-3 py-2">
@@ -323,11 +322,10 @@ export default function HomePage() {
 
                 <p
                     style={{
-                        fontFamily: "var(--home__section-3__title--font-family)",
                         fontSize: "var(--home__section-3__title--font-size)",
                     }}
                     className={`lg:text-center text-[--home__section-3__title--color]
-                    font-[--home__section-3__title--font-weight] ${lang.classname}`}
+                    font-[--home__section-3__title--font-weight] font-[morabbaRegular] ${lang.classname}`}
                     dir={lang.dir}
                 >
                     {pageDetails?.data?.attributes?.section3_text}
@@ -337,10 +335,9 @@ export default function HomePage() {
                     style={{
                         fontSize: "var(--home__section-3__subtitle--font-size)",
                         letterSpacing: "var(--home__section-3__subtitle--letter-spacing)",
-                        fontFamily: "var(--home__section-3__subtitle--font-family)",
                         lineHeight: "var(--home__section-3__subtitle--line-height)"
                     }}
-                    className={`max-w-[50ch] ${lang.dir === "rtl" && "ml-auto"} mb-20 tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
+                    className={`max-w-[50ch] ${lang.dir === "rtl" && "ml-auto"} font-[morabbaRegular] mb-20 tracking-wide mt-4 lg:text-center lg:mx-auto text-[--home__section-3__subtitle--color]
                     font-[--home__section-3__subtitle--font-weight] max-lg:max-w-[40ch] ${lang.classname} !w-full`}
                     dir={lang.dir}
                 >
@@ -468,7 +465,7 @@ export default function HomePage() {
             </div>
 
             <div id="our-projects" className="w-full max-md:px-6 mt-36" dir={lang.dir}>
-                <p className="text-2xl md:text-3xl md:w-10/12 mx-auto  text-gray-50 font-[Inter] tracking-wide font-medium mb-4">
+                <p className="text-2xl md:text-3xl md:w-10/12 mx-auto  text-gray-50 font-[morabbaRegular] tracking-wide font-medium mb-4">
                     {pageDetails?.data?.attributes?.recent_works_section_title}
                 </p>
 
@@ -490,23 +487,21 @@ export default function HomePage() {
                     <div>
                         <p
                             style={{
-                                fontFamily: "var(--home__section-4__title--font-family)",
                                 fontSize: "var(--home__section-4__title--font-size)",
                             }}
                             className="max-w-[15ch] text-[--home__section-4__title--color]
-                            font-[--home__section-4__title--font-weight]"
+                            font-[--home__section-4__title--font-weight] font-[morabbaLight]"
                         >
                             {pageDetails?.data?.attributes?.section4_text}
                         </p>
 
                         <p
                             style={{
-                                fontFamily: "var(--home__section-4__subtitle--font-family)",
                                 fontSize: "var(--home__section-4__subtitle--font-size)",
                             }}
                             className="mt-4 max-w-[40ch] text-[--home__section-4__subtitle--color]
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
-                            tracking-[--home__section-4__subtitle--letter-spacing]"
+                            tracking-[--home__section-4__subtitle--letter-spacing] font-[morabbaRegular]"
                         >
                             {pageDetails?.data?.attributes?.section4_subtext}
                         </p>
@@ -647,11 +642,10 @@ export default function HomePage() {
                 <div dir={lang.dir} className="w-full max-md:px-6 max-md:flex-col md:w-10/12 mx-auto flex gap-y-4 md:items-center justify-between mb-8">
                     <p
                         style={{
-                            fontSize: "var(--home__testimotionals__title--font-size)",
-                            fontFamily: "var(--home__testimotionals__title--font-family)"
+                            fontSize: "var(--home__testimotionals__title--font-size)"
                         }}
                         className="text-[--home__testimotionals__title--color]
-                        font-[--home__testimotionals__title--font-weight]"
+                        font-[--home__testimotionals__title--font-weight] font-[morabbaRegular]"
                     >
                         {pageDetails?.data?.attributes?.section5_text}
                     </p>
@@ -663,13 +657,13 @@ export default function HomePage() {
                             text={pageDetails?.data?.attributes?.section5_btn_text}
                             style={{
                                 fontSize: "var(--home__testimotionals__btn--font-size)",
-                                fontFamily: "var(--home__testimotionals__btn--font-family)",
                                 bg: "var(--home__testimotionals__btn--bg)",
                                 color: "var(--home__testimotionals__btn--color)",
                                 px: "var(--home__testimotionals__btn--px)",
                                 py: "var(--home__testimotionals__btn--py)",
                                 rounded: "var(--home__testimotionals__btn--border-radius)"
                             }}
+                            className="font-[morabbaRegular]"
                             href={{
                                 link: (applicationData?.["download-our-app-link"]),
                                 target: "_blank"
@@ -706,23 +700,21 @@ export default function HomePage() {
                         <div>
                             <p
                                 style={{
-                                    fontFamily: "var(--home__section-4__title--font-family)",
                                     fontSize: "var(--home__section-4__title--font-size)",
                                 }}
                                 className="max-w-[15ch] text-[--home__section-4__title--color]
-                            font-[--home__section-4__title--font-weight]"
+                            font-[--home__section-4__title--font-weight] font-[morabbaRegular]"
                             >
                                 {pageDetails?.data?.attributes?.section6_text}
                             </p>
 
                             <p
                                 style={{
-                                    fontFamily: "var(--home__section-4__subtitle--font-family)",
                                     fontSize: "var(--home__section-4__subtitle--font-size)",
                                 }}
                                 className="mt-4 max-w-[40ch] text-[--home__section-4__subtitle--color]
                             font-[--home__section-4__subtitle--font-weight] leading-[--home__section-4__subtitle--line-height]
-                            tracking-[--home__section-4__subtitle--letter-spacing]"
+                            tracking-[--home__section-4__subtitle--letter-spacing] font-[morabbaRegular]"
                             >
                                 {pageDetails?.data?.attributes?.section6_subtext}
                             </p>
@@ -785,10 +777,9 @@ export default function HomePage() {
                                 content={
                                     <Button
                                         text={item?.["button-text"]}
-                                        className="my-7 w-max tracking-wide"
+                                        className="my-7 w-max tracking-wide font-[morabbaRegular]"
                                         style={{
                                             fontSize: "0.75rem",
-                                            fontFamily: "Inter",
                                             fontWeight: 500,
                                             bg: "var(--blue)",
                                             color: "white",

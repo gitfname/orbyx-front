@@ -12,13 +12,13 @@ export default function TestimotionalCard_1({ img, name, job_title = "", educati
                 <div className="relative z-10 p-3 rounded-xl bg-transparent/40 backdrop-blur-md shadow-md shadow-black/10
             group-hover:translate-x-1/2 transition-transform duration-300 w-full h-full">
                     <p
-                        className="text-sm text-white font-[Inter] font-light leading-6 tracking-wide max-w-[45ch] line-clamp-2"
+                        className="text-sm text-white font-[morabbaRegular] font-light leading-6 tracking-wide max-w-[45ch] line-clamp-2"
                     >
                         {name}
                     </p>
 
                     <p
-                        className="text-xs text-white/90 font-[Inter] font-light mt-3 tracking-wide max-w-[45ch] break-all"
+                        className="text-xs text-white/90 font-[morabbaRegular] font-light mt-3 tracking-wide max-w-[45ch] break-all"
                     >
                         {job_title}
                     </p>
@@ -27,7 +27,7 @@ export default function TestimotionalCard_1({ img, name, job_title = "", educati
                         {
                             education?.map(item => (
                                 <p
-                                    className="text-xs mt-2 text-white/75 font-[Inter] font-light tracking-wide max-w-[45ch] line-clamp-2"
+                                    className="text-xs mt-2 text-white/75 font-[morabbaRegular] font-light tracking-wide max-w-[45ch] line-clamp-2"
                                 >
                                     {item}
                                 </p>

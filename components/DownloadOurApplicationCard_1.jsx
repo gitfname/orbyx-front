@@ -11,13 +11,13 @@ export default function DownloadOurApplicationCard_1() {
         <div className="bg-white/10 rounded-3xl px-5 py-9">
 
             <p
-                className="text-white text-sm font-medium font-[Inter]"
+                className="text-white text-sm font-medium font-[morabbaRegular]"
             >
                 DOWNLOAD OUR APPLICATION
             </p>
 
             <p
-                className="text-white max-w-[40ch] mt-4 text-[0.8rem] font-light font-[Inter] leading-5"
+                className="text-white max-w-[40ch] mt-4 text-[0.8rem] font-light font-[morabbaLight] leading-5"
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer 
             </p>
@@ -26,10 +26,9 @@ export default function DownloadOurApplicationCard_1() {
 
                 <Button
                     text="APPLE STORE"
-                    className="md:w-max tracking-wide"
+                    className="md:w-max tracking-wide font-[morabbaRegular]"
                     style={{
                         fontSize: "0.75rem",
-                        fontFamily: "Inter",
                         fontWeight: 500,
                         bg: "var(--blue)",
                         color: "white",
@@ -52,10 +51,9 @@ export default function DownloadOurApplicationCard_1() {
 
                 <Button
                     text="PLAY STORE"
-                    className="md:w-max tracking-wide"
+                    className="md:w-max tracking-wide font-[morabbaRegular]"
                     style={{
                         fontSize: "0.75rem",
-                        fontFamily: "Inter",
                         fontWeight: 500,
                         bg: "var(--blue)",
                         color: "white",

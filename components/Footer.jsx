@@ -69,7 +69,7 @@ export default function Footer() {
                     {/* menu */}
                     <div dir={lang.dir} className="w-full max-w-xs">
                         <p
-                            className="text-lg text-white font-medium tracking-wide"
+                            className="text-lg text-white font-medium font-[morabbaRegular] tracking-wide"
                         >
                             {getText(applicationData?.footer?.["menu-title"], lang.lang)}
                         </p>
@@ -84,7 +84,7 @@ export default function Footer() {
                                         key={item?.id}
                                         text={item?.attributes?.title}
                                         href={item?.attributes?.link}
-                                        className="text-sm text-white font-normal tracking-wide"
+                                        className="text-sm text-white font-normal tracking-wide font-[morabbaRegular]"
                                     >
                                         {item?.attributes?.title}
                                     </Link>

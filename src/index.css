@@ -283,6 +283,41 @@
     /* End ---------- SectionGroup_1 ---------- End */
 }
 
+
+@font-face {
+    font-family: morabbaBlack;
+    src: url(/fonts/morabba/Morabba-Black.ttf);
+}
+@font-face {
+    font-family: morabbaBold;
+    src: url(/fonts/morabba/Morabba-Bold.ttf);
+}
+@font-face {
+    font-family: morabbaExtraBold;
+    src: url(/fonts/morabba/Morabba-ExtraBold.ttf);
+}
+@font-face {
+    font-family: morabbaHeavy;
+    src: url(/fonts/morabba/Morabba-Heavy.ttf);
+}
+@font-face {
+    font-family: morabbaLight;
+    src: url(/fonts/morabba/Morabba-Light.ttf);
+}
+@font-face {
+    font-family: morabbaMedium;
+    src: url(/fonts/morabba/Morabba-Medium.ttf);
+}
+@font-face {
+    font-family: morabbaRegular;
+    src: url(/fonts/morabba/Morabba-Regular.ttf);
+}
+@font-face {
+    font-family: morabbaSemiBold;
+    src: url(/fonts/morabba/Morabba-SemiBold.ttf);
+}
+
+
 @media screen and (max-width: 1024px) {
     :root {
         --header--pl: 1.5rem;

@@ -32,14 +32,13 @@ export default function FeatureCard_1({img, text, style=styleProps}) {
             <p
                 style={{
                   color: _style.text.color,
-                  fontFamily: _style.text.fontFamily,
                   fontSize: _style.text.fontSize,
                   fontWeight: _style.text.fontWeight,
                   letterSpacing: _style.text.letterSpacing,
                   marginBottom: _style.text.mb,
                   marginTop: _style.text.mt
                 }}
-                className="text-white text-sm font-normal tracking-wide"
+                className="text-white text-sm font-normal tracking-wide font-[morabbaRegular]"
             >
                 {text}
             </p>
